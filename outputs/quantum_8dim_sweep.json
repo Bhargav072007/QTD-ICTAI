@@ -1,0 +1,2690 @@
+{
+  "generated_at": "2026-06-29T13:51:08.018617+00:00",
+  "split_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "k": 50,
+  "variants": [
+    {
+      "name": "q8_signed01_chain_cov10",
+      "coverage": 0.1,
+      "angle_map": "signed01",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_signed01_chain_cov15",
+      "coverage": 0.15,
+      "angle_map": "signed01",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_signed01_chain_cov20",
+      "coverage": 0.2,
+      "angle_map": "signed01",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_signed01_chain_cov25",
+      "coverage": 0.25,
+      "angle_map": "signed01",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_signed01_chain_cov33",
+      "coverage": 0.33,
+      "angle_map": "signed01",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_signed01_chain_cov50",
+      "coverage": 0.5,
+      "angle_map": "signed01",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_signed01_ring_cov10",
+      "coverage": 0.1,
+      "angle_map": "signed01",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_signed01_ring_cov15",
+      "coverage": 0.15,
+      "angle_map": "signed01",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_signed01_ring_cov20",
+      "coverage": 0.2,
+      "angle_map": "signed01",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_signed01_ring_cov25",
+      "coverage": 0.25,
+      "angle_map": "signed01",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_signed01_ring_cov33",
+      "coverage": 0.33,
+      "angle_map": "signed01",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_signed01_ring_cov50",
+      "coverage": 0.5,
+      "angle_map": "signed01",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_absnorm_chain_cov10",
+      "coverage": 0.1,
+      "angle_map": "absnorm",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_absnorm_chain_cov15",
+      "coverage": 0.15,
+      "angle_map": "absnorm",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_absnorm_chain_cov20",
+      "coverage": 0.2,
+      "angle_map": "absnorm",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_absnorm_chain_cov25",
+      "coverage": 0.25,
+      "angle_map": "absnorm",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_absnorm_chain_cov33",
+      "coverage": 0.33,
+      "angle_map": "absnorm",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_absnorm_chain_cov50",
+      "coverage": 0.5,
+      "angle_map": "absnorm",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_absnorm_ring_cov10",
+      "coverage": 0.1,
+      "angle_map": "absnorm",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_absnorm_ring_cov15",
+      "coverage": 0.15,
+      "angle_map": "absnorm",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_absnorm_ring_cov20",
+      "coverage": 0.2,
+      "angle_map": "absnorm",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_absnorm_ring_cov25",
+      "coverage": 0.25,
+      "angle_map": "absnorm",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_absnorm_ring_cov33",
+      "coverage": 0.33,
+      "angle_map": "absnorm",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_absnorm_ring_cov50",
+      "coverage": 0.5,
+      "angle_map": "absnorm",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_centered_chain_cov10",
+      "coverage": 0.1,
+      "angle_map": "centered",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_centered_chain_cov15",
+      "coverage": 0.15,
+      "angle_map": "centered",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_centered_chain_cov20",
+      "coverage": 0.2,
+      "angle_map": "centered",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_centered_chain_cov25",
+      "coverage": 0.25,
+      "angle_map": "centered",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_centered_chain_cov33",
+      "coverage": 0.33,
+      "angle_map": "centered",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_centered_chain_cov50",
+      "coverage": 0.5,
+      "angle_map": "centered",
+      "entanglement": "chain"
+    },
+    {
+      "name": "q8_centered_ring_cov10",
+      "coverage": 0.1,
+      "angle_map": "centered",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_centered_ring_cov15",
+      "coverage": 0.15,
+      "angle_map": "centered",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_centered_ring_cov20",
+      "coverage": 0.2,
+      "angle_map": "centered",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_centered_ring_cov25",
+      "coverage": 0.25,
+      "angle_map": "centered",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_centered_ring_cov33",
+      "coverage": 0.33,
+      "angle_map": "centered",
+      "entanglement": "ring"
+    },
+    {
+      "name": "q8_centered_ring_cov50",
+      "coverage": 0.5,
+      "angle_map": "centered",
+      "entanglement": "ring"
+    }
+  ],
+  "per_split": [
+    {
+      "split_seed": 42,
+      "teacher_only_8d": {
+        "auc": 295.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 313.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 316.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 314.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 305.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 313.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 297.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 316.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 316.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 314.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 300.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 295.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 302.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 314.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 294.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 302.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 295.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 302.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 314.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 294.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 301.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 274.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 276.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 277.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 281.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 274.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 274.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 274.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 276.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 277.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 281.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 274.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 274.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 43,
+      "teacher_only_8d": {
+        "auc": 270.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 267.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 272.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 269.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 272.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 278.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 279.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 268.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 273.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 269.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 272.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 278.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 269.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 271.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 271.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 273.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 276.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 269.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 271.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 271.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 273.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 276.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 271.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 271.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 44,
+      "teacher_only_8d": {
+        "auc": 278.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 278.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 279.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 285.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 287.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 287.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 294.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 278.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 279.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 284.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 287.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 287.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 294.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 276.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 287.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 290.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 289.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 296.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 276.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 285.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 289.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 288.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 296.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 262.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 261.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 263.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 45,
+      "teacher_only_8d": {
+        "auc": 254.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 247.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 251.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 255.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 255.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 254.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 247.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 247.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 251.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 255.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 255.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 254.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 247.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 256.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 262.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 269.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 270.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 267.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 273.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 253.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 262.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 269.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 269.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 267.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 272.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 245.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 246.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 249.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 249.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 249.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 250.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 245.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 246.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 249.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 249.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 249.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 250.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 46,
+      "teacher_only_8d": {
+        "auc": 326.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 329.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 326.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 325.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 328.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 327.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 326.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 323.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 326.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 327.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 326.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 325.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 329.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 327.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 326.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 325.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 329.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 321.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 321.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 321.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 320.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 321.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 321.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 322.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 47,
+      "teacher_only_8d": {
+        "auc": 328.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 329.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 340.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 338.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 344.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 348.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 351.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 329.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 339.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 338.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 344.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 348.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 351.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 329.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 336.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 337.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 342.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 347.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 349.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 329.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 336.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 337.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 342.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 347.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 350.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 312.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 320.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 323.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 325.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 330.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 341.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 312.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 320.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 323.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 325.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 330.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 342.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 48,
+      "teacher_only_8d": {
+        "auc": 283.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 284.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 286.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 282.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 283.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 282.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 285.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 285.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 282.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 283.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 285.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 285.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 282.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 279.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 275.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 284.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 286.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 282.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 273.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 281.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 281.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 281.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 281.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 281.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 280.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 49,
+      "teacher_only_8d": {
+        "auc": 294.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 296.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 294.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 296.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 295.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 295.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 290.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 290.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 295.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 296.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 290.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 289.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 290.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 291.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 291.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 291.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 290.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 291.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 291.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 291.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 293.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 50,
+      "teacher_only_8d": {
+        "auc": 313.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 312.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 313.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 308.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 305.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 301.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 312.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 312.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 308.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 301.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 309.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 313.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 312.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 308.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 313.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 312.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 309.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 310.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 310.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 313.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 310.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 311.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 313.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    },
+    {
+      "split_seed": 51,
+      "teacher_only_8d": {
+        "auc": 304.5,
+        "recall": 1.0,
+        "failures_found": 9
+      },
+      "variants": {
+        "q8_signed01_chain_cov10": {
+          "auc": 302.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov15": {
+          "auc": 305.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov20": {
+          "auc": 307.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov25": {
+          "auc": 307.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov33": {
+          "auc": 316.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_chain_cov50": {
+          "auc": 320.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov10": {
+          "auc": 302.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov15": {
+          "auc": 305.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov20": {
+          "auc": 307.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov25": {
+          "auc": 307.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov33": {
+          "auc": 315.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_signed01_ring_cov50": {
+          "auc": 320.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov10": {
+          "auc": 301.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov15": {
+          "auc": 305.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov20": {
+          "auc": 307.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov25": {
+          "auc": 308.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov33": {
+          "auc": 315.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_chain_cov50": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov10": {
+          "auc": 301.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov15": {
+          "auc": 304.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov20": {
+          "auc": 305.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov25": {
+          "auc": 307.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov33": {
+          "auc": 315.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_absnorm_ring_cov50": {
+          "auc": 324.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov10": {
+          "auc": 297.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov15": {
+          "auc": 297.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov20": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov25": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov33": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_chain_cov50": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov10": {
+          "auc": 295.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov15": {
+          "auc": 297.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov20": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov25": {
+          "auc": 298.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov33": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        },
+        "q8_centered_ring_cov50": {
+          "auc": 299.5,
+          "recall": 1.0,
+          "failures_found": 9
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "q8_signed01_chain_cov10": {
+      "auc": {
+        "mean": 294.7,
+        "std": 24.802419
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -0.3,
+        "std": 2.93428
+      },
+      "positive_lift_splits": 5
+    },
+    "q8_signed01_chain_cov15": {
+      "auc": {
+        "mean": 298.9,
+        "std": 25.370061
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.9,
+        "std": 6.040695
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_signed01_chain_cov20": {
+      "auc": {
+        "mean": 298.8,
+        "std": 24.281886
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.8,
+        "std": 7.152622
+      },
+      "positive_lift_splits": 6
+    },
+    "q8_signed01_chain_cov25": {
+      "auc": {
+        "mean": 299.5,
+        "std": 24.576411
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 4.5,
+        "std": 7.762087
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_signed01_chain_cov33": {
+      "auc": {
+        "mean": 299.7,
+        "std": 25.253911
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 4.7,
+        "std": 8.591275
+      },
+      "positive_lift_splits": 6
+    },
+    "q8_signed01_chain_cov50": {
+      "auc": {
+        "mean": 302.1,
+        "std": 27.492544
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 7.1,
+        "std": 10.454186
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_signed01_ring_cov10": {
+      "auc": {
+        "mean": 294.4,
+        "std": 24.357545
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -0.6,
+        "std": 2.537716
+      },
+      "positive_lift_splits": 4
+    },
+    "q8_signed01_ring_cov15": {
+      "auc": {
+        "mean": 298.9,
+        "std": 25.291105
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.9,
+        "std": 6.714909
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_signed01_ring_cov20": {
+      "auc": {
+        "mean": 298.6,
+        "std": 24.337009
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.6,
+        "std": 7.102112
+      },
+      "positive_lift_splits": 6
+    },
+    "q8_signed01_ring_cov25": {
+      "auc": {
+        "mean": 299.1,
+        "std": 24.356519
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 4.1,
+        "std": 8.104937
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_signed01_ring_cov33": {
+      "auc": {
+        "mean": 298.7,
+        "std": 24.923082
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.7,
+        "std": 8.485871
+      },
+      "positive_lift_splits": 6
+    },
+    "q8_signed01_ring_cov50": {
+      "auc": {
+        "mean": 301.6,
+        "std": 27.296337
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 6.6,
+        "std": 10.565983
+      },
+      "positive_lift_splits": 6
+    },
+    "q8_absnorm_chain_cov10": {
+      "auc": {
+        "mean": 294.7,
+        "std": 22.502444
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -0.3,
+        "std": 2.002498
+      },
+      "positive_lift_splits": 5
+    },
+    "q8_absnorm_chain_cov15": {
+      "auc": {
+        "mean": 297.6,
+        "std": 22.407365
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 2.6,
+        "std": 2.835489
+      },
+      "positive_lift_splits": 8
+    },
+    "q8_absnorm_chain_cov20": {
+      "auc": {
+        "mean": 298.6,
+        "std": 21.41238
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.6,
+        "std": 5.748043
+      },
+      "positive_lift_splits": 5
+    },
+    "q8_absnorm_chain_cov25": {
+      "auc": {
+        "mean": 300.5,
+        "std": 21.876928
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 5.5,
+        "std": 8.45281
+      },
+      "positive_lift_splits": 6
+    },
+    "q8_absnorm_chain_cov33": {
+      "auc": {
+        "mean": 298.8,
+        "std": 23.584105
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.8,
+        "std": 8.669487
+      },
+      "positive_lift_splits": 5
+    },
+    "q8_absnorm_chain_cov50": {
+      "auc": {
+        "mean": 302.3,
+        "std": 24.190081
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 7.3,
+        "std": 11.17184
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_absnorm_ring_cov10": {
+      "auc": {
+        "mean": 294.5,
+        "std": 23.203448
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -0.5,
+        "std": 1.431782
+      },
+      "positive_lift_splits": 4
+    },
+    "q8_absnorm_ring_cov15": {
+      "auc": {
+        "mean": 297.7,
+        "std": 22.315017
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 2.7,
+        "std": 2.86531
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_absnorm_ring_cov20": {
+      "auc": {
+        "mean": 298.2,
+        "std": 21.447844
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.2,
+        "std": 5.635601
+      },
+      "positive_lift_splits": 5
+    },
+    "q8_absnorm_ring_cov25": {
+      "auc": {
+        "mean": 300.5,
+        "std": 22.275547
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 5.5,
+        "std": 7.952987
+      },
+      "positive_lift_splits": 6
+    },
+    "q8_absnorm_ring_cov33": {
+      "auc": {
+        "mean": 298.8,
+        "std": 23.545913
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 3.8,
+        "std": 8.506468
+      },
+      "positive_lift_splits": 5
+    },
+    "q8_absnorm_ring_cov50": {
+      "auc": {
+        "mean": 301.9,
+        "std": 24.779831
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 6.9,
+        "std": 11.588356
+      },
+      "positive_lift_splits": 7
+    },
+    "q8_centered_chain_cov10": {
+      "auc": {
+        "mean": 286.6,
+        "std": 23.11904
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -8.4,
+        "std": 6.81469
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_chain_cov15": {
+      "auc": {
+        "mean": 287.8,
+        "std": 23.983536
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -7.2,
+        "std": 5.963221
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_chain_cov20": {
+      "auc": {
+        "mean": 288.6,
+        "std": 23.771622
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -6.4,
+        "std": 5.8
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_chain_cov25": {
+      "auc": {
+        "mean": 289.7,
+        "std": 24.202479
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -5.3,
+        "std": 5.367495
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_chain_cov33": {
+      "auc": {
+        "mean": 289.3,
+        "std": 25.242028
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -5.7,
+        "std": 7.05762
+      },
+      "positive_lift_splits": 2
+    },
+    "q8_centered_chain_cov50": {
+      "auc": {
+        "mean": 290.9,
+        "std": 27.170572
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -4.1,
+        "std": 8.745856
+      },
+      "positive_lift_splits": 1
+    },
+    "q8_centered_ring_cov10": {
+      "auc": {
+        "mean": 286.4,
+        "std": 22.98891
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -8.6,
+        "std": 6.843975
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_ring_cov15": {
+      "auc": {
+        "mean": 287.8,
+        "std": 23.983536
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -7.2,
+        "std": 5.963221
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_ring_cov20": {
+      "auc": {
+        "mean": 288.5,
+        "std": 23.803361
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -6.5,
+        "std": 5.731492
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_ring_cov25": {
+      "auc": {
+        "mean": 289.6,
+        "std": 24.163816
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -5.4,
+        "std": 5.370289
+      },
+      "positive_lift_splits": 0
+    },
+    "q8_centered_ring_cov33": {
+      "auc": {
+        "mean": 289.3,
+        "std": 25.242028
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -5.7,
+        "std": 7.05762
+      },
+      "positive_lift_splits": 2
+    },
+    "q8_centered_ring_cov50": {
+      "auc": {
+        "mean": 291.1,
+        "std": 27.255091
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -3.9,
+        "std": 8.814193
+      },
+      "positive_lift_splits": 1
+    }
+  },
+  "top_by_mean_auc_lift": [
+    "q8_absnorm_chain_cov50",
+    "q8_signed01_chain_cov50",
+    "q8_absnorm_ring_cov50",
+    "q8_signed01_ring_cov50",
+    "q8_absnorm_chain_cov25",
+    "q8_absnorm_ring_cov25",
+    "q8_signed01_chain_cov33",
+    "q8_signed01_chain_cov25",
+    "q8_signed01_ring_cov25",
+    "q8_signed01_chain_cov15"
+  ]
+}

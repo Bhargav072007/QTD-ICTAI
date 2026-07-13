@@ -1,0 +1,62 @@
+{
+  "state_count": 256,
+  "geometric_failure_count": 18,
+  "policy_failure_count_from_empirical_probabilities": 12,
+  "empirical_probability_count": 12,
+  "bit_convention": "x = encode_state_indices(indices)[::-1] as a 0/1 vector",
+  "qaoa_minimization_score": "score = -(x^T Q x)",
+  "qubo_sources": {
+    "empirical_build_qubo_matrix": "build_qubo_matrix(), empirical when load_empirical_failure_probabilities() is non-empty",
+    "surrogate_fallback": "_build_surrogate_qubo_matrix()"
+  },
+  "metrics": {
+    "empirical_build_qubo_matrix": {
+      "geometric_labels": {
+        "positive_labels": 18,
+        "negative_labels": 238,
+        "point_biserial_r_label_vs_objective": -0.19058208267430402,
+        "point_biserial_pvalue": 0.002194898963904038,
+        "ranking_auc_score_neg_objective": 0.7531512605042018,
+        "hamiltonian_ranking_auc_score_neg_energy": 0.526610644257703,
+        "hamiltonian_auc_matches_objective_auc": false,
+        "hamiltonian_minus_objective_constant": 0.5699038461538461,
+        "hamiltonian_minus_objective_centered_max_abs": 3.781634615384616
+      },
+      "policy_labels": {
+        "positive_labels": 12,
+        "negative_labels": 244,
+        "point_biserial_r_label_vs_objective": -0.2826990569478218,
+        "point_biserial_pvalue": 4.3248785564368806e-06,
+        "ranking_auc_score_neg_objective": 0.8440915300546449,
+        "hamiltonian_ranking_auc_score_neg_energy": 0.5850409836065574,
+        "hamiltonian_auc_matches_objective_auc": false,
+        "hamiltonian_minus_objective_constant": 0.5699038461538461,
+        "hamiltonian_minus_objective_centered_max_abs": 3.781634615384616
+      }
+    },
+    "surrogate_fallback": {
+      "geometric_labels": {
+        "positive_labels": 18,
+        "negative_labels": 238,
+        "point_biserial_r_label_vs_objective": -0.030936522311437564,
+        "point_biserial_pvalue": 0.622238750777228,
+        "ranking_auc_score_neg_objective": 0.5571895424836601,
+        "hamiltonian_ranking_auc_score_neg_energy": 0.5378151260504201,
+        "hamiltonian_auc_matches_objective_auc": false,
+        "hamiltonian_minus_objective_constant": 0.25763281249999953,
+        "hamiltonian_minus_objective_centered_max_abs": 0.7728984374999988
+      },
+      "policy_labels": {
+        "positive_labels": 12,
+        "negative_labels": 244,
+        "point_biserial_r_label_vs_objective": -0.07350808772121016,
+        "point_biserial_pvalue": 0.24121319233263638,
+        "ranking_auc_score_neg_objective": 0.5964822404371585,
+        "hamiltonian_ranking_auc_score_neg_energy": 0.584016393442623,
+        "hamiltonian_auc_matches_objective_auc": false,
+        "hamiltonian_minus_objective_constant": 0.25763281249999953,
+        "hamiltonian_minus_objective_centered_max_abs": 0.7728984374999988
+      }
+    }
+  }
+}

@@ -1,0 +1,554 @@
+{
+  "generated_at": "2026-07-13T06:22:55.023630+00:00",
+  "description": "Traceability of the current QTD ICTAI-2026 manuscript claims to persisted JSON sources.",
+  "shared_metric_functions": {
+    "auc": "trapezoidal cumulative-failure AUC starting from previous=0",
+    "time_to_first_failure": "1-based first index where cumulative_failures > 0",
+    "std": "population standard deviation (ddof=0)"
+  },
+  "summary": {
+    "total_rows": 94,
+    "match": 57,
+    "rounding_match": 37,
+    "fail": 0,
+    "all_pass": true
+  },
+  "significance_source": "outputs/stats_significance.json",
+  "metrics": [
+    {
+      "metric_name": "Table I QTD found/18",
+      "paper_value": 18,
+      "persisted_value": 18,
+      "match_status": "MATCH",
+      "source_json_file": "headline_reproducibility_seed42.json",
+      "source_json_key_path": "canonical_current_code.unique_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I QTD AUC",
+      "paper_value": 366.0,
+      "persisted_value": 366.0,
+      "match_status": "MATCH",
+      "source_json_file": "headline_reproducibility_seed42.json",
+      "source_json_key_path": "canonical_current_code.cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I QTD first-failure iter",
+      "paper_value": 17,
+      "persisted_value": 17,
+      "match_status": "MATCH",
+      "source_json_file": "headline_reproducibility_seed42.json",
+      "source_json_key_path": "canonical_current_code.cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I teacher-only found/18",
+      "paper_value": 16,
+      "persisted_value": 16,
+      "match_status": "MATCH",
+      "source_json_file": "ranking_diagnostic_seed42.json",
+      "source_json_key_path": "teacher_only.total_unique_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I teacher-only AUC",
+      "paper_value": 313.0,
+      "persisted_value": 313.0,
+      "match_status": "MATCH",
+      "source_json_file": "ranking_diagnostic_seed42.json",
+      "source_json_key_path": "teacher_only.cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I teacher-only first-failure iter",
+      "paper_value": 17,
+      "persisted_value": 17,
+      "match_status": "MATCH",
+      "source_json_file": "ranking_diagnostic_seed42.json",
+      "source_json_key_path": "teacher_only.cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I MC found/18",
+      "paper_value": 3,
+      "persisted_value": 3,
+      "match_status": "MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_i_seed42_mc.unique_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I MC AUC",
+      "paper_value": 44.5,
+      "persisted_value": 44.5,
+      "match_status": "MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_i_seed42_mc.cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I MC first-failure iter",
+      "paper_value": 13,
+      "persisted_value": 13,
+      "match_status": "MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_i_seed42_mc.cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I QAOA found/18",
+      "paper_value": 5,
+      "persisted_value": 5,
+      "match_status": "MATCH",
+      "source_json_file": "qaoa_results_k50.json",
+      "source_json_key_path": "unique_failures|total_unique_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I QAOA AUC",
+      "paper_value": 172.5,
+      "persisted_value": 172.5,
+      "match_status": "MATCH",
+      "source_json_file": "qaoa_results_k50.json",
+      "source_json_key_path": "cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table I QAOA first-failure iter",
+      "paper_value": 4,
+      "persisted_value": 4,
+      "match_status": "MATCH",
+      "source_json_file": "qaoa_results_k50.json",
+      "source_json_key_path": "cumulative_failures",
+      "notes": ""
+    },
+    {
+      "metric_name": "QAOA env evaluations total <= 400",
+      "paper_value": true,
+      "persisted_value": true,
+      "match_status": "MATCH",
+      "source_json_file": "qaoa_results_k50.json",
+      "source_json_key_path": "n_env_evaluations_total",
+      "notes": "total=400 unique=45"
+    },
+    {
+      "metric_name": "QAOA multi-seed failures (requires paper delta) (mean)",
+      "paper_value": 3.5,
+      "persisted_value": 3.5,
+      "match_status": "MATCH",
+      "source_json_file": "qaoa_multiseed.json",
+      "source_json_key_path": "aggregate.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "QAOA multi-seed failures (requires paper delta) (std)",
+      "paper_value": 0.8,
+      "persisted_value": 0.806226,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "qaoa_multiseed.json",
+      "source_json_key_path": "aggregate.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "QAOA multi-seed AUC (requires paper delta) (mean)",
+      "paper_value": 133.9,
+      "persisted_value": 133.85,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "qaoa_multiseed.json",
+      "source_json_key_path": "aggregate.auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "QAOA multi-seed AUC (requires paper delta) (std)",
+      "paper_value": 27.9,
+      "persisted_value": 27.885525,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "qaoa_multiseed.json",
+      "source_json_key_path": "aggregate.auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "QAOA multi-seed completed seeds",
+      "paper_value": 10,
+      "persisted_value": 10,
+      "match_status": "MATCH",
+      "source_json_file": "qaoa_multiseed.json",
+      "source_json_key_path": "per_seed",
+      "notes": ""
+    },
+    {
+      "metric_name": "QAOA multi-seed duplicate checks",
+      "paper_value": true,
+      "persisted_value": true,
+      "match_status": "MATCH",
+      "source_json_file": "qaoa_multiseed.json",
+      "source_json_key_path": "determinism_checked",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II QTD failing states (mean)",
+      "paper_value": 17.9,
+      "persisted_value": 17.9,
+      "match_status": "MATCH",
+      "source_json_file": "multiseed_results.json",
+      "source_json_key_path": "aggregate.qtd.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II QTD failing states (std)",
+      "paper_value": 0.3,
+      "persisted_value": 0.3,
+      "match_status": "MATCH",
+      "source_json_file": "multiseed_results.json",
+      "source_json_key_path": "aggregate.qtd.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II QTD AUC (mean)",
+      "paper_value": 378.2,
+      "persisted_value": 378.15,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "multiseed_results.json",
+      "source_json_key_path": "aggregate.qtd.auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II QTD AUC (std)",
+      "paper_value": 20.0,
+      "persisted_value": 19.985057,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "multiseed_results.json",
+      "source_json_key_path": "aggregate.qtd.auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II QTD first-failure (mean)",
+      "paper_value": 15.1,
+      "persisted_value": 15.1,
+      "match_status": "MATCH",
+      "source_json_file": "multiseed_results.json",
+      "source_json_key_path": "aggregate.qtd.time_to_first_failure.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II QTD first-failure (std)",
+      "paper_value": 1.6,
+      "persisted_value": 1.577973,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "multiseed_results.json",
+      "source_json_key_path": "aggregate.qtd.time_to_first_failure.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II MC failing states (mean)",
+      "paper_value": 4.2,
+      "persisted_value": 4.2,
+      "match_status": "MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_ii_mc_aggregate.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II MC failing states (std)",
+      "paper_value": 1.1,
+      "persisted_value": 1.077033,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_ii_mc_aggregate.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II MC AUC (mean)",
+      "paper_value": 98.8,
+      "persisted_value": 98.8,
+      "match_status": "MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_ii_mc_aggregate.auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II MC AUC (std)",
+      "paper_value": 32.4,
+      "persisted_value": 32.416971,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_ii_mc_aggregate.auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II MC first-failure (mean)",
+      "paper_value": 12.0,
+      "persisted_value": 12.0,
+      "match_status": "MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_ii_mc_aggregate.time_to_first_failure.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Table II MC first-failure (std)",
+      "paper_value": 6.9,
+      "persisted_value": 6.884766,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "table_ii_mc_aggregate.time_to_first_failure.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation AUC lift (mean)",
+      "paper_value": 26.5,
+      "persisted_value": 26.45,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "quantum_ablation_multiseed.json",
+      "source_json_key_path": "delta_aggregate.auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation AUC lift (std)",
+      "paper_value": 12.2,
+      "persisted_value": 12.180825,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "quantum_ablation_multiseed.json",
+      "source_json_key_path": "delta_aggregate.auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation AUC lift positive seeds",
+      "paper_value": 10,
+      "persisted_value": 10,
+      "match_status": "MATCH",
+      "source_json_file": "quantum_ablation_multiseed.json",
+      "source_json_key_path": "delta_aggregate.positive_auc_delta_seed_count",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation AUC lift sign-test p",
+      "paper_value": 0.00195,
+      "persisted_value": 0.001953125,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "stats_significance.json",
+      "source_json_key_path": "ablation_auc_lift.sign_test_two_sided_p",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation failure lift (mean)",
+      "paper_value": 1.3,
+      "persisted_value": 1.3,
+      "match_status": "MATCH",
+      "source_json_file": "quantum_ablation_multiseed.json",
+      "source_json_key_path": "delta_aggregate.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation failure lift (std)",
+      "paper_value": 1.2,
+      "persisted_value": 1.187434,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "quantum_ablation_multiseed.json",
+      "source_json_key_path": "delta_aggregate.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation failure lift positive seeds",
+      "paper_value": 6,
+      "persisted_value": 6,
+      "match_status": "MATCH",
+      "source_json_file": "quantum_ablation_multiseed.json",
+      "source_json_key_path": "delta_aggregate.positive_failure_delta_seed_count",
+      "notes": ""
+    },
+    {
+      "metric_name": "Ablation failure lift tied seeds",
+      "paper_value": 4,
+      "persisted_value": 4,
+      "match_status": "MATCH",
+      "source_json_file": "quantum_ablation_multiseed.json",
+      "source_json_key_path": "per_seed[*].delta.unique_failures==0",
+      "notes": ""
+    },
+    {
+      "metric_name": "Closed-loop denominator",
+      "paper_value": 12,
+      "persisted_value": 12,
+      "match_status": "MATCH",
+      "source_json_file": "policy_loop_norepl.json",
+      "source_json_key_path": "config.reachable_failures_denominator",
+      "notes": ""
+    },
+    {
+      "metric_name": "Closed-loop QTD failing states (mean)",
+      "paper_value": 12.0,
+      "persisted_value": 12.0,
+      "match_status": "MATCH",
+      "source_json_file": "policy_loop_comparison.json",
+      "source_json_key_path": "aggregate.qtd_quantum_on.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Closed-loop QTD failing states (std)",
+      "paper_value": 0.0,
+      "persisted_value": 0.0,
+      "match_status": "MATCH",
+      "source_json_file": "policy_loop_comparison.json",
+      "source_json_key_path": "aggregate.qtd_quantum_on.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Closed-loop teacher-only failing states (mean)",
+      "paper_value": 10.9,
+      "persisted_value": 10.9,
+      "match_status": "MATCH",
+      "source_json_file": "policy_loop_comparison.json",
+      "source_json_key_path": "aggregate.teacher_only_no_quantum.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Closed-loop teacher-only failing states (std)",
+      "paper_value": 1.2,
+      "persisted_value": 1.220656,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "policy_loop_comparison.json",
+      "source_json_key_path": "aggregate.teacher_only_no_quantum.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Closed-loop MC failing states (mean)",
+      "paper_value": 2.2,
+      "persisted_value": 2.2,
+      "match_status": "MATCH",
+      "source_json_file": "policy_loop_comparison.json",
+      "source_json_key_path": "aggregate.monte_carlo.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Split QTD AUC (mean)",
+      "paper_value": 302.3,
+      "persisted_value": 302.3,
+      "match_status": "MATCH",
+      "source_json_file": "split_results.json",
+      "source_json_key_path": "aggregate.qtd_auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Split QTD AUC (std)",
+      "paper_value": 23.9,
+      "persisted_value": 23.932405,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "split_results.json",
+      "source_json_key_path": "aggregate.qtd_auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Split QTD recall (mean)",
+      "paper_value": 1.0,
+      "persisted_value": 1.0,
+      "match_status": "MATCH",
+      "source_json_file": "split_results.json",
+      "source_json_key_path": "aggregate.qtd_recall.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Split QTD recall (std)",
+      "paper_value": 0.0,
+      "persisted_value": 0.0,
+      "match_status": "MATCH",
+      "source_json_file": "split_results.json",
+      "source_json_key_path": "aggregate.qtd_recall.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Split quantum AUC lift (mean)",
+      "paper_value": 7.3,
+      "persisted_value": 7.3,
+      "match_status": "MATCH",
+      "source_json_file": "split_results.json",
+      "source_json_key_path": "aggregate.quantum_auc_lift.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Split quantum AUC lift (std)",
+      "paper_value": 14.4,
+      "persisted_value": 14.360014,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "split_results.json",
+      "source_json_key_path": "aggregate.quantum_auc_lift.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Split lift sign-test p (6/10)",
+      "paper_value": 0.754,
+      "persisted_value": 0.75390625,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "stats_significance.json",
+      "source_json_key_path": "split_auc_lift.sign_test_two_sided_p",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 MC AUC (mean)",
+      "paper_value": 73.0,
+      "persisted_value": 73.0,
+      "match_status": "MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "experiment_5_mc_aggregate.auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 MC AUC (std)",
+      "paper_value": 53.2,
+      "persisted_value": 53.150259,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "experiment_5_mc_aggregate.auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 MC recall (mean)",
+      "paper_value": 0.356,
+      "persisted_value": 0.355556,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "experiment_5_mc_aggregate.recall.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 MC recall (std)",
+      "paper_value": 0.232,
+      "persisted_value": 0.232007,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mc_no_replacement.json",
+      "source_json_key_path": "experiment_5_mc_aggregate.recall.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 1024-shot QTD AUC (mean)",
+      "paper_value": 302.0,
+      "persisted_value": 302.4,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "split_results_1024.json",
+      "source_json_key_path": "aggregate.qtd_auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 1024-shot QTD AUC (std)",
+      "paper_value": 24.0,
+      "persisted_value": 23.985204,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "split_results_1024.json",
+      "source_json_key_path": "aggregate.qtd_auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 1024-shot QTD recall (mean)",
+      "paper_value": 1.0,
+      "persisted_value": 1.0,
+      "match_status": "MATCH",
+      "source_json_file": "split_results_1024.json",
+      "source_json_key_path": "aggregate.qtd_recall.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 1024-shot QTD recall (std)",
+      "paper_value": 0.0,
+      "persisted_value": 0.0,
+      "match_status": "MATCH",
+      "sourc

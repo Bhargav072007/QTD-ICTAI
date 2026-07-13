@@ -1,0 +1,37 @@
+{
+  "method": "MonteCarlo",
+  "seed": 7,
+  "k_iterations": 10,
+  "elapsed_seconds": 0.001,
+  "total_unique_failures": 1,
+  "cumulative_failures": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "failures": [
+    {
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 4.0,
+        "int_x_offset": 10.0
+      },
+      "min_h_sep_nm": 2.035,
+      "min_v_sep_ft": 1000.0,
+      "separation_loss": false,
+      "near_miss": true,
+      "failure": true,
+      "failure_type": "near_miss",
+      "surrogate_score": 0.4362,
+      "iteration": 2
+    }
+  ]
+}

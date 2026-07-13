@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "epochs": 180,
+  "episodes_per_epoch": 64,
+  "best_mean_reward": 13.804888,
+  "final_mean_reward": 12.104943,
+  "reward_trace_tail": [
+    9.981737,
+    10.947338,
+    13.804888,
+    11.85703,
+    11.879905,
+    11.282834,
+    9.829083,
+    12.639423,
+    12.006202,
+    12.104943
+  ],
+  "artifact": "outputs/phase1/policy_weights.npz"
+}

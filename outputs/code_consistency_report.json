@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-06-27T03:51:56.405834+00:00",
+  "selection_rule": {
+    "uses_argsort_teacher_probs_descending": true,
+    "interpretation": "selects top 25 percent by highest teacher probability, not uncertainty or mid-confidence",
+    "code_reference": "phase3_quantum_tree/quantum_layer.py:50"
+  },
+  "qubo_source": {
+    "failure_states_path": "outputs\\failure_states.json",
+    "failure_states_file_exists": true,
+    "empirical_probability_count": 12,
+    "current_code_path": "empirical_failure_states",
+    "build_qubo_references_empirical_loader": true,
+    "fallback_reference": "phase2_qaoa/qubo_encoder.py:245"
+  },
+  "teacher_accuracy": {
+    "fresh_seed": 42,
+    "dataset_size": 256,
+    "feature_rows": 256,
+    "label_rows": 256,
+    "accuracy": 0.925781,
+    "loss": 0.182206,
+    "train_test_split_present": false,
+    "interpretation": "teacher metrics are in-sample over all 256 grid states; no train/test split is present",
+    "code_references": [
+      "phase3_quantum_tree/classical_layer.py:31",
+      "phase3_quantum_tree/classical_layer.py:103"
+    ]
+  },
+  "backend": {
+    "qtd_backend_in_saved_fair_run": "qiskit-statevector",
+    "qtd_used_qiskit_statevector": true,
+    "qiskit_branch_reference": "phase3_quantum_tree/quantum_layer.py:102"
+  }
+}

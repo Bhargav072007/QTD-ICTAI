@@ -1,0 +1,757 @@
+{
+  "generated_at": "2026-06-29T13:47:33.210967+00:00",
+  "split_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "k": 50,
+  "variants": [
+    {
+      "name": "teacher_only_8d",
+      "quantum_kind": "none",
+      "coverage": 1.0,
+      "entanglement": "chain",
+      "teacher_injection": "ry_q0",
+      "target_mode": "teacher"
+    },
+    {
+      "name": "current_3q_top25",
+      "quantum_kind": "current_3q",
+      "coverage": 0.25,
+      "entanglement": "chain",
+      "teacher_injection": "ry_q0",
+      "target_mode": "blend"
+    },
+    {
+      "name": "q8_chain_top25",
+      "quantum_kind": "q8_exact",
+      "coverage": 0.25,
+      "entanglement": "chain",
+      "teacher_injection": "ry_q0",
+      "target_mode": "blend"
+    },
+    {
+      "name": "q8_chain_all",
+      "quantum_kind": "q8_exact",
+      "coverage": 1.0,
+      "entanglement": "chain",
+      "teacher_injection": "ry_q0",
+      "target_mode": "blend"
+    },
+    {
+      "name": "q8_ring_all",
+      "quantum_kind": "q8_exact",
+      "coverage": 1.0,
+      "entanglement": "ring",
+      "teacher_injection": "ry_q0",
+      "target_mode": "blend"
+    }
+  ],
+  "per_split": [
+    {
+      "split_seed": 42,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 295.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 336.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 314.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 309.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 306.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 43,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 270.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 273.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 272.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 279.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 280.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 44,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 278.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 291.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 287.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 287.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 287.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 45,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 254.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 270.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 255.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 0.888889,
+          "auc": 184.0,
+          "failures_found": 8,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 0.888889,
+          "auc": 184.0,
+          "failures_found": 8,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 46,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 326.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 318.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 324.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 319.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 316.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 47,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 328.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 342.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 344.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 348.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 348.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 48,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 283.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 281.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 283.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 286.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 288.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 49,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 294.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 290.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 299.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 307.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 304.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 50,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 313.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 303.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 305.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 281.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 281.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    },
+    {
+      "split_seed": 51,
+      "train_failures": 9,
+      "test_failures": 9,
+      "variants": {
+        "teacher_only_8d": {
+          "recall": 1.0,
+          "auc": 304.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "current_3q_top25": {
+          "recall": 1.0,
+          "auc": 314.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_top25": {
+          "recall": 1.0,
+          "auc": 307.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_chain_all": {
+          "recall": 1.0,
+          "auc": 297.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        },
+        "q8_ring_all": {
+          "recall": 1.0,
+          "auc": 297.5,
+          "failures_found": 9,
+          "test_failures_total": 9,
+          "warmstart_count": 9,
+          "checks": {
+            "no_warmstart_test_overlap": true,
+            "warmstart_subset_train_failures": true
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "teacher_only_8d": {
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc": {
+        "mean": 295.0,
+        "std": 22.787058
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "positive_auc_lift_splits": 0
+    },
+    "current_3q_top25": {
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc": {
+        "mean": 302.3,
+        "std": 23.932405
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 7.3,
+        "std": 14.360014
+      },
+      "positive_auc_lift_splits": 6
+    },
+    "q8_chain_top25": {
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auc": {
+        "mean": 299.5,
+        "std": 24.576411
+      },
+      "auc_lift_vs_teacher": {
+        "mean": 4.5,
+        "std": 7.762087
+      },
+      "positive_auc_lift_splits": 7
+    },
+    "q8_chain_all": {
+      "recall": {
+        "mean": 0.988889,
+        "std": 0.033333
+      },
+      "auc": {
+        "mean": 290.15,
+        "std": 40.585743
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -4.85,
+        "std": 26.063432
+      },
+      "positive_auc_lift_splits": 6
+    },
+    "q8_ring_all": {
+      "recall": {
+        "mean": 0.988889,
+        "std": 0.033333
+      },
+      "auc": {
+        "mean": 289.55,
+        "std": 40.085191
+      },
+      "auc_lift_vs_teacher": {
+        "mean": -5.45,
+        "std": 25.832586
+      },
+      "positive_auc_lift_splits": 6
+    }
+  }
+}

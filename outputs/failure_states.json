@@ -1,0 +1,551 @@
+{
+  "episodes": 500,
+  "failure_states": [
+    {
+      "episode": 4,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 31000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -20.0
+      },
+      "indices": [
+        0,
+        2,
+        3,
+        0
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 6.807,
+      "min_v_sep_ft": 0.0,
+      "reward": -6.298137
+    },
+    {
+      "episode": 44,
+      "params": {
+        "int_heading": 90.0,
+        "int_altitude": 30000.0,
+        "int_speed": 6.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 4.105,
+      "min_v_sep_ft": 1000.0,
+      "reward": -5.973707
+    },
+    {
+      "episode": 57,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 31000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -20.0
+      },
+      "indices": [
+        0,
+        2,
+        3,
+        0
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 6.807,
+      "min_v_sep_ft": 0.0,
+      "reward": -6.298137
+    },
+    {
+      "episode": 62,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -10.0
+      },
+      "indices": [
+        0,
+        1,
+        3,
+        1
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 2.611,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.347362
+    },
+    {
+      "episode": 86,
+      "params": {
+        "int_heading": 90.0,
+        "int_altitude": 32000.0,
+        "int_speed": 6.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 4.105,
+      "min_v_sep_ft": 1000.0,
+      "reward": -5.973707
+    },
+    {
+      "episode": 90,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 32000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -20.0
+      },
+      "indices": [
+        0,
+        3,
+        3,
+        0
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 6.807,
+      "min_v_sep_ft": 1000.0,
+      "reward": -5.298137
+    },
+    {
+      "episode": 96,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.826647
+    },
+    {
+      "episode": 100,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.826647
+    },
+    {
+      "episode": 120,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -20.0
+      },
+      "indices": [
+        0,
+        1,
+        3,
+        0
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 6.807,
+      "min_v_sep_ft": 1000.0,
+      "reward": -5.298137
+    },
+    {
+      "episode": 157,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 31000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        2,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "separation_loss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 0.0,
+      "reward": -19.826647
+    },
+    {
+      "episode": 165,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.826647
+    },
+    {
+      "episode": 193,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 31000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        2,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "separation_loss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 0.0,
+      "reward": -19.826647
+    },
+    {
+      "episode": 218,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 32000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -10.0
+      },
+      "indices": [
+        0,
+        3,
+        3,
+        1
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 2.611,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.347362
+    },
+    {
+      "episode": 244,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -10.0
+      },
+      "indices": [
+        0,
+        1,
+        3,
+        1
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 2.611,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.347362
+    },
+    {
+      "episode": 253,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.826647
+    },
+    {
+      "episode": 266,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.826647
+    },
+    {
+      "episode": 278,
+      "params": {
+        "int_heading": 90.0,
+        "int_altitude": 31000.0,
+        "int_speed": 6.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        1,
+        2,
+        3,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "separation_loss",
+      "min_h_sep_nm": 4.105,
+      "min_v_sep_ft": 0.0,
+      "reward": -18.973707
+    },
+    {
+      "episode": 321,
+      "params": {
+        "int_heading": 90.0,
+        "int_altitude": 32000.0,
+        "int_speed": 6.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 4.105,
+      "min_v_sep_ft": 1000.0,
+      "reward": -5.973707
+    },
+    {
+      "episode": 381,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 31000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -20.0
+      },
+      "indices": [
+        0,
+        2,
+        3,
+        0
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 6.807,
+      "min_v_sep_ft": 0.0,
+      "reward": -6.298137
+    },
+    {
+      "episode": 402,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 30000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -10.0
+      },
+      "indices": [
+        0,
+        1,
+        3,
+        1
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 2.611,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.347362
+    },
+    {
+      "episode": 410,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 32000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -20.0
+      },
+      "indices": [
+        0,
+        3,
+        3,
+        0
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 6.807,
+      "min_v_sep_ft": 1000.0,
+      "reward": -5.298137
+    },
+    {
+      "episode": 412,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 32000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        3,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.826647
+    },
+    {
+      "episode": 419,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 31000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -10.0
+      },
+      "indices": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "separation_loss",
+      "min_h_sep_nm": 2.611,
+      "min_v_sep_ft": 0.0,
+      "reward": -19.347362
+    },
+    {
+      "episode": 454,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 32000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -10.0
+      },
+      "indices": [
+        0,
+        3,
+        3,
+        1
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 2.611,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.347362
+    },
+    {
+      "episode": 486,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 32000.0,
+        "int_speed": 5.0,
+        "int_x_offset": 10.0
+      },
+      "indices": [
+        0,
+        3,
+        2,
+        3
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 0.693,
+      "min_v_sep_ft": 1000.0,
+      "reward": -6.826647
+    },
+    {
+      "episode": 489,
+      "params": {
+        "int_heading": 75.0,
+        "int_altitude": 31000.0,
+        "int_speed": 6.0,
+        "int_x_offset": -20.0
+      },
+      "indices": [
+        0,
+        2,
+        3,
+        0
+      ],
+      "action": "turn_right",
+      "action_index": 4,
+      "failure_type": "near_miss",
+      "min_h_sep_nm": 6.807,
+      "min_v_sep_ft": 0.0,
+      "reward": -6.298137
+    }
+  ]
+}

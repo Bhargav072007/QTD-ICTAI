@@ -1,0 +1,6769 @@
+{
+  "generated_at": "2026-07-08T18:26:16.720904+00:00",
+  "question": "Why does headline QTD (seed 42) find its first failure only at iteration 17?",
+  "warmstart_set_size": 12,
+  "qtd": {
+    "variant": "qtd",
+    "quantum_backend_values": [
+      "qiskit-statevector",
+      "skipped-low-teacher"
+    ],
+    "n_warmstart_states": 26,
+    "config": {
+      "seed": 42,
+      "k": 50,
+      "candidate_pool_size": 150,
+      "shots": 1024,
+      "evaluator": "geometric",
+      "quantum_enabled": true
+    },
+    "cumulative_failures": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      6,
+      7,
+      8,
+      8,
+      9,
+      9,
+      10,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      15,
+      15,
+      16,
+      16,
+      17,
+      17,
+      17,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    "total_unique_failures": 18,
+    "auc": 366.0,
+    "time_to_first_failure": 17,
+    "summary": {
+      "n_top16_teacher_false_positives": 1,
+      "n_true_failures_in_top16": 0,
+      "n_top16_in_warmstart_set": 7,
+      "n_true_failures_total": 18,
+      "n_failures_in_pool_150": 18,
+      "n_failures_in_top50": 18,
+      "best_failure_rank_in_pool_150": 17,
+      "best_failure_student_score": 0.311925,
+      "best_failure_teacher_prob": 0.323184,
+      "best_failure_quantum_score": 0.771484,
+      "best_failure_distilled_target": 0.457674,
+      "student_score_16th_evaluated": 0.318129,
+      "max_teacher_prob_among_true_failures": 0.323184,
+      "max_teacher_prob_among_top16": 0.517308,
+      "min_teacher_prob_among_top16": 0.172048
+    },
+    "evaluated_order_first_50": [
+      {
+        "rank": 1,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.517308,
+        "quantum_score": 0.690104,
+        "distilled_target": 0.603706,
+        "student_score": 0.473696,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 2,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.455218,
+        "quantum_score": 0.722005,
+        "distilled_target": 0.588612,
+        "student_score": 0.458489,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 3,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.388824,
+        "quantum_score": 0.765299,
+        "distilled_target": 0.501767,
+        "student_score": 0.443359,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 4,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261683,
+        "quantum_score": 0.447917,
+        "distilled_target": 0.317553,
+        "student_score": 0.413439,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 5,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.442463,
+        "quantum_score": 0.694336,
+        "distilled_target": 0.568399,
+        "student_score": 0.393532,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 6,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.40265,
+        "quantum_score": 0.770508,
+        "distilled_target": 0.586579,
+        "student_score": 0.386047,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 7,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.376472,
+        "quantum_score": 0.72819,
+        "distilled_target": 0.481987,
+        "student_score": 0.379045,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 8,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.335822,
+        "quantum_score": 0.619466,
+        "distilled_target": 0.420915,
+        "student_score": 0.371667,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 9,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.310939,
+        "quantum_score": 0.769857,
+        "distilled_target": 0.448614,
+        "student_score": 0.364771,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 10,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.272685,
+        "quantum_score": 0.420247,
+        "distilled_target": 0.316954,
+        "student_score": 0.357511,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 11,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.32088,
+        "quantum_score": 0.669596,
+        "distilled_target": 0.425495,
+        "student_score": 0.345212,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 12,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.198707,
+        "quantum_score": 0.518555,
+        "distilled_target": 0.294661,
+        "student_score": 0.336943,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 13,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261523,
+        "quantum_score": 0.664388,
+        "distilled_target": 0.382382,
+        "student_score": 0.331531,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 14,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.172048,
+        "quantum_score": 0.594076,
+        "distilled_target": 0.298657,
+        "student_score": 0.32995,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 15,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.361688,
+        "quantum_score": 0.686849,
+        "distilled_target": 0.459236,
+        "student_score": 0.318719,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 16,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.206888,
+        "quantum_score": 0.652669,
+        "distilled_target": 0.340623,
+        "student_score": 0.318129,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 17,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.323184,
+        "quantum_score": 0.771484,
+        "distilled_target": 0.457674,
+        "student_score": 0.311925,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 18,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.297213,
+        "quantum_score": 0.713867,
+        "distilled_target": 0.422209,
+        "student_score": 0.305598,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 19,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.284412,
+        "quantum_score": 0.413411,
+        "distilled_target": 0.323112,
+        "student_score": 0.305212,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 20,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.260722,
+        "quantum_score": 0.500651,
+        "distilled_target": 0.332701,
+        "student_score": 0.298961,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 21,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.238046,
+        "quantum_score": 0.704427,
+        "distilled_target": 0.37796,
+        "student_score": 0.292785,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 22,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.226607,
+        "quantum_score": 0.602214,
+        "distilled_target": 0.339289,
+        "student_score": 0.292408,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 23,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.122179,
+        "quantum_score": 0.596354,
+        "distilled_target": 0.264431,
+        "student_score": 0.292224,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 24,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.206213,
+        "quantum_score": 0.625,
+        "distilled_target": 0.331849,
+        "student_score": 0.286312,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 25,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.178437,
+        "quantum_score": 0.626953,
+        "distilled_target": 0.312992,
+        "student_score": 0.279926,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 26,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.247255,
+        "quantum_score": 0.698568,
+        "distilled_target": 0.382649,
+        "student_score": 0.275413,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 27,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.218928,
+        "quantum_score": 0.628255,
+        "distilled_target": 0.341726,
+        "student_score": 0.269178,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 28,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.146765,
+        "quantum_score": 0.611654,
+        "distilled_target": 0.286232,
+        "student_score": 0.268132,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 29,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.194742,
+        "quantum_score": 0.654948,
+        "distilled_target": 0.332804,
+        "student_score": 0.263386,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 30,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.127192,
+        "quantum_score": 0.640299,
+        "distilled_target": 0.281124,
+        "student_score": 0.262002,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 31,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.168788,
+        "quantum_score": 0.511068,
+        "distilled_target": 0.271472,
+        "student_score": 0.257326,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 32,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111757,
+        "quantum_score": 0.641602,
+        "distilled_target": 0.27071,
+        "student_score": 0.255963,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 33,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.282388,
+        "quantum_score": 0.66276,
+        "distilled_target": 0.3965,
+        "student_score": 0.252213,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 34,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.149861,
+        "quantum_score": 0.832357,
+        "distilled_target": 0.35461,
+        "student_score": 0.251701,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 35,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.247708,
+        "quantum_score": 0.689453,
+        "distilled_target": 0.380232,
+        "student_score": 0.246325,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 36,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.127898,
+        "quantum_score": 0.657878,
+        "distilled_target": 0.286892,
+        "student_score": 0.245821,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 37,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.225048,
+        "quantum_score": 0.609701,
+        "distilled_target": 0.340444,
+        "student_score": 0.240862,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 38,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.215071,
+        "quantum_score": 0.573893,
+        "distilled_target": 0.322718,
+        "student_score": 0.24053,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 39,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145417,
+        "quantum_score": 0.722005,
+        "distilled_target": 0.318393,
+        "student_score": 0.235953,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 40,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.194559,
+        "quantum_score": 0.576823,
+        "distilled_target": 0.309238,
+        "student_score": 0.235156,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 41,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.186621,
+        "quantum_score": 0.677083,
+        "distilled_target": 0.33376,
+        "student_score": 0.234828,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 42,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.176235,
+        "quantum_score": 0.366862,
+        "distilled_target": 0.233423,
+        "student_score": 0.229865,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 43,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.167833,
+        "quantum_score": 0.588216,
+        "distilled_target": 0.293948,
+        "student_score": 0.229543,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 44,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.086331,
+        "quantum_score": 0.0,
+        "distilled_target": 0.060432,
+        "student_score": 0.229385,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 45,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111623,
+        "quantum_score": 0.894206,
+        "distilled_target": 0.346398,
+        "student_score": 0.225114,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 46,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.15138,
+        "quantum_score": 0.574544,
+        "distilled_target": 0.278329,
+        "student_score": 0.224342,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 47,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145929,
+        "quantum_score": 0.625326,
+        "distilled_target": 0.289748,
+        "student_score": 0.224025,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 48,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.073333,
+        "quantum_score": 0.0,
+        "distilled_target": 0.051333,
+        "student_score": 0.22387,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 49,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.13087,
+        "quantum_score": 0.604818,
+        "distilled_target": 0.273054,
+        "student_score": 0.218914,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 50,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.181795,
+        "quantum_score": 0.675456,
+        "distilled_target": 0.329893,
+        "student_score": 0.215091,
+        "true_failure": false,
+        "in_warmstart_set": false
+      }
+    ],
+    "pool_ranking_150": [
+      {
+        "rank": 1,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.517308,
+        "quantum_score": 0.690104,
+        "distilled_target": 0.603706,
+        "student_score": 0.473696,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 2,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.455218,
+        "quantum_score": 0.722005,
+        "distilled_target": 0.588612,
+        "student_score": 0.458489,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 3,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.388824,
+        "quantum_score": 0.765299,
+        "distilled_target": 0.501767,
+        "student_score": 0.443359,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 4,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261683,
+        "quantum_score": 0.447917,
+        "distilled_target": 0.317553,
+        "student_score": 0.413439,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 5,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.442463,
+        "quantum_score": 0.694336,
+        "distilled_target": 0.568399,
+        "student_score": 0.393532,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 6,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.40265,
+        "quantum_score": 0.770508,
+        "distilled_target": 0.586579,
+        "student_score": 0.386047,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 7,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.376472,
+        "quantum_score": 0.72819,
+        "distilled_target": 0.481987,
+        "student_score": 0.379045,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 8,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.335822,
+        "quantum_score": 0.619466,
+        "distilled_target": 0.420915,
+        "student_score": 0.371667,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 9,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.310939,
+        "quantum_score": 0.769857,
+        "distilled_target": 0.448614,
+        "student_score": 0.364771,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 10,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.272685,
+        "quantum_score": 0.420247,
+        "distilled_target": 0.316954,
+        "student_score": 0.357511,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 11,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.32088,
+        "quantum_score": 0.669596,
+        "distilled_target": 0.425495,
+        "student_score": 0.345212,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 12,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.198707,
+        "quantum_score": 0.518555,
+        "distilled_target": 0.294661,
+        "student_score": 0.336943,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 13,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261523,
+        "quantum_score": 0.664388,
+        "distilled_target": 0.382382,
+        "student_score": 0.331531,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 14,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.172048,
+        "quantum_score": 0.594076,
+        "distilled_target": 0.298657,
+        "student_score": 0.32995,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 15,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.361688,
+        "quantum_score": 0.686849,
+        "distilled_target": 0.459236,
+        "student_score": 0.318719,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 16,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.206888,
+        "quantum_score": 0.652669,
+        "distilled_target": 0.340623,
+        "student_score": 0.318129,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 17,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.323184,
+        "quantum_score": 0.771484,
+        "distilled_target": 0.457674,
+        "student_score": 0.311925,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 18,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.297213,
+        "quantum_score": 0.713867,
+        "distilled_target": 0.422209,
+        "student_score": 0.305598,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 19,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.284412,
+        "quantum_score": 0.413411,
+        "distilled_target": 0.323112,
+        "student_score": 0.305212,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 20,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.260722,
+        "quantum_score": 0.500651,
+        "distilled_target": 0.332701,
+        "student_score": 0.298961,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 21,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.238046,
+        "quantum_score": 0.704427,
+        "distilled_target": 0.37796,
+        "student_score": 0.292785,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 22,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.226607,
+        "quantum_score": 0.602214,
+        "distilled_target": 0.339289,
+        "student_score": 0.292408,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 23,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.122179,
+        "quantum_score": 0.596354,
+        "distilled_target": 0.264431,
+        "student_score": 0.292224,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 24,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.206213,
+        "quantum_score": 0.625,
+        "distilled_target": 0.331849,
+        "student_score": 0.286312,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 25,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.178437,
+        "quantum_score": 0.626953,
+        "distilled_target": 0.312992,
+        "student_score": 0.279926,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 26,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.247255,
+        "quantum_score": 0.698568,
+        "distilled_target": 0.382649,
+        "student_score": 0.275413,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 27,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.218928,
+        "quantum_score": 0.628255,
+        "distilled_target": 0.341726,
+        "student_score": 0.269178,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 28,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.146765,
+        "quantum_score": 0.611654,
+        "distilled_target": 0.286232,
+        "student_score": 0.268132,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 29,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.194742,
+        "quantum_score": 0.654948,
+        "distilled_target": 0.332804,
+        "student_score": 0.263386,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 30,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.127192,
+        "quantum_score": 0.640299,
+        "distilled_target": 0.281124,
+        "student_score": 0.262002,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 31,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.168788,
+        "quantum_score": 0.511068,
+        "distilled_target": 0.271472,
+        "student_score": 0.257326,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 32,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111757,
+        "quantum_score": 0.641602,
+        "distilled_target": 0.27071,
+        "student_score": 0.255963,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 33,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.282388,
+        "quantum_score": 0.66276,
+        "distilled_target": 0.3965,
+        "student_score": 0.252213,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 34,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.149861,
+        "quantum_score": 0.832357,
+        "distilled_target": 0.35461,
+        "student_score": 0.251701,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 35,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.247708,
+        "quantum_score": 0.689453,
+        "distilled_target": 0.380232,
+        "student_score": 0.246325,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 36,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.127898,
+        "quantum_score": 0.657878,
+        "distilled_target": 0.286892,
+        "student_score": 0.245821,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 37,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.225048,
+        "quantum_score": 0.609701,
+        "distilled_target": 0.340444,
+        "student_score": 0.240862,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 38,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.215071,
+        "quantum_score": 0.573893,
+        "distilled_target": 0.322718,
+        "student_score": 0.24053,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 39,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145417,
+        "quantum_score": 0.722005,
+        "distilled_target": 0.318393,
+        "student_score": 0.235953,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 40,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.194559,
+        "quantum_score": 0.576823,
+        "distilled_target": 0.309238,
+        "student_score": 0.235156,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 41,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.186621,
+        "quantum_score": 0.677083,
+        "distilled_target": 0.33376,
+        "student_score": 0.234828,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 42,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.176235,
+        "quantum_score": 0.366862,
+        "distilled_target": 0.233423,
+        "student_score": 0.229865,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 43,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.167833,
+        "quantum_score": 0.588216,
+        "distilled_target": 0.293948,
+        "student_score": 0.229543,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 44,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.086331,
+        "quantum_score": 0.0,
+        "distilled_target": 0.060432,
+        "student_score": 0.229385,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 45,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111623,
+        "quantum_score": 0.894206,
+        "distilled_target": 0.346398,
+        "student_score": 0.225114,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 46,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.15138,
+        "quantum_score": 0.574544,
+        "distilled_target": 0.278329,
+        "student_score": 0.224342,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 47,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145929,
+        "quantum_score": 0.625326,
+        "distilled_target": 0.289748,
+        "student_score": 0.224025,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 48,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.073333,
+        "quantum_score": 0.0,
+        "distilled_target": 0.051333,
+        "student_score": 0.22387,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 49,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.13087,
+        "quantum_score": 0.604818,
+        "distilled_target": 0.273054,
+        "student_score": 0.218914,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 50,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.181795,
+        "quantum_score": 0.675456,
+        "distilled_target": 0.329893,
+        "student_score": 0.215091,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 51,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.084325,
+        "quantum_score": 0.0,
+        "distilled_target": 0.059027,
+        "student_score": 0.214633,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 52,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.114843,
+        "quantum_score": 0.634115,
+        "distilled_target": 0.270625,
+        "student_score": 0.213581,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 53,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.158047,
+        "quantum_score": 0.626302,
+        "distilled_target": 0.298523,
+        "student_score": 0.209826,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 54,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.107159,
+        "quantum_score": 0.727539,
+        "distilled_target": 0.293273,
+        "student_score": 0.208945,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 55,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.13932,
+        "quantum_score": 0.929362,
+        "distilled_target": 0.376333,
+        "student_score": 0.204953,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 56,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.136154,
+        "quantum_score": 0.608398,
+        "distilled_target": 0.277827,
+        "student_score": 0.204656,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 57,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.093244,
+        "quantum_score": 0.0,
+        "distilled_target": 0.065271,
+        "student_score": 0.203791,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 58,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.119039,
+        "quantum_score": 0.429036,
+        "distilled_target": 0.212038,
+        "student_score": 0.199873,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 59,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.08262,
+        "quantum_score": 0.0,
+        "distilled_target": 0.057834,
+        "student_score": 0.198733,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 60,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.105345,
+        "quantum_score": 0.0,
+        "distilled_target": 0.073742,
+        "student_score": 0.195174,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 61,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.101638,
+        "quantum_score": 0.0,
+        "distilled_target": 0.071147,
+        "student_score": 0.194888,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 62,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.047759,
+        "quantum_score": 0.0,
+        "distilled_target": 0.033431,
+        "student_score": 0.194748,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 63,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.074733,
+        "quantum_score": 0.0,
+        "distilled_target": 0.052313,
+        "student_score": 0.193769,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 64,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.183339,
+        "quantum_score": 0.661133,
+        "distilled_target": 0.326677,
+        "student_score": 0.190697,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 65,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.089177,
+        "quantum_score": 0.0,
+        "distilled_target": 0.062424,
+        "student_score": 0.190278,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 66,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.157588,
+        "quantum_score": 0.547852,
+        "distilled_target": 0.274667,
+        "student_score": 0.185888,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 67,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.076131,
+        "quantum_score": 0.0,
+        "distilled_target": 0.053292,
+        "student_score": 0.185477,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 68,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.104935,
+        "quantum_score": 0.0,
+        "distilled_target": 0.073455,
+        "student_score": 0.182102,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 69,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.141771,
+        "quantum_score": 0.576172,
+        "distilled_target": 0.272091,
+        "student_score": 0.181443,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 70,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.136413,
+        "quantum_score": 0.605794,
+        "distilled_target": 0.277228,
+        "student_score": 0.181173,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 71,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.091153,
+        "quantum_score": 0.0,
+        "distilled_target": 0.063807,
+        "student_score": 0.177462,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 72,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.121876,
+        "quantum_score": 0.611979,
+        "distilled_target": 0.268907,
+        "student_score": 0.176816,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 73,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.06059,
+        "quantum_score": 0.0,
+        "distilled_target": 0.042413,
+        "student_score": 0.176686,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 74,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.079349,
+        "quantum_score": 0.0,
+        "distilled_target": 0.055545,
+        "student_score": 0.173176,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 75,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.109839,
+        "quantum_score": 0.659505,
+        "distilled_target": 0.274739,
+        "student_score": 0.172542,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 76,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.106322,
+        "quantum_score": 0.628906,
+        "distilled_target": 0.263097,
+        "student_score": 0.172282,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 77,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.051706,
+        "quantum_score": 0.0,
+        "distilled_target": 0.036194,
+        "student_score": 0.172155,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 78,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.067581,
+        "quantum_score": 0.0,
+        "distilled_target": 0.047307,
+        "student_score": 0.168716,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 79,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.095195,
+        "quantum_score": 0.0,
+        "distilled_target": 0.066637,
+        "student_score": 0.168096,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 80,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.045086,
+        "quantum_score": 0.0,
+        "distilled_target": 0.03156,
+        "student_score": 0.167716,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 81,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.128879,
+        "quantum_score": 0.979492,
+        "distilled_target": 0.384063,
+        "student_score": 0.164973,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 82,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.059583,
+        "quantum_score": 0.0,
+        "distilled_target": 0.041708,
+        "student_score": 0.164599,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 83,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.084143,
+        "quantum_score": 0.0,
+        "distilled_target": 0.0589,
+        "student_score": 0.163741,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 84,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.110226,
+        "quantum_score": 0.467122,
+        "distilled_target": 0.217295,
+        "student_score": 0.160683,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 85,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.050125,
+        "quantum_score": 0.0,
+        "distilled_target": 0.035088,
+        "student_score": 0.160318,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 86,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.0972,
+        "quantum_score": 0.0,
+        "distilled_target": 0.06804,
+        "student_score": 0.156725,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 87,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.094078,
+        "quantum_score": 0.0,
+        "distilled_target": 0.065855,
+        "student_score": 0.156485,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 88,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.068904,
+        "quantum_score": 0.0,
+        "distilled_target": 0.048232,
+        "student_score": 0.155783,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 89,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.066775,
+        "quantum_score": 0.0,
+        "distilled_target": 0.046742,
+        "student_score": 0.153185,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 90,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.082162,
+        "quantum_score": 0.0,
+        "distilled_target": 0.057513,
+        "student_score": 0.152611,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 91,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.081015,
+        "quantum_score": 0.0,
+        "distilled_target": 0.056711,
+        "student_score": 0.152376,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 92,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.061583,
+        "quantum_score": 0.0,
+        "distilled_target": 0.043108,
+        "student_score": 0.151689,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 93,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.073158,
+        "quantum_score": 0.0,
+        "distilled_target": 0.05121,
+        "student_score": 0.148817,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 94,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.069954,
+        "quantum_score": 0.0,
+        "distilled_target": 0.048967,
+        "student_score": 0.148586,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 95,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.034302,
+        "quantum_score": 0.0,
+        "distilled_target": 0.024012,
+        "student_score": 0.148473,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 96,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.05621,
+        "quantum_score": 0.0,
+        "distilled_target": 0.039347,
+        "student_score": 0.147684,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 97,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.051251,
+        "quantum_score": 0.0,
+        "distilled_target": 0.035875,
+        "student_score": 0.145424,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 98,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.061672,
+        "quantum_score": 0.0,
+        "distilled_target": 0.043171,
+        "student_score": 0.144875,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 99,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.060609,
+        "quantum_score": 0.0,
+        "distilled_target": 0.042426,
+        "student_score": 0.144649,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 100,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.113946,
+        "quantum_score": 0.617839,
+        "distilled_target": 0.265114,
+        "student_score": 0.141349,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 101,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.05281,
+        "quantum_score": 0.0,
+        "distilled_target": 0.036967,
+        "student_score": 0.14102,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 102,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.074316,
+        "quantum_score": 0.0,
+        "distilled_target": 0.052021,
+        "student_score": 0.138316,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 103,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.039118,
+        "quantum_score": 0.0,
+        "distilled_target": 0.027382,
+        "student_score": 0.137993,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 104,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.098776,
+        "quantum_score": 0.0,
+        "distilled_target": 0.069143,
+        "student_score": 0.137572,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 105,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.046294,
+        "quantum_score": 0.0,
+        "distilled_target": 0.032406,
+        "student_score": 0.137251,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 106,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.063547,
+        "quantum_score": 0.0,
+        "distilled_target": 0.044483,
+        "student_score": 0.134608,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 107,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.088366,
+        "quantum_score": 0.0,
+        "distilled_target": 0.061856,
+        "student_score": 0.134093,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 108,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.04302,
+        "quantum_score": 0.0,
+        "distilled_target": 0.030114,
+        "student_score": 0.133989,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 109,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.055858,
+        "quantum_score": 0.0,
+        "distilled_target": 0.039101,
+        "student_score": 0.131192,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 110,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.054166,
+        "quantum_score": 0.0,
+        "distilled_target": 0.037916,
+        "student_score": 0.130984,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 111,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.077539,
+        "quantum_score": 0.0,
+        "distilled_target": 0.054277,
+        "student_score": 0.130481,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 112,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.036946,
+        "quantum_score": 0.0,
+        "distilled_target": 0.025862,
+        "student_score": 0.130379,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 113,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.047074,
+        "quantum_score": 0.0,
+        "distilled_target": 0.032952,
+        "student_score": 0.127647,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 114,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.069793,
+        "quantum_score": 0.0,
+        "distilled_target": 0.048855,
+        "student_score": 0.127154,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 115,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.032514,
+        "quantum_score": 0.0,
+        "distilled_target": 0.02276,
+        "student_score": 0.126853,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 116,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.042085,
+        "quantum_score": 0.0,
+        "distilled_target": 0.02946,
+        "student_score": 0.124382,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 117,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.039921,
+        "quantum_score": 0.0,
+        "distilled_target": 0.027945,
+        "student_score": 0.124183,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 118,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.062193,
+        "quantum_score": 0.0,
+        "distilled_target": 0.043535,
+        "student_score": 0.123702,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 119,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.075826,
+        "quantum_score": 0.0,
+        "distilled_target": 0.053078,
+        "student_score": 0.121284,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 120,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.035257,
+        "quantum_score": 0.0,
+        "distilled_target": 0.02468,
+        "student_score": 0.120995,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 121,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.064347,
+        "quantum_score": 0.0,
+        "distilled_target": 0.045043,
+        "student_score": 0.11797,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 122,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.04967,
+        "quantum_score": 0.0,
+        "distilled_target": 0.034769,
+        "student_score": 0.115371,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 123,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.056737,
+        "quantum_score": 0.0,
+        "distilled_target": 0.039716,
+        "student_score": 0.11492,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 124,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.055511,
+        "quantum_score": 0.0,
+        "distilled_target": 0.038858,
+        "student_score": 0.114735,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 125,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.046752,
+        "quantum_score": 0.0,
+        "distilled_target": 0.032727,
+        "student_score": 0.114195,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 126,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.04268,
+        "quantum_score": 0.0,
+        "distilled_target": 0.029876,
+        "student_score": 0.112198,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 127,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.04832,
+        "quantum_score": 0.0,
+        "distilled_target": 0.033824,
+        "student_score": 0.111758,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 128,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.043006,
+        "quantum_score": 0.0,
+        "distilled_target": 0.030104,
+        "student_score": 0.11105,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 129,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.03802,
+        "quantum_score": 0.0,
+        "distilled_target": 0.026614,
+        "student_score": 0.109279,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 130,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.043212,
+        "quantum_score": 0.0,
+        "distilled_target": 0.030248,
+        "student_score": 0.108849,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 131,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.042116,
+        "quantum_score": 0.0,
+        "distilled_target": 0.029481,
+        "student_score": 0.108672,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 132,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.032129,
+        "quantum_score": 0.0,
+        "distilled_target": 0.02249,
+        "student_score": 0.106254,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 133,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.037181,
+        "quantum_score": 0.0,
+        "distilled_target": 0.026027,
+        "student_score": 0.105834,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 134,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.052291,
+        "quantum_score": 0.0,
+        "distilled_target": 0.036604,
+        "student_score": 0.103723,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 135,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.071916,
+        "quantum_score": 0.0,
+        "distilled_target": 0.050341,
+        "student_score": 0.103143,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 136,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.03286,
+        "quantum_score": 0.0,
+        "distilled_target": 0.023002,
+        "student_score": 0.102892,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 137,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.044141,
+        "quantum_score": 0.0,
+        "distilled_target": 0.030899,
+        "student_score": 0.100834,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 138,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.03946,
+        "quantum_score": 0.0,
+        "distilled_target": 0.027622,
+        "student_score": 0.098178,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 139,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.037421,
+        "quantum_score": 0.0,
+        "distilled_target": 0.026195,
+        "student_score": 0.098016,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 140,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.057277,
+        "quantum_score": 0.0,
+        "distilled_target": 0.040094,
+        "student_score": 0.097625,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 141,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.033026,
+        "quantum_score": 0.0,
+        "distilled_target": 0.023118,
+        "student_score": 0.095427,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 142,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.032204,
+        "quantum_score": 0.0,
+        "distilled_target": 0.022543,
+        "student_score": 0.095269,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 143,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.046777,
+        "quantum_score": 0.0,
+        "distilled_target": 0.032744,
+        "student_score": 0.092372,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 144,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.044568,
+        "quantum_score": 0.0,
+        "distilled_target": 0.031198,
+        "student_score": 0.087946,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 145,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.036802,
+        "quantum_score": 0.0,
+        "distilled_target": 0.025761,
+        "student_score": 0.085945,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 146,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.038599,
+        "quantum_score": 0.0,
+        "distilled_target": 0.027019,
+        "student_score": 0.085455,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 147,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.031222,
+        "quantum_score": 0.0,
+        "distilled_target": 0.021855,
+        "student_score": 0.083504,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 148,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.034172,
+        "quantum_score": 0.0,
+        "distilled_target": 0.02392,
+        "student_score": 0.083166,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 149,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.033591,
+        "quantum_score": 0.0,
+        "distilled_target": 0.023513,
+        "student_score": 0.082623,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 150,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.031086,
+        "quantum_score": 0.0,
+        "distilled_target": 0.02176,
+        "student_score": 0.074802,
+        "true_failure": false,
+        "in_warmstart_set": false
+      }
+    ],
+    "failure_positions": [
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 17,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.323184,
+        "quantum_score": 0.771484,
+        "distilled_target": 0.457674,
+        "student_score": 0.311925,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 19,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.284412,
+        "quantum_score": 0.413411,
+        "distilled_target": 0.323112,
+        "student_score": 0.305212,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 20,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.260722,
+        "quantum_score": 0.500651,
+        "distilled_target": 0.332701,
+        "student_score": 0.298961,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 22,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.226607,
+        "quantum_score": 0.602214,
+        "distilled_target": 0.339289,
+        "student_score": 0.292408,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 24,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.206213,
+        "quantum_score": 0.625,
+        "distilled_target": 0.331849,
+        "student_score": 0.286312,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 25,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.178437,
+        "quantum_score": 0.626953,
+        "distilled_target": 0.312992,
+        "student_score": 0.279926,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 26,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.247255,
+        "quantum_score": 0.698568,
+        "distilled_target": 0.382649,
+        "student_score": 0.275413,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 27,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.218928,
+        "quantum_score": 0.628255,
+        "distilled_target": 0.341726,
+        "student_score": 0.269178,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 29,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.194742,
+        "quantum_score": 0.654948,
+        "distilled_target": 0.332804,
+        "student_score": 0.263386,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 31,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.168788,
+        "quantum_score": 0.511068,
+        "distilled_target": 0.271472,
+        "student_score": 0.257326,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "rank_in_pool_150": 33,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.282388,
+        "quantum_score": 0.66276,
+        "distilled_target": 0.3965,
+        "student_score": 0.252213,
+        "in_warmstart_set": true
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 34,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.149861,
+        "quantum_score": 0.832357,
+        "distilled_target": 0.35461,
+        "student_score": 0.251701,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "rank_in_pool_150": 35,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.247708,
+        "quantum_score": 0.689453,
+        "distilled_target": 0.380232,
+        "student_score": 0.246325,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 36,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.127898,
+        "quantum_score": 0.657878,
+        "distilled_target": 0.286892,
+        "student_score": 0.245821,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "rank_in_pool_150": 37,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.225048,
+        "quantum_score": 0.609701,
+        "distilled_target": 0.340444,
+        "student_score": 0.240862,
+        "in_warmstart_set": true
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "rank_in_pool_150": 40,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.194559,
+        "quantum_score": 0.576823,
+        "distilled_target": 0.309238,
+        "student_score": 0.235156,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "rank_in_pool_150": 42,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.176235,
+        "quantum_score": 0.366862,
+        "distilled_target": 0.233423,
+        "student_score": 0.229865,
+        "in_warmstart_set": true
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "rank_in_pool_150": 46,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.15138,
+        "quantum_score": 0.574544,
+        "distilled_target": 0.278329,
+        "student_score": 0.224342,
+        "in_warmstart_set": false
+      }
+    ]
+  },
+  "teacher_only": {
+    "variant": "teacher_only",
+    "quantum_backend_values": [
+      "quantum-disabled"
+    ],
+    "n_warmstart_states": 26,
+    "config": {
+      "seed": 42,
+      "k": 50,
+      "candidate_pool_size": 150,
+      "shots": 1024,
+      "evaluator": "geometric",
+      "quantum_enabled": false
+    },
+    "cumulative_failures": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      3,
+      3,
+      4,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      8,
+      9,
+      9,
+      10,
+      11,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      13,
+      13,
+      13,
+      14,
+      15,
+      15,
+      16
+    ],
+    "total_unique_failures": 16,
+    "auc": 313.0,
+    "time_to_first_failure": 17,
+    "summary": {
+      "n_top16_teacher_false_positives": 1,
+      "n_true_failures_in_top16": 0,
+      "n_top16_in_warmstart_set": 6,
+      "n_true_failures_total": 18,
+      "n_failures_in_pool_150": 18,
+      "n_failures_in_top50": 16,
+      "best_failure_rank_in_pool_150": 17,
+      "best_failure_student_score": 0.228521,
+      "best_failure_teacher_prob": 0.284412,
+      "best_failure_quantum_score": 0.0,
+      "best_failure_distilled_target": 0.284412,
+      "student_score_16th_evaluated": 0.240452,
+      "max_teacher_prob_among_true_failures": 0.323184,
+      "max_teacher_prob_among_top16": 0.517308,
+      "min_teacher_prob_among_top16": 0.122179
+    },
+    "evaluated_order_first_50": [
+      {
+        "rank": 1,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.517308,
+        "quantum_score": 0.0,
+        "distilled_target": 0.517308,
+        "student_score": 0.3428,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 2,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.455218,
+        "quantum_score": 0.0,
+        "distilled_target": 0.455218,
+        "student_score": 0.336866,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 3,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.388824,
+        "quantum_score": 0.0,
+        "distilled_target": 0.388824,
+        "student_score": 0.330984,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 4,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261683,
+        "quantum_score": 0.0,
+        "distilled_target": 0.261683,
+        "student_score": 0.319378,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 5,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.40265,
+        "quantum_score": 0.0,
+        "distilled_target": 0.40265,
+        "student_score": 0.282162,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 6,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.442463,
+        "quantum_score": 0.0,
+        "distilled_target": 0.442463,
+        "student_score": 0.277044,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 7,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.335822,
+        "quantum_score": 0.0,
+        "distilled_target": 0.335822,
+        "student_score": 0.276836,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 8,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.376472,
+        "quantum_score": 0.0,
+        "distilled_target": 0.376472,
+        "student_score": 0.271778,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 9,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.272685,
+        "quantum_score": 0.0,
+        "distilled_target": 0.272685,
+        "student_score": 0.271573,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 10,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.310939,
+        "quantum_score": 0.0,
+        "distilled_target": 0.310939,
+        "student_score": 0.266576,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 11,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.172048,
+        "quantum_score": 0.0,
+        "distilled_target": 0.172048,
+        "student_score": 0.261237,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 12,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.32088,
+        "quantum_score": 0.0,
+        "distilled_target": 0.32088,
+        "student_score": 0.260299,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 13,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.198707,
+        "quantum_score": 0.0,
+        "distilled_target": 0.198707,
+        "student_score": 0.256363,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 14,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261523,
+        "quantum_score": 0.0,
+        "distilled_target": 0.261523,
+        "student_score": 0.255239,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 15,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.206888,
+        "quantum_score": 0.0,
+        "distilled_target": 0.206888,
+        "student_score": 0.250245,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 16,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.122179,
+        "quantum_score": 0.0,
+        "distilled_target": 0.122179,
+        "student_score": 0.240452,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 17,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.284412,
+        "quantum_score": 0.0,
+        "distilled_target": 0.284412,
+        "student_score": 0.228521,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 18,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.323184,
+        "quantum_score": 0.0,
+        "distilled_target": 0.323184,
+        "student_score": 0.224073,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 19,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.226607,
+        "quantum_score": 0.0,
+        "distilled_target": 0.226607,
+        "student_score": 0.223892,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 20,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.361688,
+        "quantum_score": 0.0,
+        "distilled_target": 0.361688,
+        "student_score": 0.219686,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 21,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.260722,
+        "quantum_score": 0.0,
+        "distilled_target": 0.260722,
+        "student_score": 0.219508,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 22,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.178437,
+        "quantum_score": 0.0,
+        "distilled_target": 0.178437,
+        "student_score": 0.21933,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 23,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.297213,
+        "quantum_score": 0.0,
+        "distilled_target": 0.297213,
+        "student_score": 0.215186,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 24,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.206213,
+        "quantum_score": 0.0,
+        "distilled_target": 0.206213,
+        "student_score": 0.215011,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 25,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.238046,
+        "quantum_score": 0.0,
+        "distilled_target": 0.238046,
+        "student_score": 0.210753,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 26,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111757,
+        "quantum_score": 0.0,
+        "distilled_target": 0.111757,
+        "student_score": 0.210408,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 27,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.218928,
+        "quantum_score": 0.0,
+        "distilled_target": 0.218928,
+        "student_score": 0.209601,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 28,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.127192,
+        "quantum_score": 0.0,
+        "distilled_target": 0.127192,
+        "student_score": 0.206217,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 29,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.247255,
+        "quantum_score": 0.0,
+        "distilled_target": 0.247255,
+        "student_score": 0.205423,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 30,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.168788,
+        "quantum_score": 0.0,
+        "distilled_target": 0.168788,
+        "student_score": 0.205253,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 31,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.146765,
+        "quantum_score": 0.0,
+        "distilled_target": 0.146765,
+        "student_score": 0.202089,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 32,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.194742,
+        "quantum_score": 0.0,
+        "distilled_target": 0.194742,
+        "student_score": 0.201139,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 33,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.127898,
+        "quantum_score": 0.0,
+        "distilled_target": 0.127898,
+        "student_score": 0.200973,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 34,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.149861,
+        "quantum_score": 0.0,
+        "distilled_target": 0.149861,
+        "student_score": 0.196923,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 35,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.073333,
+        "quantum_score": 0.0,
+        "distilled_target": 0.073333,
+        "student_score": 0.192613,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 36,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145417,
+        "quantum_score": 0.0,
+        "distilled_target": 0.145417,
+        "student_score": 0.191858,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 37,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.086331,
+        "quantum_score": 0.0,
+        "distilled_target": 0.086331,
+        "student_score": 0.188692,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 38,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111623,
+        "quantum_score": 0.0,
+        "distilled_target": 0.111623,
+        "student_score": 0.18779,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 39,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.084325,
+        "quantum_score": 0.0,
+        "distilled_target": 0.084325,
+        "student_score": 0.18379,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 40,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.186621,
+        "quantum_score": 0.0,
+        "distilled_target": 0.186621,
+        "student_score": 0.182486,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 41,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.215071,
+        "quantum_score": 0.0,
+        "distilled_target": 0.215071,
+        "student_score": 0.178725,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 42,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145929,
+        "quantum_score": 0.0,
+        "distilled_target": 0.145929,
+        "student_score": 0.178573,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 43,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.047759,
+        "quantum_score": 0.0,
+        "distilled_target": 0.047759,
+        "student_score": 0.175987,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 44,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.247708,
+        "quantum_score": 0.0,
+        "distilled_target": 0.247708,
+        "student_score": 0.175026,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 45,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.167833,
+        "quantum_score": 0.0,
+        "distilled_target": 0.167833,
+        "student_score": 0.174876,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 46,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.114843,
+        "quantum_score": 0.0,
+        "distilled_target": 0.114843,
+        "student_score": 0.174727,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 47,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.282388,
+        "quantum_score": 0.0,
+        "distilled_target": 0.282388,
+        "student_score": 0.171387,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 48,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.194559,
+        "quantum_score": 0.0,
+        "distilled_target": 0.194559,
+        "student_score": 0.17124,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 49,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.13087,
+        "quantum_score": 0.0,
+        "distilled_target": 0.13087,
+        "student_score": 0.171093,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 50,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.225048,
+        "quantum_score": 0.0,
+        "distilled_target": 0.225048,
+        "student_score": 0.167664,
+        "true_failure": true,
+        "in_warmstart_set": true
+      }
+    ],
+    "pool_ranking_150": [
+      {
+        "rank": 1,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.517308,
+        "quantum_score": 0.0,
+        "distilled_target": 0.517308,
+        "student_score": 0.3428,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 2,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.455218,
+        "quantum_score": 0.0,
+        "distilled_target": 0.455218,
+        "student_score": 0.336866,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 3,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.388824,
+        "quantum_score": 0.0,
+        "distilled_target": 0.388824,
+        "student_score": 0.330984,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 4,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261683,
+        "quantum_score": 0.0,
+        "distilled_target": 0.261683,
+        "student_score": 0.319378,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 5,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.40265,
+        "quantum_score": 0.0,
+        "distilled_target": 0.40265,
+        "student_score": 0.282162,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 6,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.442463,
+        "quantum_score": 0.0,
+        "distilled_target": 0.442463,
+        "student_score": 0.277044,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 7,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.335822,
+        "quantum_score": 0.0,
+        "distilled_target": 0.335822,
+        "student_score": 0.276836,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 8,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.376472,
+        "quantum_score": 0.0,
+        "distilled_target": 0.376472,
+        "student_score": 0.271778,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 9,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.272685,
+        "quantum_score": 0.0,
+        "distilled_target": 0.272685,
+        "student_score": 0.271573,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 10,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.310939,
+        "quantum_score": 0.0,
+        "distilled_target": 0.310939,
+        "student_score": 0.266576,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 11,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.172048,
+        "quantum_score": 0.0,
+        "distilled_target": 0.172048,
+        "student_score": 0.261237,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 12,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.32088,
+        "quantum_score": 0.0,
+        "distilled_target": 0.32088,
+        "student_score": 0.260299,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 13,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.198707,
+        "quantum_score": 0.0,
+        "distilled_target": 0.198707,
+        "student_score": 0.256363,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 14,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.261523,
+        "quantum_score": 0.0,
+        "distilled_target": 0.261523,
+        "student_score": 0.255239,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 15,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.206888,
+        "quantum_score": 0.0,
+        "distilled_target": 0.206888,
+        "student_score": 0.250245,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 16,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.122179,
+        "quantum_score": 0.0,
+        "distilled_target": 0.122179,
+        "student_score": 0.240452,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 17,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.284412,
+        "quantum_score": 0.0,
+        "distilled_target": 0.284412,
+        "student_score": 0.228521,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 18,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.323184,
+        "quantum_score": 0.0,
+        "distilled_target": 0.323184,
+        "student_score": 0.224073,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 19,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.226607,
+        "quantum_score": 0.0,
+        "distilled_target": 0.226607,
+        "student_score": 0.223892,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 20,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.361688,
+        "quantum_score": 0.0,
+        "distilled_target": 0.361688,
+        "student_score": 0.219686,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 21,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.260722,
+        "quantum_score": 0.0,
+        "distilled_target": 0.260722,
+        "student_score": 0.219508,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 22,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.178437,
+        "quantum_score": 0.0,
+        "distilled_target": 0.178437,
+        "student_score": 0.21933,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 23,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.297213,
+        "quantum_score": 0.0,
+        "distilled_target": 0.297213,
+        "student_score": 0.215186,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 24,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.206213,
+        "quantum_score": 0.0,
+        "distilled_target": 0.206213,
+        "student_score": 0.215011,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 25,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.238046,
+        "quantum_score": 0.0,
+        "distilled_target": 0.238046,
+        "student_score": 0.210753,
+        "true_failure": false,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 26,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111757,
+        "quantum_score": 0.0,
+        "distilled_target": 0.111757,
+        "student_score": 0.210408,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 27,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.218928,
+        "quantum_score": 0.0,
+        "distilled_target": 0.218928,
+        "student_score": 0.209601,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 28,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.127192,
+        "quantum_score": 0.0,
+        "distilled_target": 0.127192,
+        "student_score": 0.206217,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 29,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.247255,
+        "quantum_score": 0.0,
+        "distilled_target": 0.247255,
+        "student_score": 0.205423,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 30,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.168788,
+        "quantum_score": 0.0,
+        "distilled_target": 0.168788,
+        "student_score": 0.205253,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 31,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.146765,
+        "quantum_score": 0.0,
+        "distilled_target": 0.146765,
+        "student_score": 0.202089,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 32,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.194742,
+        "quantum_score": 0.0,
+        "distilled_target": 0.194742,
+        "student_score": 0.201139,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 33,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.127898,
+        "quantum_score": 0.0,
+        "distilled_target": 0.127898,
+        "student_score": 0.200973,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 34,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.149861,
+        "quantum_score": 0.0,
+        "distilled_target": 0.149861,
+        "student_score": 0.196923,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 35,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.073333,
+        "quantum_score": 0.0,
+        "distilled_target": 0.073333,
+        "student_score": 0.192613,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 36,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145417,
+        "quantum_score": 0.0,
+        "distilled_target": 0.145417,
+        "student_score": 0.191858,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 37,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.086331,
+        "quantum_score": 0.0,
+        "distilled_target": 0.086331,
+        "student_score": 0.188692,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 38,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.111623,
+        "quantum_score": 0.0,
+        "distilled_target": 0.111623,
+        "student_score": 0.18779,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 39,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.084325,
+        "quantum_score": 0.0,
+        "distilled_target": 0.084325,
+        "student_score": 0.18379,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 40,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.186621,
+        "quantum_score": 0.0,
+        "distilled_target": 0.186621,
+        "student_score": 0.182486,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 41,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.215071,
+        "quantum_score": 0.0,
+        "distilled_target": 0.215071,
+        "student_score": 0.178725,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 42,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.145929,
+        "quantum_score": 0.0,
+        "distilled_target": 0.145929,
+        "student_score": 0.178573,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 43,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.047759,
+        "quantum_score": 0.0,
+        "distilled_target": 0.047759,
+        "student_score": 0.175987,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 44,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.247708,
+        "quantum_score": 0.0,
+        "distilled_target": 0.247708,
+        "student_score": 0.175026,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 45,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.167833,
+        "quantum_score": 0.0,
+        "distilled_target": 0.167833,
+        "student_score": 0.174876,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 46,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.114843,
+        "quantum_score": 0.0,
+        "distilled_target": 0.114843,
+        "student_score": 0.174727,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 47,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.282388,
+        "quantum_score": 0.0,
+        "distilled_target": 0.282388,
+        "student_score": 0.171387,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 48,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.194559,
+        "quantum_score": 0.0,
+        "distilled_target": 0.194559,
+        "student_score": 0.17124,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 49,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.13087,
+        "quantum_score": 0.0,
+        "distilled_target": 0.13087,
+        "student_score": 0.171093,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 50,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.225048,
+        "quantum_score": 0.0,
+        "distilled_target": 0.225048,
+        "student_score": 0.167664,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 51,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.15138,
+        "quantum_score": 0.0,
+        "distilled_target": 0.15138,
+        "student_score": 0.167519,
+        "true_failure": true,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 52,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.074733,
+        "quantum_score": 0.0,
+        "distilled_target": 0.074733,
+        "student_score": 0.16723,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 53,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.136154,
+        "quantum_score": 0.0,
+        "distilled_target": 0.136154,
+        "student_score": 0.166554,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 54,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.176235,
+        "quantum_score": 0.0,
+        "distilled_target": 0.176235,
+        "student_score": 0.164006,
+        "true_failure": true,
+        "in_warmstart_set": true
+      },
+      {
+        "rank": 55,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.08262,
+        "quantum_score": 0.0,
+        "distilled_target": 0.08262,
+        "student_score": 0.163721,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 56,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.158047,
+        "quantum_score": 0.0,
+        "distilled_target": 0.158047,
+        "student_score": 0.163057,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 57,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.101638,
+        "quantum_score": 0.0,
+        "distilled_target": 0.101638,
+        "student_score": 0.162915,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 58,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.093244,
+        "quantum_score": 0.0,
+        "distilled_target": 0.093244,
+        "student_score": 0.160272,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 59,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.181795,
+        "quantum_score": 0.0,
+        "distilled_target": 0.181795,
+        "student_score": 0.159619,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 60,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.119039,
+        "quantum_score": 0.0,
+        "distilled_target": 0.119039,
+        "student_score": 0.159479,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 61,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.076131,
+        "quantum_score": 0.0,
+        "distilled_target": 0.076131,
+        "student_score": 0.15934,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 62,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.107159,
+        "quantum_score": 0.0,
+        "distilled_target": 0.107159,
+        "student_score": 0.156882,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 63,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.13932,
+        "quantum_score": 0.0,
+        "distilled_target": 0.13932,
+        "student_score": 0.156103,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 64,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.089177,
+        "quantum_score": 0.0,
+        "distilled_target": 0.089177,
+        "student_score": 0.155966,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 65,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.105345,
+        "quantum_score": 0.0,
+        "distilled_target": 0.105345,
+        "student_score": 0.15265,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 66,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.045086,
+        "quantum_score": 0.0,
+        "distilled_target": 0.045086,
+        "student_score": 0.152382,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 67,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.091153,
+        "quantum_score": 0.0,
+        "distilled_target": 0.091153,
+        "student_score": 0.151755,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 68,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.051706,
+        "quantum_score": 0.0,
+        "distilled_target": 0.051706,
+        "student_score": 0.149129,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 69,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.104935,
+        "quantum_score": 0.0,
+        "distilled_target": 0.104935,
+        "student_score": 0.148513,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 70,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.067581,
+        "quantum_score": 0.0,
+        "distilled_target": 0.067581,
+        "student_score": 0.148382,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 71,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.06059,
+        "quantum_score": 0.0,
+        "distilled_target": 0.06059,
+        "student_score": 0.145933,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 72,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.079349,
+        "quantum_score": 0.0,
+        "distilled_target": 0.079349,
+        "student_score": 0.1452,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 73,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.050125,
+        "quantum_score": 0.0,
+        "distilled_target": 0.050125,
+        "student_score": 0.145071,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 74,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.059583,
+        "quantum_score": 0.0,
+        "distilled_target": 0.059583,
+        "student_score": 0.141948,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 75,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.136413,
+        "quantum_score": 0.0,
+        "distilled_target": 0.136413,
+        "student_score": 0.140889,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 76,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.066775,
+        "quantum_score": 0.0,
+        "distilled_target": 0.066775,
+        "student_score": 0.138053,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 77,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.157588,
+        "quantum_score": 0.0,
+        "distilled_target": 0.157588,
+        "student_score": 0.137841,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 78,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.106322,
+        "quantum_score": 0.0,
+        "distilled_target": 0.106322,
+        "student_score": 0.137718,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 79,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.034302,
+        "quantum_score": 0.0,
+        "distilled_target": 0.034302,
+        "student_score": 0.135626,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 80,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.051251,
+        "quantum_score": 0.0,
+        "distilled_target": 0.051251,
+        "student_score": 0.134936,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 81,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.183339,
+        "quantum_score": 0.0,
+        "distilled_target": 0.183339,
+        "student_score": 0.134849,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 82,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.121876,
+        "quantum_score": 0.0,
+        "distilled_target": 0.121876,
+        "student_score": 0.134728,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 83,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.084143,
+        "quantum_score": 0.0,
+        "distilled_target": 0.084143,
+        "student_score": 0.134608,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 84,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.039118,
+        "quantum_score": 0.0,
+        "distilled_target": 0.039118,
+        "student_score": 0.131879,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 85,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.141771,
+        "quantum_score": 0.0,
+        "distilled_target": 0.141771,
+        "student_score": 0.131794,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 86,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.095195,
+        "quantum_score": 0.0,
+        "distilled_target": 0.095195,
+        "student_score": 0.131675,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 87,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.081015,
+        "quantum_score": 0.0,
+        "distilled_target": 0.081015,
+        "student_score": 0.130884,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 88,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.109839,
+        "quantum_score": 0.0,
+        "distilled_target": 0.109839,
+        "student_score": 0.128797,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 89,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.05621,
+        "quantum_score": 0.0,
+        "distilled_target": 0.05621,
+        "student_score": 0.128564,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 90,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.094078,
+        "quantum_score": 0.0,
+        "distilled_target": 0.094078,
+        "student_score": 0.12802,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 91,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.060609,
+        "quantum_score": 0.0,
+        "distilled_target": 0.060609,
+        "student_score": 0.127904,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 92,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.061583,
+        "quantum_score": 0.0,
+        "distilled_target": 0.061583,
+        "student_score": 0.125744,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 93,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.110226,
+        "quantum_score": 0.0,
+        "distilled_target": 0.110226,
+        "student_score": 0.12521,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 94,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.069954,
+        "quantum_score": 0.0,
+        "distilled_target": 0.069954,
+        "student_score": 0.125097,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 95,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.046294,
+        "quantum_score": 0.0,
+        "distilled_target": 0.046294,
+        "student_score": 0.124983,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 96,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.068904,
+        "quantum_score": 0.0,
+        "distilled_target": 0.068904,
+        "student_score": 0.122977,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 97,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.128879,
+        "quantum_score": 0.0,
+        "distilled_target": 0.128879,
+        "student_score": 0.122454,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 98,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.082162,
+        "quantum_score": 0.0,
+        "distilled_target": 0.082162,
+        "student_score": 0.122342,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 99,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.05281,
+        "quantum_score": 0.0,
+        "distilled_target": 0.05281,
+        "student_score": 0.122231,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 100,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.0972,
+        "quantum_score": 0.0,
+        "distilled_target": 0.0972,
+        "student_score": 0.11964,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 101,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.061672,
+        "quantum_score": 0.0,
+        "distilled_target": 0.061672,
+        "student_score": 0.119531,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 102,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.054166,
+        "quantum_score": 0.0,
+        "distilled_target": 0.054166,
+        "student_score": 0.118802,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 103,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.073158,
+        "quantum_score": 0.0,
+        "distilled_target": 0.073158,
+        "student_score": 0.116882,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 104,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.032514,
+        "quantum_score": 0.0,
+        "distilled_target": 0.032514,
+        "student_score": 0.116668,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 105,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.063547,
+        "quantum_score": 0.0,
+        "distilled_target": 0.063547,
+        "student_score": 0.116168,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 106,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.039921,
+        "quantum_score": 0.0,
+        "distilled_target": 0.039921,
+        "student_score": 0.116061,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 107,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.036946,
+        "quantum_score": 0.0,
+        "distilled_target": 0.036946,
+        "student_score": 0.114075,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 108,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.074316,
+        "quantum_score": 0.0,
+        "distilled_target": 0.074316,
+        "student_score": 0.113584,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 109,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.047074,
+        "quantum_score": 0.0,
+        "distilled_target": 0.047074,
+        "student_score": 0.11348,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 110,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 28000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.04302,
+        "quantum_score": 0.0,
+        "distilled_target": 0.04302,
+        "student_score": 0.111532,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 111,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.055858,
+        "quantum_score": 0.0,
+        "distilled_target": 0.055858,
+        "student_score": 0.110949,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 112,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.035257,
+        "quantum_score": 0.0,
+        "distilled_target": 0.035257,
+        "student_score": 0.110846,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 113,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.042085,
+        "quantum_score": 0.0,
+        "distilled_target": 0.042085,
+        "student_score": 0.108367,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 114,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.04268,
+        "quantum_score": 0.0,
+        "distilled_target": 0.04268,
+        "student_score": 0.107698,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 115,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.098776,
+        "quantum_score": 0.0,
+        "distilled_target": 0.098776,
+        "student_score": 0.107527,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 116,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.04967,
+        "quantum_score": 0.0,
+        "distilled_target": 0.04967,
+        "student_score": 0.10528,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 117,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.032129,
+        "quantum_score": 0.0,
+        "distilled_target": 0.032129,
+        "student_score": 0.105183,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 118,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.113946,
+        "quantum_score": 0.0,
+        "distilled_target": 0.113946,
+        "student_score": 0.105113,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 119,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.077539,
+        "quantum_score": 0.0,
+        "distilled_target": 0.077539,
+        "student_score": 0.105015,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 120,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.03802,
+        "quantum_score": 0.0,
+        "distilled_target": 0.03802,
+        "student_score": 0.102815,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 121,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.088366,
+        "quantum_score": 0.0,
+        "distilled_target": 0.088366,
+        "student_score": 0.102651,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 122,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.062193,
+        "quantum_score": 0.0,
+        "distilled_target": 0.062193,
+        "student_score": 0.102555,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 123,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.069793,
+        "quantum_score": 0.0,
+        "distilled_target": 0.069793,
+        "student_score": 0.10024,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 124,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.055511,
+        "quantum_score": 0.0,
+        "distilled_target": 0.055511,
+        "student_score": 0.099616,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 125,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.043006,
+        "quantum_score": 0.0,
+        "distilled_target": 0.043006,
+        "student_score": 0.097788,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 126,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.064347,
+        "quantum_score": 0.0,
+        "distilled_target": 0.064347,
+        "student_score": 0.09736,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 127,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.042116,
+        "quantum_score": 0.0,
+        "distilled_target": 0.042116,
+        "student_score": 0.097269,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 128,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.046752,
+        "quantum_score": 0.0,
+        "distilled_target": 0.046752,
+        "student_score": 0.095569,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 129,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.075826,
+        "quantum_score": 0.0,
+        "distilled_target": 0.075826,
+        "student_score": 0.09515,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 130,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.04832,
+        "quantum_score": 0.0,
+        "distilled_target": 0.04832,
+        "student_score": 0.095061,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 131,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.03286,
+        "quantum_score": 0.0,
+        "distilled_target": 0.03286,
+        "student_score": 0.094971,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 132,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.056737,
+        "quantum_score": 0.0,
+        "distilled_target": 0.056737,
+        "student_score": 0.092897,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 133,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.037181,
+        "quantum_score": 0.0,
+        "distilled_target": 0.037181,
+        "student_score": 0.09281,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 134,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": 10.0
+        },
+        "teacher_prob": 0.032204,
+        "quantum_score": 0.0,
+        "distilled_target": 0.032204,
+        "student_score": 0.092227,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 135,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.043212,
+        "quantum_score": 0.0,
+        "distilled_target": 0.043212,
+        "student_score": 0.090692,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 136,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.037421,
+        "quantum_score": 0.0,
+        "distilled_target": 0.037421,
+        "student_score": 0.090122,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 137,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.044141,
+        "quantum_score": 0.0,
+        "distilled_target": 0.044141,
+        "student_score": 0.08806,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 138,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.052291,
+        "quantum_score": 0.0,
+        "distilled_target": 0.052291,
+        "student_score": 0.086041,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 139,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.033026,
+        "quantum_score": 0.0,
+        "distilled_target": 0.033026,
+        "student_score": 0.085959,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 140,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.03946,
+        "quantum_score": 0.0,
+        "distilled_target": 0.03946,
+        "student_score": 0.083983,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 141,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "teacher_prob": 0.031222,
+        "quantum_score": 0.0,
+        "distilled_target": 0.031222,
+        "student_score": 0.08145,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 142,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.071916,
+        "quantum_score": 0.0,
+        "distilled_target": 0.071916,
+        "student_score": 0.081317,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 143,
+        "params": {
+          "int_heading": 120.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.036802,
+        "quantum_score": 0.0,
+        "distilled_target": 0.036802,
+        "student_score": 0.07957,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 144,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.057277,
+        "quantum_score": 0.0,
+        "distilled_target": 0.057277,
+        "student_score": 0.079363,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 145,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.046777,
+        "quantum_score": 0.0,
+        "distilled_target": 0.046777,
+        "student_score": 0.077452,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 146,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -10.0
+        },
+        "teacher_prob": 0.038599,
+        "quantum_score": 0.0,
+        "distilled_target": 0.038599,
+        "student_score": 0.075172,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 147,
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 28000.0,
+          "int_speed": 3.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.033591,
+        "quantum_score": 0.0,
+        "distilled_target": 0.033591,
+        "student_score": 0.073756,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 148,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.044568,
+        "quantum_score": 0.0,
+        "distilled_target": 0.044568,
+        "student_score": 0.073425,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 149,
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.034172,
+        "quantum_score": 0.0,
+        "distilled_target": 0.034172,
+        "student_score": 0.071646,
+        "true_failure": false,
+        "in_warmstart_set": false
+      },
+      {
+        "rank": 150,
+        "params": {
+          "int_heading": 105.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -20.0
+        },
+        "teacher_prob": 0.031086,
+        "quantum_score": 0.0,
+        "distilled_target": 0.031086,
+        "student_score": 0.066243,
+        "true_failure": false,
+        "in_warmstart_set": false
+      }
+    ],
+    "failure_positions": [
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 17,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.284412,
+        "quantum_score": 0.0,
+        "distilled_target": 0.284412,
+        "student_score": 0.228521,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 18,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.323184,
+        "quantum_score": 0.0,
+        "distilled_target": 0.323184,
+        "student_score": 0.224073,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 19,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.226607,
+        "quantum_score": 0.0,
+        "distilled_target": 0.226607,
+        "student_score": 0.223892,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 21,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.260722,
+        "quantum_score": 0.0,
+        "distilled_target": 0.260722,
+        "student_score": 0.219508,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 4.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 22,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.178437,
+        "quantum_score": 0.0,
+        "distilled_target": 0.178437,
+        "student_score": 0.21933,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 24,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.206213,
+        "quantum_score": 0.0,
+        "distilled_target": 0.206213,
+        "student_score": 0.215011,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 27,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.218928,
+        "quantum_score": 0.0,
+        "distilled_target": 0.218928,
+        "student_score": 0.209601,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 29,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.247255,
+        "quantum_score": 0.0,
+        "distilled_target": 0.247255,
+        "student_score": 0.205423,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 30,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.168788,
+        "quantum_score": 0.0,
+        "distilled_target": 0.168788,
+        "student_score": 0.205253,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 32,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.194742,
+        "quantum_score": 0.0,
+        "distilled_target": 0.194742,
+        "student_score": 0.201139,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": 10.0
+        },
+        "rank_in_pool_150": 33,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.127898,
+        "quantum_score": 0.0,
+        "distilled_target": 0.127898,
+        "student_score": 0.200973,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 90.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 0.0
+        },
+        "rank_in_pool_150": 34,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.149861,
+        "quantum_score": 0.0,
+        "distilled_target": 0.149861,
+        "student_score": 0.196923,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "rank_in_pool_150": 44,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.247708,
+        "quantum_score": 0.0,
+        "distilled_target": 0.247708,
+        "student_score": 0.175026,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "rank_in_pool_150": 47,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.282388,
+        "quantum_score": 0.0,
+        "distilled_target": 0.282388,
+        "student_score": 0.171387,
+        "in_warmstart_set": true
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "rank_in_pool_150": 48,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.194559,
+        "quantum_score": 0.0,
+        "distilled_target": 0.194559,
+        "student_score": 0.17124,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 31000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "rank_in_pool_150": 50,
+        "in_pool_150": true,
+        "evaluated_in_top50": true,
+        "teacher_prob": 0.225048,
+        "quantum_score": 0.0,
+        "distilled_target": 0.225048,
+        "student_score": 0.167664,
+        "in_warmstart_set": true
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 5.0,
+          "int_x_offset": -10.0
+        },
+        "rank_in_pool_150": 51,
+        "in_pool_150": true,
+        "evaluated_in_top50": false,
+        "teacher_prob": 0.15138,
+        "quantum_score": 0.0,
+        "distilled_target": 0.15138,
+        "student_score": 0.167519,
+        "in_warmstart_set": false
+      },
+      {
+        "params": {
+          "int_heading": 75.0,
+          "int_altitude": 30000.0,
+          "int_speed": 6.0,
+          "int_x_offset": -20.0
+        },
+        "rank_in_pool_150": 54,
+        "in_pool_150": true,
+        "evaluated_in_top50": false,
+        "teacher_prob": 0.176235,
+        "quantum_score": 0.0,
+        "distilled_target": 0.176235,
+        "student_score": 0.164006,
+        "in_warmstart_set": true
+      }
+    ]
+  },
+  "mechanism_explanation": "All 16 top-ranked candidates the pipeline evaluates first are truly safe, and the first true failure sits at rank 17 in the student ranking, edged out because the 16th safe state scores 0.318129 versus the best failure's 0.311925. The root cause is the teacher's compressed, weakly-discriminative probabilities: it assigns no true failure a probability above 0.323184 while giving safe states probabilities up to 0.517308 (only 1 of the top 16 even exceeds 0.5), so the distilled targets and the student that learns them place those safe states first. The quantum layer lifts the first failure's quantum_score to 0.771484, but the confidence-adaptive blend caps quantum influence for low-teacher-probability states, so its distilled target only reaches 0.457674 and its student score stays just below the safe cluster, so the first failure is not evaluated until iteration 17."
+}

@@ -1,0 +1,14 @@
+{
+  "episodes": 500,
+  "seed": 42,
+  "mean_reward": 11.965591,
+  "success_rate": 0.948,
+  "failure_rate": 0.052,
+  "near_miss_rate": 0.044,
+  "separation_loss_rate": 0.008,
+  "failure_counts": {
+    "separation_loss": 4,
+    "near_miss": 22
+  },
+  "policy_artifact": "outputs/phase1/policy_weights.npz"
+}

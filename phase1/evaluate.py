@@ -1,0 +1,110 @@
+"""
+Phase 1 - evaluate the trained baseline policy and export empirical failure states.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+import sys
+from typing import Any, Dict, List
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from phase1.aviation_env_3d import ACTIONS, AviationEnv3D, state_to_indices
+from phase1.train import OUT, LinearPolicy, train_policy
+
+
+OUTPUT_ROOT = ROOT / "outputs"
+
+
+def _load_policy(seed: int = 42, train_if_missing: bool = True) -> LinearPolicy:
+    artifact = OUT / "policy_weights.npz"
+    if not artifact.exists():
+        if not train_if_missing:
+            raise FileNotFoundError(f"Missing policy artifact at {artifact}")
+        train_policy(seed=seed)
+    data = np.load(artifact, allow_pickle=True)
+    policy = LinearPolicy(seed=seed)
+    policy.weights = np.array(data["weights"], dtype=float)
+    policy.bias = np.array(data["bias"], dtype=float)
+    return policy
+
+
+def evaluate_policy(episodes: int = 500, seed: int = 42) -> Dict[str, Any]:
+    env = AviationEnv3D(seed=seed)
+    policy = _load_policy(seed=seed)
+    rewards: List[float] = []
+    failure_states: List[Dict[str, Any]] = []
+    success_count = 0
+    failure_counts = {"separation_loss": 0, "near_miss": 0}
+
+    for episode in range(episodes):
+        obs = env.reset()
+        probs = policy.action_probs(obs)
+        # Greedy action selection (argmax). Policy always picks highest-prob action.
+        # All 500 episodes will deterministically follow the same action for each state.
+        action_index = int(np.argmax(probs))
+        _, reward, _, outcome = env.step(action_index)
+        rewards.append(reward)
+        if outcome["failure"]:
+            failure_counts[outcome["failure_type"]] += 1
+            failure_states.append(
+                {
+                    "episode": episode,
+                    "params": outcome["params"],
+                    "indices": list(state_to_indices(outcome["params"])),
+                    "action": ACTIONS[action_index],
+                    "action_index": action_index,
+                    "failure_type": outcome["failure_type"],
+                    "min_h_sep_nm": outcome["min_h_sep_nm"],
+                    "min_v_sep_ft": outcome["min_v_sep_ft"],
+                    "reward": outcome["reward"],
+                }
+            )
+        else:
+            success_count += 1
+
+    summary = {
+        "episodes": episodes,
+        "seed": seed,
+        "mean_reward": round(float(np.mean(rewards)), 6),
+        "success_rate": round(success_count / max(episodes, 1), 6),
+        "failure_rate": round(len(failure_states) / max(episodes, 1), 6),
+        "near_miss_rate": round(failure_counts["near_miss"] / max(episodes, 1), 6),
+        "separation_loss_rate": round(failure_counts["separation_loss"] / max(episodes, 1), 6),
+        "failure_counts": failure_counts,
+        # Repo-relative path so exported artifacts carry no machine-specific identity.
+        "policy_artifact": (OUT / "policy_weights.npz").relative_to(ROOT).as_posix(),
+    }
+    OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+    (OUTPUT_ROOT / "failure_states.json").write_text(
+        json.dumps({"episodes": episodes, "failure_states": failure_states}, indent=2),
+        encoding="utf-8",
+    )
+    (OUT / "evaluation_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    return summary
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Evaluate the Phase 1 aviation policy baseline")
+    parser.add_argument("--episodes", type=int, default=500)
+    parser.add_argument("--seed", type=int, default=42)
+    args = parser.parse_args()
+    summary = evaluate_policy(episodes=args.episodes, seed=args.seed)
+    print("Phase 1 evaluation complete")
+    print(f"Episodes            : {summary['episodes']}")
+    print(f"Mean reward         : {summary['mean_reward']}")
+    print(f"Failure rate        : {summary['failure_rate']}")
+    print(f"Separation loss rate: {summary['separation_loss_rate']}")
+    print(f"Near miss rate      : {summary['near_miss_rate']}")
+    print(f"Failure states      : {OUTPUT_ROOT / 'failure_states.json'}")
+
+
+if __name__ == "__main__":
+    main()
