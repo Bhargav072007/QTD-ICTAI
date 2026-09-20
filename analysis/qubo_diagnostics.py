@@ -6,8 +6,8 @@
 2. Per-parameter marginal ranking AUC (each state scored by the mean objective of
    its value of that parameter).
 3. Exact-enumeration comparator: all 256 states sorted by objective; failures
-   among the N lowest-energy states.  This is the ceiling for ANY minimizer of
-   this objective (quantum or classical) and needs no seeds.
+   among the N lowest-energy states.  This is a deterministic energy-ranking baseline, not a ceiling on
+   the failure discovery of arbitrary optimizers or sampling methods.
 
 Deterministic; classical only.  Output: outputs/qubo_diagnostics.json
 Run from the repository root:  python analysis/qubo_diagnostics.py
@@ -22,6 +22,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+from artifact_io import output_options
 
 from phase2_qaoa import qubo_encoder as Q  # noqa: E402
 from phase2_qaoa.qaoa_runner import evaluate_state  # noqa: E402
@@ -36,6 +37,7 @@ def rank_auc(score: np.ndarray, labels: np.ndarray) -> float:
 
 
 def main() -> None:
+    destination = output_options(["qubo_diagnostics.json"], "derived")
     states = Q.enumerate_parameter_states()
     labels = np.array([1 if evaluate_state(s)["failure"] else 0 for s in states])
     idx = np.array([Q._state_indices_from_params(s) for s in states])
@@ -49,11 +51,14 @@ def main() -> None:
     finally:
         Q._apply_one_hot_regularization = original
 
-    out = {"state_count": int(len(states)), "geometric_failures": int(labels.sum()), "variants": {}}
+    out = {"state_count": int(len(states)), "geometric_failures": int(labels.sum()), "variants": {}, "implemented_convention": "upper_triangular_hamiltonian",
+           "tie_break": "stable enumerate_parameter_states order",
+           "resource_accounting": {"diagnostic_label_calls": len(states), "unique_states": len(states), "circuit_shots": 0}}
     for tag, mat in (("with_penalty", q_pen), ("without_penalty", q_nopen)):
         entry = {}
         for conv, m in (("xTQx_symmetric", mat), ("upper_triangular_hamiltonian", np.triu(mat))):
-            obj = np.einsum("ni,ij,nj->n", X, m, X)
+            obj = (np.array([Q.objective_value(mat, x) for x in X]) if conv == "upper_triangular_hamiltonian"
+                   else np.einsum("ni,ij,nj->n", X, m, X))
             order = np.argsort(obj, kind="stable")
             cum = np.cumsum(labels[order])
             best = states[int(order[0])]
@@ -68,7 +73,7 @@ def main() -> None:
                 }
             entry[conv] = {
                 "ranking_auc": round(rank_auc(-obj, labels), 6),
-                "failures_in_lowest_energy": {str(n): int(cum[n - 1]) for n in (18, 45, 50, 100)},
+                "failures_in_lowest_energy": {str(n): int(cum[n - 1]) for n in range(1, len(states) + 1)},
                 "rank_of_first_failure": int(np.argmax(labels[order] == 1)) + 1,
                 "global_minimum_state": best,
                 "global_minimum_is_failure": bool(labels[order[0]]),
@@ -80,7 +85,7 @@ def main() -> None:
         "Value index 0 of each parameter encodes as bits 00; the frequency-based construction credits only "
         "set bits, so index 0 is never rewarded.  12 of 18 failures have heading index 0."
     )
-    path = ROOT / "outputs" / "qubo_diagnostics.json"
+    path = destination / "qubo_diagnostics.json"
     path.write_text(json.dumps(out, indent=2), encoding="utf-8")
     sym = out["variants"]["with_penalty"]["xTQx_symmetric"]
     print("AUC with penalty", sym["ranking_auc"], "| without", out["variants"]["without_penalty"]["xTQx_symmetric"]["ranking_auc"])

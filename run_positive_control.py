@@ -151,6 +151,7 @@ def run_arm(seed: int, spec: Dict[str, Any], readout: str = "student") -> Dict[s
     cumulative = [int(v) for v in result["cumulative_failures"]]
     return {
         "seed": seed,
+        "resources": result["resources"],
         "unique_failures": int(result["total_unique_failures"]),
         "auc": auc(cumulative),
         "first_failure": first_failure(cumulative),

@@ -30,28 +30,71 @@ python run_traceability_checks.py                # numbers carried over from the
 python analysis/check_camera_ready_numbers.py    # numbers added or changed in the camera-ready
 ```
 
-Both checkers must end with `ALL PASS`.
+Both checkers must end with `ALL PASS`. They verify historical saved metrics,
+not the corrected QAOA manuscript or the mathematical implementation. The
+exhaustive objective/counter tests in pytest cover the repaired implementation.
+The traceability checker is read-only unless `--report-dir NEW_DIRECTORY` is supplied.
 
 ## Reproduce the results
 
 | Paper item | Command | Output (under `outputs/`) | Time |
 | --- | --- | --- | --- |
-| Policy weights and rollout failures (Sec. III-A) | `python phase1/train.py && python phase1/evaluate.py` | `phase1/policy_weights.npz`, `failure_states.json` | seconds |
+| Policy weights and rollout failures (Sec. III-A) | `python phase1/train.py && python phase1/evaluate.py` | `reproduction/phase1/` (does not replace the QUBO training input) | seconds |
 | MC baselines (Tables II-III, Sec. VI-C) | `python run_mc_no_replacement_analysis.py` | `mc_no_replacement.json` | seconds |
-| QAOA, one seed at a time (Sec. VI-A) | `python run_qaoa_multiseed.py --seed 42` ... `--seed 51`, then `--assemble` | `qaoa_multiseed_parts/`, `qaoa_multiseed.json` | about 12 min per seed |
-| QUBO diagnostics and exact minimizer (Secs. III-B, VI-A) | `python analysis/qubo_diagnostics.py` | `qubo_diagnostics.json` | seconds |
+| QAOA, one seed at a time (Sec. VI-A) | `python run_qaoa_multiseed.py --seed 42` ... `--seed 51`, then `python run_qaoa_multiseed.py --assemble` | `reproduction/qaoa_corrected/` | about 12 min per seed |
+| QUBO diagnostics and exact minimizer (Secs. III-B, VI-A) | `python analysis/qubo_diagnostics.py` | `reproduction/derived/qubo_diagnostics.json` | seconds |
 | Mechanism controls (Sec. VI-B1) | `python run_mechanism_controls.py --output-name mechanism_controls_rerun.json` | as named | about 2 min |
 | Positive control, constant and zero-score arms (Secs. VI-B1, VI-B2) | `python run_positive_control.py --output-name positive_control_rerun.json` | as named | about 2 min |
-| Fixed-ego vs. policy failures, warm-start overlap (Sec. VI-B3) | `python analysis/policy_failure_overlap.py` | `policy_failure_overlap.json` | seconds |
+| Fixed-ego vs. policy failures, warm-start overlap (Sec. VI-B3) | `python analysis/policy_failure_overlap.py` | `reproduction/derived/policy_failure_overlap.json` | seconds |
 | Label-disjoint splits (Sec. VI-C) | `python run_split_experiment.py --shots 1024 --output-name split_results_1024_rerun.json` | as named | about 1 min |
-| CEM baseline (Sec. VI-C1) | `python run_adaptive_baseline.py` | `adaptive_baseline*.json` | seconds |
-| Cold start (Sec. VI-C2) | `python run_coldstart_qtd.py` | `coldstart_qtd.json` | minutes |
-| 8-qubit sweep, QTDv2, QTDv3 (Sec. VI-D, exploratory) | `python run_8dim_quantum_sweep.py`, `python run_qtd_v2_matched_benchmark.py`, `python run_qtd_v3_stochastic_suite.py` | `quantum_8dim_sweep.json`, `reproduction/` | minutes |
-| Derived statistics cited in the text | `python analysis/camera_ready_stats.py` | `camera_ready_stats.json` | seconds |
-| All figures | `python figures/make_paper_figures.py` | `figures/*.pdf` | seconds |
+| CEM baseline (Sec. VI-C1) | `python run_adaptive_baseline.py` | `reproduction/adaptive/adaptive_baseline*.json` | seconds |
+| Cold start (Sec. VI-C2) | `python run_coldstart_qtd.py` | `reproduction/coldstart/coldstart_qtd.json` | minutes |
+| 8-qubit sweep, QTDv2, QTDv3 (Sec. VI-D, exploratory) | `python run_8dim_quantum_sweep.py`, `python run_qtd_v2_matched_benchmark.py`, `python run_qtd_v3_stochastic_suite.py` | `reproduction/eight_qubit/`, other timestamped `reproduction/` directories | minutes |
+| Derived statistics cited in the text | `python analysis/camera_ready_stats.py` | `reproduction/derived/camera_ready_stats.json` | seconds |
+| All figures | `python figures/make_paper_figures.py` | `reproduction/figures/*.pdf` | seconds |
 
-Scripts refuse to overwrite a canonical output unless `--force` is passed; use `--output-name`
-(where available) to write a rerun next to the persisted file and compare.
+The commands above write separate reproduction artifacts. Reusing an existing
+explicit destination fails unless the particular script supports and receives
+`--force`; figure generation and the v2/v3 runners always require a new directory.
+Use `--output-dir` for QAOA, phase1, diagnostics, adaptive/cold-start and the
+8-qubit sweep; use `--output-name` for mechanism/positive/split experiments.
+Do not use `--force` on historical artifacts. This guarantee applies to the
+listed command-line workflows, not every legacy library entry point.
+
+### Corrected QAOA and figure workflow
+
+The repaired objective is E(x) = sum_i Q_ii x_i + sum_(i<j)
+((Q_ij+Q_ji)/2) x_i x_j. Q is symmetric storage of pair coefficients;
+it is **not** the quadratic form x^T Q x. This preserves the original cost
+Hamiltonian and 0.12 pair penalty. `objective_value` documents the convention.
+The optimizer now evaluates Qiskit measurement strings in the same qubit order
+as the Hamiltonian. Historical JSON remains unchanged and is not a corrected run.
+
+After all ten corrected seeds have been generated and assembled:
+
+```bash
+python analysis/qubo_diagnostics.py --output-dir outputs/reproduction/qaoa_corrected
+python analysis/check_corrected_artifacts.py --data-dir outputs/reproduction/qaoa_corrected
+python figures/make_paper_figures.py --data-dir outputs/reproduction/qaoa_corrected --output-dir outputs/reproduction/corrected_figures
+```
+
+The figure data directory is an explicit overlay: corrected QAOA/diagnostics
+come from it, and unchanged series come from historical outputs. Each generated
+figure package includes input hashes and rendering provenance. The comparator
+is an energy ranking of 50 states, **not** a ceiling on arbitrary search methods.
+
+QAOA records measured optimizer calls/shots and final sampling shots separately.
+It no longer builds the unused 256-state fallback catalog on the Qiskit path.
+Persisted phase1 labels are still consumed: no claim of label-free QAOA is made.
+QTD reuses search evaluations for reporting and records actual training/search
+calls, unique states and sampled circuit shots. Historical label-acquisition
+costs are separate from calls measured during a new invocation.
+
+Figures use Matplotlib's bundled DejaVu Serif (recorded by hash), avoiding
+machine-dependent font fallback. This intentionally differs from the old
+Liberation Serif rendering. `requirements.audit.txt` pins the core environment
+used for these corrections; `requirements.lock` is the historical environment,
+not the environment in which these corrected results were verified.
 
 ## Provenance notes
 

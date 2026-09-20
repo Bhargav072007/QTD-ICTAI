@@ -80,22 +80,35 @@ def evaluate_policy(episodes: int = 500, seed: int = 42) -> Dict[str, Any]:
         "separation_loss_rate": round(failure_counts["separation_loss"] / max(episodes, 1), 6),
         "failure_counts": failure_counts,
         # Repo-relative path so exported artifacts carry no machine-specific identity.
-        "policy_artifact": (OUT / "policy_weights.npz").relative_to(ROOT).as_posix(),
+        "policy_artifact": str(OUT / "policy_weights.npz"),
     }
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
     (OUTPUT_ROOT / "failure_states.json").write_text(
         json.dumps({"episodes": episodes, "failure_states": failure_states}, indent=2),
         encoding="utf-8",
     )
-    (OUT / "evaluation_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (OUTPUT_ROOT / "evaluation_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     return summary
 
 
 def main() -> None:
+    global OUT, OUTPUT_ROOT
     parser = argparse.ArgumentParser(description="Evaluate the Phase 1 aviation policy baseline")
     parser.add_argument("--episodes", type=int, default=500)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs/reproduction/phase1")
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--policy-dir", type=Path, default=ROOT / "outputs/reproduction/phase1")
     args = parser.parse_args()
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    OUT = args.policy_dir
+    OUTPUT_ROOT = args.output_dir
+    if not (OUT / "policy_weights.npz").exists():
+        parser.error("Train first or select --policy-dir containing policy_weights.npz")
+    for path in (OUTPUT_ROOT / "failure_states.json", OUTPUT_ROOT / "evaluation_summary.json"):
+        if path.exists() and not args.force:
+            parser.error(f"Refusing to overwrite {path}")
+
     summary = evaluate_policy(episodes=args.episodes, seed=args.seed)
     print("Phase 1 evaluation complete")
     print(f"Episodes            : {summary['episodes']}")

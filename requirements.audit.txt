@@ -1,0 +1,8 @@
+# Core corrected-run environment: Python 3.9.6, macOS arm64.
+qiskit==1.4.6
+qiskit-aer==0.17.2
+qiskit-algorithms==0.4.0
+numpy==2.0.2
+scipy==1.13.1
+matplotlib==3.9.4
+pytest==8.4.2

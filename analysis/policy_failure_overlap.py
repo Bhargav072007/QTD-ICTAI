@@ -13,6 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+from artifact_io import output_options
 
 from phase2_qaoa.qaoa_runner import evaluate_state  # noqa: E402
 from phase2_qaoa.qubo_encoder import enumerate_parameter_states  # noqa: E402
@@ -24,6 +25,7 @@ def key(p):
 
 
 def main() -> None:
+    destination = output_options(["policy_failure_overlap.json"], "derived")
     states = enumerate_parameter_states()
     geo = {key(s) for s in states if evaluate_state(s)["failure"]}
     pol, actions = set(), Counter()
@@ -47,7 +49,7 @@ def main() -> None:
         "warmstart_states_that_are_geometric_failures": len(warm & geo),
         "policy_failure_states": sorted(pol),
     }
-    path = ROOT / "outputs" / "policy_failure_overlap.json"
+    path = destination / "policy_failure_overlap.json"
     path.write_text(json.dumps(out, indent=2), encoding="utf-8")
     print({k: v for k, v in out.items() if k != "policy_failure_states"})
 

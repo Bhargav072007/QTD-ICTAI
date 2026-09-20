@@ -18,6 +18,7 @@ Reproduce:
 from __future__ import annotations
 
 import json
+import argparse
 from datetime import datetime, timezone
 from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
@@ -162,6 +163,11 @@ def compute_significance(ablation: Dict[str, Any], split: Dict[str, Any]) -> Dic
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Read-only verification of historical paper metrics")
+    parser.add_argument("--report-dir", type=Path, help="Optional NEW directory for derived reports")
+    args = parser.parse_args()
+    if args.report_dir:
+        args.report_dir.mkdir(parents=True, exist_ok=False)
     mc = load("mc_no_replacement.json")
     multiseed = load("multiseed_results.json")
     ablation = load("quantum_ablation_multiseed.json")
@@ -186,7 +192,8 @@ def main() -> int:
 
     # ---- Significance stats (written first so the table can reference them) ----
     significance = compute_significance(ablation, split_1024)
-    (OUT / "stats_significance.json").write_text(json.dumps(significance, indent=2), encoding="utf-8")
+    if args.report_dir:
+        (args.report_dir / "stats_significance.json").write_text(json.dumps(significance, indent=2), encoding="utf-8")
 
     checker = Checker()
 
@@ -320,10 +327,11 @@ def main() -> int:
         "significance_source": "outputs/stats_significance.json",
         "metrics": checker.rows,
     }
-    (OUT / "paper_metric_traceability.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    if args.report_dir:
+        (args.report_dir / "paper_metric_traceability.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     # PASS/FAIL table
-    print("PAPER TRACEABILITY (current main.tex claims)")
+    print("HISTORICAL PAPER TRACEABILITY (does not certify corrected QAOA results)")
     print("metric | paper | persisted | status | source")
     print("--- | --- | --- | --- | ---")
     for row in checker.rows:

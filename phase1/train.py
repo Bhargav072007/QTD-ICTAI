@@ -113,12 +113,21 @@ def train_policy(
 
 
 def main() -> None:
+    global OUT
     parser = argparse.ArgumentParser(description="Train the Phase 1 aviation policy baseline")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--epochs", type=int, default=180)
     parser.add_argument("--episodes-per-epoch", type=int, default=64)
     parser.add_argument("--learning-rate", type=float, default=0.045)
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs/reproduction/phase1")
+    parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    OUT = args.output_dir
+    for name in ("policy_weights.npz", "training_summary.json"):
+        if (OUT / name).exists() and not args.force:
+            parser.error(f"Refusing to overwrite {OUT / name}")
+
     summary = train_policy(
         seed=args.seed,
         epochs=args.epochs,

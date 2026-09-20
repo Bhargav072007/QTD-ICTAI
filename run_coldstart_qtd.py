@@ -29,6 +29,7 @@ Reproduce:
 """
 
 from __future__ import annotations
+from artifact_io import output_options
 
 import json
 import statistics
@@ -220,6 +221,8 @@ def run_coldstart_seed(seed: int, quantum_enabled: bool) -> Dict[str, Any]:
 
 
 def main() -> None:
+    global OUT
+    OUT = output_options(['coldstart_qtd.json'], "coldstart")
     OUT.mkdir(parents=True, exist_ok=True)
     per_seed: List[Dict[str, Any]] = []
     all_backend_values: set = set()

@@ -229,10 +229,13 @@ def _evaluate_student_search(
     cumulative_failures: List[int] = []
     unique_failure_keys: set[Tuple[float, float, float, float]] = set()
     top_failures: List[Dict[str, Any]] = []
+    search_evaluations = []
+    reporting_calls = 0
 
     for iteration, row in enumerate(ranked_rows[:k_iterations]):
         state = _state_from_row(row)
         evaluation = evaluator(state)
+        search_evaluations.append(evaluation)
         scenario_type = evaluation["failure_type"]
 
         if scenario_type in {"separation_loss", "near_miss"}:
@@ -243,7 +246,11 @@ def _evaluate_student_search(
     inspection_budget = min(len(ranked_rows), max(k_iterations, 25))
     for iteration, row in enumerate(ranked_rows[:inspection_budget]):
         state = _state_from_row(row)
-        evaluation = evaluator(state)
+        if iteration < len(search_evaluations):
+            evaluation = search_evaluations[iteration]
+        else:
+            evaluation = evaluator(state)
+            reporting_calls += 1
         scenario_type = evaluation["failure_type"]
         if scenario_type not in {"separation_loss", "near_miss"}:
             continue
@@ -278,6 +285,12 @@ def _evaluate_student_search(
     total_unique_failures = len(unique_failure_keys)
     failure_rate = round(total_unique_failures / max(k_iterations, 1), 6)
     return {
+        "search_resource_accounting": {
+            "search_simulator_calls": len(search_evaluations),
+            "search_unique_states": len({_state_key(_state_from_row(r)) for r in ranked_rows[:k_iterations]}),
+            "reporting_simulator_calls": reporting_calls,
+            "scope": "Search/readout only; excludes teacher training and persisted warm-start labels.",
+        },
         "cumulative_failures": cumulative_failures,
         "total_unique_failures": total_unique_failures,
         "failures_found": total_unique_failures,
@@ -356,8 +369,14 @@ def run_quantum_tree_pipeline(
 
     k_iterations = int(k_iterations) if k_iterations is not None else (5 if fast else 50)
     effective_shots = 256 if fast else shots
-    evaluator_fn = _select_evaluator(evaluator)
+    base_evaluator = _select_evaluator(evaluator)
+    evaluated_keys = []
+    def evaluator_fn(state):
+        evaluated_keys.append(_state_key(state))
+        return base_evaluator(state)
     classical = run_classical_layer(seed=seed, evaluator=evaluator_fn)
+    training_calls = len(evaluated_keys)
+    training_unique = len(set(evaluated_keys))
     if quantum_enabled:
         quantum_layer = QuantumDistillationLayer(shots=effective_shots, seed=seed, variant=quantum_variant)
         quantum = quantum_layer.refine(classical["hidden"], classical["teacher_probs"])
@@ -459,6 +478,19 @@ def run_quantum_tree_pipeline(
         "top_failures": search_results["top_failures"],
         "top_distilled_states": ranked,
         "n_warmstart_states": n_warmstart,
+        "resources": {
+            "training_label_acquisition_calls": training_calls,
+            "training_unique_states": training_unique,
+            "setup_catalog_calls": 0,
+            **search_results["search_resource_accounting"],
+            "simulator_calls_total_this_run": len(evaluated_keys),
+            "simulator_unique_states_this_run": len(set(evaluated_keys)),
+            "circuit_shots": quantum.get("resources", {}).get("circuit_shots", 0),
+            "sampler_calls": quantum.get("resources", {}).get("sampler_calls", 0),
+            "persisted_warmstart_records_used": n_warmstart,
+            "historical_warmstart_acquisition_cost": "Not measured in this run; persisted phase1 policy-conditioned labels are reused.",
+            "scope": "All evaluator calls in this pipeline invocation; prior artifact production reported separately.",
+        },
     }
 
     effective_output_path = None if fast else output_path

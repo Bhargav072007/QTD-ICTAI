@@ -16,6 +16,7 @@ Reproduce:
 """
 
 from __future__ import annotations
+from artifact_io import output_options
 
 import json
 from datetime import datetime, timezone
@@ -122,6 +123,8 @@ def _run_variant(
 
 
 def main() -> None:
+    global OUT
+    OUT = output_options(['adaptive_baseline.json', 'adaptive_baseline_policy.json'], "adaptive")
     OUT.mkdir(parents=True, exist_ok=True)
     geometric_total = _total_failures(evaluate_geometric_state)
     policy_total = _total_failures(evaluate_policy_state)

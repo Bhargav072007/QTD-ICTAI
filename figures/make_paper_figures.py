@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Regenerate every figure of the camera-ready paper from canonical outputs/*.json.
 
-No numbers are typed into this file: every plotted value is read from a JSON file
-under outputs/ (or recomputed from the deterministic encounter model for Fig. 1).
+Empirical plotted values are loaded from JSON or recomputed from the encounter
+model. Circuit/architecture schematics contain explicitly stated design constants.
 Fonts are embedded as TrueType (pdf.fonttype 42), so the PDFs contain no Type 3 fonts.
 
 Run from the repository root:  python figures/make_paper_figures.py
@@ -11,6 +11,9 @@ Outputs: figures/*.pdf
 from __future__ import annotations
 
 import json
+import argparse
+import hashlib
+import platform
 import sys
 from pathlib import Path
 
@@ -24,12 +27,14 @@ import numpy as np  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 OUT = ROOT / "outputs"
-FIG = ROOT / "figures"
+FIG = ROOT / "outputs/reproduction/figures"
+OVERLAY = None
+INPUTS = {}
 
 plt.rcParams.update({
     "pdf.fonttype": 42, "ps.fonttype": 42,
     "font.family": "serif",
-    "font.serif": ["Liberation Serif", "Tinos", "Times New Roman", "DejaVu Serif"],
+    "font.serif": ["DejaVu Serif"],
     "mathtext.fontset": "stix",
     "font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8,
     "xtick.labelsize": 7.5, "ytick.labelsize": 7.5, "legend.fontsize": 7.5,
@@ -53,7 +58,9 @@ def save(fig, name: str) -> None:
 
 
 def load(name: str):
-    return json.loads((OUT / name).read_text(encoding="utf-8"))
+    path = OVERLAY / name if OVERLAY and (OVERLAY / name).exists() else OUT / name
+    INPUTS[name] = {"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def ms(values):
@@ -167,15 +174,15 @@ def fig_qaoa():
     rng = np.random.default_rng(0)
     qaoa = [r["unique_failures"] for r in load("qaoa_multiseed.json")["per_seed"]]
     mc = [r["unique_failures"] for r in load("mc_no_replacement.json")["table_ii_mc_records"]]
-    exact = load("qubo_diagnostics.json")["variants"]["with_penalty"]["xTQx_symmetric"]["failures_in_lowest_energy"]
+    exact = load("qubo_diagnostics.json")["variants"]["with_penalty"]["upper_triangular_hamiltonian"]["failures_in_lowest_energy"]
     fig, ax = plt.subplots(figsize=(COL, 1.75))
     for x, vals, col in ((0, qaoa, C["qaoa"]), (1, mc, C["mc"])):
         m, s = dots(ax, x, vals, col, rng)
         ax.text(x + 0.36, m, r1(m) + "$\\pm$" + r1(s), va="center", fontsize=7.5)
-    ax.scatter([2], [exact["45"]], marker="D", s=22, color=C["exact"], zorder=3)
-    ax.text(2.13, exact["45"], f"{exact['45']} (deterministic)", va="center", fontsize=7.5)
+    ax.scatter([2], [exact["50"]], marker="D", s=22, color=C["exact"], zorder=3)
+    ax.text(2.13, exact["50"], f"{exact['50']} (deterministic)", va="center", fontsize=7.5)
     ax.set_xticks([0, 1, 2], ["QAOA ($p{=}2$)\n400 calls/seed", "Monte Carlo\n50 states",
-                              "Exact QUBO\nminimizer, 45 states"])
+                              "Exact QUBO\nranking, 50 states"])
     ax.set_xlim(-0.45, 3.1)
     ax.set_ylim(0, 9)
     ax.set_ylabel("Failures found (of 18)")
@@ -219,7 +226,7 @@ def fig_policy():
         m, s = ms(vals)
         ax.bar(x, m, yerr=s, color=col, width=0.62, error_kw=dict(lw=0.9, capsize=2.5), zorder=2)
         ax.text(x, m + s + 0.45, r1(m), ha="center", fontsize=7.5)
-    ax.axhline(12, color="0.35", lw=0.7, ls=":")
+    ax.axhline(load("policy_failure_overlap.json")["policy_failures"], color="0.35", lw=0.7, ls=":")
     ax.text(3.45, 12.25, "12 policy-failing states", ha="right", fontsize=7)
     ax.set_xticks(range(4), [s[0] for s in series])
     ax.set_ylim(0, 15)
@@ -236,7 +243,7 @@ def fig_cumulative():
     fig, ax = plt.subplots(figsize=(COL, 1.7))
     ax.step(k, d["qtd_cum42"], where="post", color=C["qtd"], lw=1.4, label="QTD (full circuit)")
     ax.step(k, d["mc_cum42"], where="post", color=C["mc"], lw=1.3, ls="--", label="Monte Carlo")
-    ax.axhline(18, color="0.35", lw=0.7, ls=":")
+    ax.axhline(load("policy_failure_overlap.json")["geometric_failures"], color="0.35", lw=0.7, ls=":")
     ax.text(1, 18.4, "all 18 failing states", fontsize=7)
     ax.set_xlim(0, 50)
     ax.set_ylim(0, 20.5)
@@ -256,7 +263,7 @@ def fig_budget_curves():
     for label, curves, col, ls in (
         ("QTD (full circuit)", [np.array(r["qtd_cumulative_failures"]) / r["test_failure_count"] for r in splits], C["qtd"], "-"),
         ("Teacher-only", [np.array(r["teacher_only_cumulative_failures"]) / r["test_failure_count"] for r in splits], C["teacher"], "--"),
-        ("Monte Carlo", [np.array(r["cumulative_failures"]) / 9.0 for r in mc], C["mc"], ":"),
+        ("Monte Carlo", [np.array(r["cumulative_failures"]) / r["test_failures"] for r in mc], C["mc"], ":"),
     ):
         arr = np.vstack(curves)
         m, s = arr.mean(0), arr.std(0)
@@ -292,7 +299,7 @@ def fig_lift():
 def fig_regimes():
     abl = load("quantum_ablation_multiseed.json")["per_seed"]
     cold = load("coldstart_qtd.json")["per_seed"]
-    exact = load("qubo_diagnostics.json")["variants"]["with_penalty"]["xTQx_symmetric"]["failures_in_lowest_energy"]["50"]
+    exact = load("qubo_diagnostics.json")["variants"]["with_penalty"]["upper_triangular_hamiltonian"]["failures_in_lowest_energy"]["50"]
     rows = [
         ("QTD (full circuit)", [r["qtd_quantum_on"]["unique_failures"] for r in abl], C["qtd"]),
         ("Teacher-only", [r["teacher_only_no_quantum"]["unique_failures"] for r in abl], C["teacher"]),
@@ -321,7 +328,7 @@ def fig_regimes():
         ticks.append(y)
         labels.append(name)
         y -= 1.0
-    ax.axvline(18, color="0.35", lw=0.7, ls=":")
+    ax.axvline(load("policy_failure_overlap.json")["geometric_failures"], color="0.35", lw=0.7, ls=":")
     ax.set_yticks(ticks, labels)
     ax.set_xlim(0, 23.5)
     ax.set_xticks([0, 5, 10, 15, 18])
@@ -332,8 +339,21 @@ def fig_regimes():
 
 
 if __name__ == "__main__":
-    FIG.mkdir(exist_ok=True)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=FIG)
+    parser.add_argument("--data-dir", type=Path, help="Overlay corrected JSON; unchanged sources use historical outputs")
+    args = parser.parse_args()
+    FIG, OVERLAY = args.output_dir, args.data_dir
+    FIG.mkdir(parents=True, exist_ok=False)
     for fn in (fig_failure_geometry, fig_architecture, fig_circuit, fig_qaoa, fig_mechanism, fig_policy,
                fig_cumulative, fig_budget_curves, fig_lift, fig_regimes):
         fn()
         print("ok", fn.__name__)
+
+    from matplotlib import font_manager
+    font_path = Path(font_manager.findfont("DejaVu Serif"))
+    (FIG / "figure_provenance.json").write_text(json.dumps({
+        "python": platform.python_version(), "matplotlib": matplotlib.__version__,
+        "font": str(font_path), "font_sha256": hashlib.sha256(font_path.read_bytes()).hexdigest(),
+        "inputs": INPUTS, "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    }, indent=2))

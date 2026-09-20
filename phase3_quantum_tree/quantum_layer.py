@@ -121,6 +121,8 @@ class QuantumDistillationLayer:
         outputs/mechanism_controls.json (see outputs/repair_validation.json).
         """
         sampler = StatevectorSampler(seed=self.seed)
+        measured_shots = 0
+        sampler_calls = 0
         top_indices = self._top_indices(teacher_probs)
         top_index_set = set(int(index) for index in top_indices.tolist())
         scores = np.zeros(len(hidden), dtype=float)
@@ -133,10 +135,13 @@ class QuantumDistillationLayer:
             result = sampler.run([qc], shots=int(self.shots)).result()[0]
             counts = result.data.meas.get_counts()
             total = sum(counts.values())
+            measured_shots += total
+            sampler_calls += 1
             weight = sum(bits.count("1") * count for bits, count in counts.items())
             scores[index] = float(np.clip(weight / (3.0 * total), 0.0, 1.0))
             backend[index] = "qiskit-statevector" if entangle else "qiskit-statevector-no-cz"
-        return {"backend": backend, "quantum_scores": scores}
+        return {"backend": backend, "quantum_scores": scores,
+                "resources": {"circuit_shots": measured_shots, "sampler_calls": sampler_calls}}
 
     def _analytic_refine(self, hidden: np.ndarray, teacher_probs: np.ndarray) -> Dict[str, np.ndarray]:
         """Exact (shot-free) expectation of the same entangled circuit."""

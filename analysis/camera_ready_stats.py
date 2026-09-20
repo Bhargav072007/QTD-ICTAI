@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+from artifact_io import output_options
 from phase3_quantum_tree.classical_layer import run_classical_layer  # noqa: E402
 from phase3_quantum_tree.pipeline import _select_evaluator  # noqa: E402
 
@@ -25,6 +26,7 @@ def rank_auc(score, labels):
 
 
 def main():
+    destination = output_options(["camera_ready_stats.json"], "derived")
     out = {}
     splits = json.loads((ROOT / "outputs" / "split_results_1024.json").read_text())["per_split"]
     out["heldout_recall_difference_qtd_minus_teacher"] = {}
@@ -45,7 +47,7 @@ def main():
     out["teacher_in_sample"] = {"majority_class_accuracy": round(238 / 256, 6), "per_seed": teacher,
                                 "ranking_auroc_mean": round(statistics.mean(t["ranking_auroc"] for t in teacher), 6),
                                 "ranking_auroc_pstd": round(statistics.pstdev(t["ranking_auroc"] for t in teacher), 6)}
-    (ROOT / "outputs" / "camera_ready_stats.json").write_text(json.dumps(out, indent=2))
+    (destination / "camera_ready_stats.json").write_text(json.dumps(out, indent=2))
     print(json.dumps({k: v for k, v in out["heldout_recall_difference_qtd_minus_teacher"].items()}, indent=0))
     print(out["teacher_in_sample"]["ranking_auroc_mean"], out["teacher_in_sample"]["ranking_auroc_pstd"], teacher[0])
 

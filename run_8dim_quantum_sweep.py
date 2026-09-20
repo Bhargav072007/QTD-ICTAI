@@ -5,6 +5,7 @@ whether any 8D quantum refinement is worth a stricter follow-up experiment.
 """
 
 from __future__ import annotations
+from artifact_io import output_options
 
 import json
 import statistics
@@ -148,8 +149,8 @@ def train_student_metric(
 
 
 def main() -> None:
-    if OUT_JSON.exists():
-        raise FileExistsError(f"Refusing to overwrite existing output: {OUT_JSON}")
+    global OUT_JSON
+    OUT_JSON = output_options(["quantum_8dim_sweep.json"], "eight_qubit") / "quantum_8dim_sweep.json"
     states = enumerate_parameter_states()
     labels = labels_for(states)
     print("8D QUANTUM SWEEP")

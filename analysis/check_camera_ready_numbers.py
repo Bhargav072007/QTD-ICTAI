@@ -1,4 +1,5 @@
-"""Checks every number that is new or changed in the camera-ready text against outputs/*.json.
+"""Historical camera-ready numeric regression against saved outputs/*.json.
+This does not parse the manuscript or validate corrected QAOA results.
 (run_traceability_checks.py covers the numbers carried over from the reviewed version.)
 Exit code 0 only if every check passes.  Run from the repository root.
 """
