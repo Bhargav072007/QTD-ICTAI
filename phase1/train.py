@@ -59,6 +59,8 @@ def train_policy(
     rng = np.random.default_rng(seed)
     policy = LinearPolicy(seed=seed)
     reward_trace = []
+    rollout_calls = 0
+    rollout_states = set()
     best_weights = policy.weights.copy()
     best_bias = policy.bias.copy()
     best_reward = float("-inf")
@@ -71,7 +73,9 @@ def train_policy(
         for _ in range(episodes_per_epoch):
             obs = env.reset()
             action, probs = policy.act(obs, rng)
-            _, reward, _, _ = env.step(action)
+            _, reward, _, outcome = env.step(action)
+            rollout_calls += 1
+            rollout_states.add(tuple(sorted(outcome["params"].items())))
             rewards.append(reward)
 
             one_hot = np.zeros(len(ACTIONS), dtype=float)
@@ -100,6 +104,7 @@ def train_policy(
         actions=np.array(ACTIONS, dtype=object),
     )
     summary = {
+        "resources": {"policy_training_rollouts": rollout_calls, "unique_encounter_states": len(rollout_states), "circuit_shots": 0},
         "seed": seed,
         "epochs": epochs,
         "episodes_per_epoch": episodes_per_epoch,

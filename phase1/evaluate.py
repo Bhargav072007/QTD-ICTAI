@@ -40,6 +40,7 @@ def evaluate_policy(episodes: int = 500, seed: int = 42) -> Dict[str, Any]:
     env = AviationEnv3D(seed=seed)
     policy = _load_policy(seed=seed)
     rewards: List[float] = []
+    rollout_states = set()
     failure_states: List[Dict[str, Any]] = []
     success_count = 0
     failure_counts = {"separation_loss": 0, "near_miss": 0}
@@ -52,6 +53,7 @@ def evaluate_policy(episodes: int = 500, seed: int = 42) -> Dict[str, Any]:
         action_index = int(np.argmax(probs))
         _, reward, _, outcome = env.step(action_index)
         rewards.append(reward)
+        rollout_states.add(tuple(sorted(outcome["params"].items())))
         if outcome["failure"]:
             failure_counts[outcome["failure_type"]] += 1
             failure_states.append(
@@ -71,6 +73,7 @@ def evaluate_policy(episodes: int = 500, seed: int = 42) -> Dict[str, Any]:
             success_count += 1
 
     summary = {
+        "resources": {"label_acquisition_rollouts": len(rewards), "unique_encounter_states": len(rollout_states), "circuit_shots": 0},
         "episodes": episodes,
         "seed": seed,
         "mean_reward": round(float(np.mean(rewards)), 6),
