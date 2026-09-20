@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import hashlib
+import platform
+import importlib.metadata
 import statistics
 import subprocess
 from datetime import datetime, timezone
@@ -68,27 +71,41 @@ def run_once(seed: int) -> Dict[str, Any]:
         "total_env_evaluations": int(result["n_env_evaluations_total"]),
         "unique_env_evaluations": int(result["n_env_evaluations_unique"]),
         "elapsed_seconds": float(result["elapsed_seconds"]),
-        "declared_optimizer_query_cost": int(K * COBYLA_MAXITER * SHOTS),
+        "configured_optimizer_shots_upper_budget": int(K * COBYLA_MAXITER * SHOTS),
+        "resources": result["resources"],
         "circuit_info": result["circuit_info"],
     }
 
 
 def checked_metrics(row: Dict[str, Any]) -> Dict[str, Any]:
-    return {key: row[key] for key in ("unique_failures", "auc", "first_failure", "cumulative_failures", "total_env_evaluations", "unique_env_evaluations")}
+    return {key: row[key] for key in ("unique_failures", "auc", "first_failure", "cumulative_failures", "total_env_evaluations", "unique_env_evaluations", "resources")}
+
+
+def provenance() -> dict:
+    files = [ROOT / "phase2_qaoa/qaoa_runner.py", ROOT / "phase2_qaoa/qubo_encoder.py", Path(__file__), ROOT / "outputs/failure_states.json"]
+    return {
+        "python": platform.python_version(), "platform": platform.platform(),
+        "packages": {name: importlib.metadata.version(name) for name in ("qiskit", "qiskit-aer", "qiskit-algorithms", "numpy", "scipy")},
+        "sha256": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
+        "git_status": subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], cwd=ROOT, text=True),
+        "objective_convention": "pair_once_symmetric_storage",
+    }
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run QAOA p=2 across seeds 42--51 twice")
+    parser.add_argument("--output-dir", type=Path, default=OUT / "reproduction" / "qaoa_corrected")
     parser.add_argument("--force", action="store_true", help="Allow replacement of qaoa_multiseed.json.")
     parser.add_argument("--seed", type=int, choices=SEEDS, help="Run and persist one duplicate-checked seed part.")
     parser.add_argument("--assemble", action="store_true", help="Assemble the final JSON from all verified per-seed parts.")
     args = parser.parse_args()
     if args.seed is not None and args.assemble:
         parser.error("--seed and --assemble are mutually exclusive")
-    output = OUT / "qaoa_multiseed.json"
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    output = args.output_dir / "qaoa_multiseed.json"
     backend = verify_qaoa_backend()
 
-    parts_dir = OUT / "qaoa_multiseed_parts"
+    parts_dir = args.output_dir / "qaoa_multiseed_parts"
     if args.seed is not None:
         parts_dir.mkdir(parents=True, exist_ok=True)
         part = parts_dir / f"qaoa_seed_{args.seed}.json"
@@ -105,6 +122,7 @@ def main() -> None:
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "code_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
             "backend": backend,
+            "provenance": provenance(),
             "config": {"p": REPS, "shots": SHOTS, "k": K, "cobyla_maxiter": COBYLA_MAXITER, "protocol": "eight most-frequent bitstrings per iteration"},
             "deterministic": deterministic,
             "record": first,
@@ -138,6 +156,7 @@ def main() -> None:
         "code_commit": producing_commit,
         "assembly_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
         "backend": backend,
+            "provenance": provenance(),
         "config": {"seeds": SEEDS, "p": REPS, "shots": SHOTS, "k": K, "cobyla_maxiter": COBYLA_MAXITER, "protocol": "eight most-frequent bitstrings per iteration"},
         "determinism_checked": determinism,
         "per_seed": records,
@@ -148,7 +167,9 @@ def main() -> None:
             "total_env_evaluations": mean_pstd([float(row["total_env_evaluations"]) for row in records]),
             "unique_env_evaluations": mean_pstd([float(row["unique_env_evaluations"]) for row in records]),
             "elapsed_seconds": mean_pstd([float(row["elapsed_seconds"]) for row in records]),
-            "declared_optimizer_query_cost": K * COBYLA_MAXITER * SHOTS,
+            "configured_optimizer_shots_upper_budget": K * COBYLA_MAXITER * SHOTS,
+            "resources": {key: mean_pstd([float(row["resources"][key]) for row in records])
+                          for key in ("optimizer_evaluations", "optimizer_shots", "sampling_shots", "circuit_shots_total", "simulator_calls_total_this_run")},
         },
     }
     output.write_text(json.dumps(payload, indent=2), encoding="utf-8")

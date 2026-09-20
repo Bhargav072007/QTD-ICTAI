@@ -268,8 +268,21 @@ def build_qubo_matrix() -> np.ndarray:
     return qubo
 
 
+def objective_value(qubo: np.ndarray, bits: np.ndarray) -> float:
+    """Pair-once objective: diagonal terms plus averaged symmetric pairs.
+
+    x[i] is qubit i (rightmost measurement bit is x[0]). The symmetric
+    storage matrix holds each pair coefficient twice, NOT an x.T @ Q @ x
+    matrix. For symmetric Q this equals x.T @ triu(Q) @ x. Keeping this
+    convention preserves the original 0.12 pair penalty and cost circuit.
+    """
+    x = np.asarray(bits, dtype=float)
+    pairs = np.triu((qubo + qubo.T) / 2.0, k=1)
+    return float(np.dot(np.diag(qubo), x) + x @ pairs @ x)
+
+
 def qubo_to_hamiltonian(qubo: np.ndarray) -> SparsePauliOp:
-    """Converts a QUBO matrix into a diagonal Ising Hamiltonian."""
+    """Map objective_value to Z operators, including the constant offset."""
     num_qubits = qubo.shape[0]
     terms: List[Tuple[str, complex]] = []
     constant = 0.0

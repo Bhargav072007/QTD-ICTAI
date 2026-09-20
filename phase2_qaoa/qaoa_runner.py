@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from functools import lru_cache
 import sys
 import time
 from dataclasses import dataclass
@@ -174,7 +175,13 @@ class QAOAExplorer:
         # distinct states that touches. They exclude the one-off catalog build below.
         self.n_env_evaluations_total = 0
         self._env_eval_unique_keys: set[str] = set()
-        self._evaluated_states = self._build_state_catalog()
+        # The Qiskit path never consumes the fallback's oracle-labeled catalog.
+        self._evaluated_states = [] if QISKIT_AVAILABLE else self._build_state_catalog()
+        self.optimizer_evaluations = 0
+        self.optimizer_shots = 0
+        self.sampling_calls = 0
+        self.sampling_shots = 0
+        self.optimizer_nfev = []
 
         if QISKIT_AVAILABLE:
             algorithm_globals.random_seed = seed
@@ -206,8 +213,13 @@ class QAOAExplorer:
             catalog.append(evaluation)
         return catalog
 
+    @lru_cache(maxsize=256)
     def _hamiltonian_cost(self, bitstring: str) -> float:
-        z_values = [1 - 2 * int(bit) for bit in bitstring]
+        # Qiskit strings display q[n-1] ... q[0]; reversed Pauli labels
+        # below enumerate q[0] first. Preserve term order and arithmetic.
+        if len(bitstring) != N_QUBITS or set(bitstring) - {"0", "1"}:
+            raise ValueError("Expected an 8-bit Qiskit measurement string")
+        z_values = [1 - 2 * int(bit) for bit in reversed(bitstring)]
         total = 0.0
         for label, coeff in zip(self.hamiltonian.paulis, self.hamiltonian.coeffs):
             term = 1.0
@@ -251,6 +263,8 @@ class QAOAExplorer:
 
     def _evaluate_circuit(self, params: np.ndarray) -> float:
         counts = self._sample_counts(params)
+        self.optimizer_evaluations += 1
+        self.optimizer_shots += sum(counts.values())
         total_shots = max(sum(counts.values()), 1)
         expected_cost = 0.0
         for bitstring, count in counts.items():
@@ -266,7 +280,12 @@ class QAOAExplorer:
             # loop additionally evaluates the top-8 bitstrings each iteration, so over k
             # iterations it performs up to 8*k non-unique environment evaluations
             # (tracked as n_env_evaluations_total / n_env_evaluations_unique in run()).
+            before = self.optimizer_evaluations
             result = COBYLA(maxiter=35).minimize(fun=self._evaluate_circuit, x0=init)
+            measured = self.optimizer_evaluations - before
+            if measured != result.nfev:
+                raise RuntimeError("Optimizer evaluation accounting disagrees with nfev")
+            self.optimizer_nfev.append(measured)
             return np.array(result.x, dtype=float)
 
         candidates = []
@@ -279,6 +298,8 @@ class QAOAExplorer:
     def run_iteration(self, iteration: int) -> List[Dict[str, Any]]:
         params = self._optimize_params(iteration)
         counts = self._sample_counts(params)
+        self.sampling_calls += 1
+        self.sampling_shots += sum(counts.values())
         top_samples = sorted(counts.items(), key=lambda item: item[1], reverse=True)[:8]
 
         failures: List[Dict[str, Any]] = []
@@ -299,7 +320,13 @@ class QAOAExplorer:
         self.iteration_counts.append(len(self.all_failures))
         return failures
 
-    def run(self, k_iterations: int = 50, output_path: str | Path | None = OUT / "qaoa_results.json") -> Dict[str, Any]:
+    def run(self, k_iterations: int = 50, output_path: str | Path | None = None, force: bool = False) -> Dict[str, Any]:
+        if output_path is not None:
+            checked_path = Path(output_path)
+            if not checked_path.is_absolute():
+                checked_path = ROOT / checked_path
+            if checked_path.exists() and not force:
+                raise FileExistsError(f"Refusing to overwrite {checked_path}")
         started = time.time()
         for iteration in range(k_iterations):
             self.run_iteration(iteration)
@@ -316,11 +343,30 @@ class QAOAExplorer:
             "total_unique_failures": len(self.all_failures),
             "n_env_evaluations_total": self.n_env_evaluations_total,
             "n_env_evaluations_unique": len(self._env_eval_unique_keys),
+            "objective_convention": "pair_once_symmetric_storage",
+            "resources": {
+                "optimizer_evaluations": self.optimizer_evaluations,
+                "optimizer_nfev_per_iteration": self.optimizer_nfev,
+                "optimizer_shots": self.optimizer_shots,
+                "sampling_calls": self.sampling_calls,
+                "sampling_shots": self.sampling_shots,
+                "circuit_shots_total": self.optimizer_shots + self.sampling_shots if QISKIT_AVAILABLE else 0,
+                "fallback_draws_total": 0 if QISKIT_AVAILABLE else self.optimizer_shots + self.sampling_shots,
+                "setup_catalog_calls": len(self._evaluated_states),
+                "search_simulator_calls": self.n_env_evaluations_total,
+                "search_unique_states": len(self._env_eval_unique_keys),
+                "reporting_simulator_calls": 0,
+                "simulator_calls_total_this_run": len(self._evaluated_states) + self.n_env_evaluations_total,
+                "simulator_unique_states_this_run": len(self._evaluated_states) if self._evaluated_states else len(self._env_eval_unique_keys),
+                "training_label_acquisition_calls_this_run": 0,
+                "prior_training_cost": "Not measured here: reads persisted phase1 failure labels; NOT label-free. See input hash and historical training protocol.",
+                "configured_optimizer_shots_upper_budget": k_iterations * 35 * self.shots,
+            },
             "env_evaluation_note": (
                 "run_iteration() evaluates the top-8 bitstrings each iteration, so the "
                 "exploration loop performs up to 8*k non-unique environment evaluations "
                 "over k iterations; this is distinct from the per-iteration COBYLA optimizer "
-                "budget and from the one-off 256-state catalog build."
+                "budget; the 256-state catalog is now built only for the non-Qiskit fallback."
             ),
             "cumulative_failures": self.iteration_counts,
             "failures": self.all_failures,
@@ -350,6 +396,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--k", type=int, default=50)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", type=str, default=str(OUT / "qaoa_results.json"))
+    parser.add_argument("--force", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     return parser
 
@@ -377,7 +424,7 @@ def main() -> None:
         print(_safe_draw_text(explorer.circuit))
         return
 
-    results = explorer.run(k_iterations=args.k, output_path=args.output)
+    results = explorer.run(k_iterations=args.k, output_path=args.output, force=args.force)
     print(f"\nUnique failures found: {results['total_unique_failures']}")
     print(f"Results written to   : {args.output}")
 
