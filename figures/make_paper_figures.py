@@ -39,7 +39,7 @@ plt.rcParams.update({
     "font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8,
     "xtick.labelsize": 7.5, "ytick.labelsize": 7.5, "legend.fontsize": 7.5,
     "axes.linewidth": 0.6, "axes.grid": True, "grid.color": "0.88", "grid.linewidth": 0.5,
-    "legend.frameon": False, "savefig.bbox": "tight", "savefig.pad_inches": 0.02,
+    "legend.frameon": False, "savefig.bbox": "tight", "savefig.pad_inches": 0.08,
     "axes.spines.top": False, "axes.spines.right": False,
 })
 COL = 3.45  # IEEE column width (in)
