@@ -31,6 +31,7 @@ NAMES = ["heading", "altitude", "speed", "lateral_offset"]
 
 
 def rank_auc(score: np.ndarray, labels: np.ndarray) -> float:
+    score = np.round(score, 12)  # Numerical noise must not split mathematical ties.
     pos, neg = score[labels == 1], score[labels == 0]
     wins = (pos[:, None] > neg[None, :]).sum() + 0.5 * (pos[:, None] == neg[None, :]).sum()
     return float(wins / (len(pos) * len(neg)))
@@ -52,13 +53,15 @@ def main() -> None:
         Q._apply_one_hot_regularization = original
 
     out = {"state_count": int(len(states)), "geometric_failures": int(labels.sum()), "variants": {}, "implemented_convention": "upper_triangular_hamiltonian",
-           "tie_break": "stable enumerate_parameter_states order",
+           "tie_break": "round energies to 12 decimals, then stable enumerate_parameter_states order",
+           "energy_ranking_decimals": 12,
            "resource_accounting": {"diagnostic_label_calls": len(states), "unique_states": len(states), "circuit_shots": 0}}
     for tag, mat in (("with_penalty", q_pen), ("without_penalty", q_nopen)):
         entry = {}
         for conv, m in (("xTQx_symmetric", mat), ("upper_triangular_hamiltonian", np.triu(mat))):
             obj = (np.array([Q.objective_value(mat, x) for x in X]) if conv == "upper_triangular_hamiltonian"
                    else np.einsum("ni,ij,nj->n", X, m, X))
+            obj = np.round(obj, 12)
             order = np.argsort(obj, kind="stable")
             cum = np.cumsum(labels[order])
             best = states[int(order[0])]

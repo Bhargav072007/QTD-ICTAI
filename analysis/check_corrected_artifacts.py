@@ -76,7 +76,7 @@ def main():
     energies=np.array([q._hamiltonian_cost(encode_state_indices(_state_indices_from_params(s))) for s in states])
     polynomial=np.array([objective_value(q.qubo,np.array([int(c) for c in encode_state_indices(_state_indices_from_params(s))[::-1]])) for s in states])
     assert np.allclose(energies,polynomial,rtol=0,atol=1e-12)
-    cum=np.cumsum(labels[np.argsort(polynomial,kind='stable')])
+    cum=np.cumsum(labels[np.argsort(np.round(polynomial,diagnostic["energy_ranking_decimals"]),kind='stable')])
     recorded=diagnostic['variants']['with_penalty']['upper_triangular_hamiltonian']
     assert cum[:50].tolist()==recorded['exact_enumeration_cumulative_failures_k50']
     for budget,count in recorded['failures_in_lowest_energy'].items():assert cum[int(budget)-1]==count
