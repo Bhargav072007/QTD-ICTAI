@@ -1,0 +1,88 @@
+{
+  "geometric_failures": 18,
+  "policy_failures": 12,
+  "policy_failures_also_geometric": 3,
+  "policy_failures_safe_under_fixed_ego": 9,
+  "geometric_failures_avoided_by_policy": 15,
+  "policy_primary_action_counts_over_256_states": {
+    "turn_right": 256
+  },
+  "warmstart_records": 26,
+  "warmstart_unique_states": 12,
+  "warmstart_equals_policy_failure_set": true,
+  "warmstart_states_that_are_geometric_failures": 3,
+  "policy_failure_states": [
+    [
+      75.0,
+      30000.0,
+      5.0,
+      10.0
+    ],
+    [
+      75.0,
+      30000.0,
+      6.0,
+      -20.0
+    ],
+    [
+      75.0,
+      30000.0,
+      6.0,
+      -10.0
+    ],
+    [
+      75.0,
+      31000.0,
+      5.0,
+      10.0
+    ],
+    [
+      75.0,
+      31000.0,
+      6.0,
+      -20.0
+    ],
+    [
+      75.0,
+      31000.0,
+      6.0,
+      -10.0
+    ],
+    [
+      75.0,
+      32000.0,
+      5.0,
+      10.0
+    ],
+    [
+      75.0,
+      32000.0,
+      6.0,
+      -20.0
+    ],
+    [
+      75.0,
+      32000.0,
+      6.0,
+      -10.0
+    ],
+    [
+      90.0,
+      30000.0,
+      6.0,
+      10.0
+    ],
+    [
+      90.0,
+      31000.0,
+      6.0,
+      10.0
+    ],
+    [
+      90.0,
+      32000.0,
+      6.0,
+      10.0
+    ]
+  ]
+}

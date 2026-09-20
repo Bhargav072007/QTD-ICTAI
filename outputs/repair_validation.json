@@ -1,0 +1,22 @@
+{
+  "seed42_per_candidate_scores": {
+    "candidates": 150,
+    "gated_nonzero": 64,
+    "max_abs_difference": 4.791666666781325e-07,
+    "match": true
+  },
+  "mechanism_arms_curves_identical_seeds": {
+    "qtd_full": 10,
+    "teacher_only": 10,
+    "no_cz": 10,
+    "analytic": 10,
+    "matched_classical": 10,
+    "shuffled": 1,
+    "random": 1
+  },
+  "split_experiment": {
+    "aggregate_identical": true,
+    "per_split_curves_identical": 10,
+    "note": "MC rows in this file are a secondary in-file estimate; mc_no_replacement.json is canonical."
+  }
+}

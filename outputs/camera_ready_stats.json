@@ -1,0 +1,138 @@
+{
+  "heldout_recall_difference_qtd_minus_teacher": {
+    "k10": {
+      "per_split": [
+        0.0,
+        0.0,
+        0.0,
+        0.222222,
+        0.111111,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.111111
+      ],
+      "mean": 0.044444,
+      "pstd": 0.073703,
+      "positive": 3,
+      "negative": 0,
+      "sign_test_p": 0.25
+    },
+    "k20": {
+      "per_split": [
+        0.333333,
+        -0.111111,
+        0.111111,
+        0.0,
+        -0.111111,
+        0.111111,
+        0.0,
+        0.111111,
+        0.0,
+        0.111111
+      ],
+      "mean": 0.055556,
+      "pstd": 0.124226,
+      "positive": 5,
+      "negative": 2,
+      "sign_test_p": 0.453125
+    },
+    "k30": {
+      "per_split": [
+        0.0,
+        0.0,
+        0.0,
+        0.222222,
+        -0.111111,
+        0.0,
+        -0.111111,
+        0.0,
+        -0.111111,
+        0.0
+      ],
+      "mean": -0.011111,
+      "pstd": 0.092296,
+      "positive": 1,
+      "negative": 3,
+      "sign_test_p": 0.625
+    }
+  },
+  "teacher_in_sample": {
+    "majority_class_accuracy": 0.929688,
+    "per_seed": [
+      {
+        "seed": 42,
+        "accuracy": 0.925781,
+        "ranking_auroc": 0.92577,
+        "max_p_on_failures": 0.323184,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 43,
+        "accuracy": 0.921875,
+        "ranking_auroc": 0.926237,
+        "max_p_on_failures": 0.368955,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 44,
+        "accuracy": 0.929688,
+        "ranking_auroc": 0.924837,
+        "max_p_on_failures": 0.330884,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 45,
+        "accuracy": 0.929688,
+        "ranking_auroc": 0.926471,
+        "max_p_on_failures": 0.320118,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 46,
+        "accuracy": 0.925781,
+        "ranking_auroc": 0.92577,
+        "max_p_on_failures": 0.358025,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 47,
+        "accuracy": 0.925781,
+        "ranking_auroc": 0.927171,
+        "max_p_on_failures": 0.367541,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 48,
+        "accuracy": 0.917969,
+        "ranking_auroc": 0.92507,
+        "max_p_on_failures": 0.386233,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 49,
+        "accuracy": 0.925781,
+        "ranking_auroc": 0.926004,
+        "max_p_on_failures": 0.374615,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 50,
+        "accuracy": 0.921875,
+        "ranking_auroc": 0.922035,
+        "max_p_on_failures": 0.378194,
+        "failures_in_top25pct_gate": 18
+      },
+      {
+        "seed": 51,
+        "accuracy": 0.925781,
+        "ranking_auroc": 0.92507,
+        "max_p_on_failures": 0.353557,
+        "failures_in_top25pct_gate": 18
+      }
+    ],
+    "ranking_auroc_mean": 0.925443,
+    "ranking_auroc_pstd": 0.001321
+  }
+}

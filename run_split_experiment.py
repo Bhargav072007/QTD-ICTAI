@@ -393,5 +393,37 @@ def main() -> None:
             f"mc_recall={record['mc_recall']} qtd_auc={record['qtd_auc']} "
             f"teacher_only_auc={record['teacher_only_auc']} mc_auc={record['mc_auc']}"
         )
-        print(
-    
+        print(f"  checks={checks}")
+
+    # --- Tail reconstructed for the camera-ready artifact repair -------------
+    # The first public export truncated this file here. The block below was
+    # rebuilt to emit the same schema as outputs/split_results_1024.json and is
+    # validated in outputs/repair_validation.json.
+    try:
+        code_commit = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, stderr=subprocess.DEVNULL, text=True
+        ).strip()
+    except Exception:
+        code_commit = None
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "split_seeds": SPLIT_SEEDS,
+        "k": K,
+        "shots": int(args.shots),
+        "code_commit": code_commit,
+        "backend": backend,
+        "per_split": per_split,
+        "aggregate": aggregate(per_split),
+        "leakage_checks_passed": bool(all_checks_passed),
+    }
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    write_markdown(payload, out_md)
+    print("")
+    print(f"aggregate={payload['aggregate']}")
+    print(f"leakage_checks_passed={payload['leakage_checks_passed']}")
+    print(f"wrote {out_json}")
+
+
+if __name__ == "__main__":
+    main()

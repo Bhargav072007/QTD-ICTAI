@@ -99,7 +99,82 @@ class QuantumDistillationLayer:
             "quantum_scores": refined,
         }
 
-    def _qiskit_refine(self, hidden: np.ndarray, teacher_probs: np.ndarray) -> Dict[str, np.ndarray]:
+    def _build_circuit(self, theta: np.ndarray, phi: float, entangle: bool = True, measure: bool = True):
+        qc = QuantumCircuit(3)
+        for qubit in range(3):
+            qc.ry(float(theta[qubit]), qubit)
+        if entangle:
+            qc.cz(0, 1)
+            qc.cz(1, 2)
+        qc.ry(phi, 0)
+        if measure:
+            qc.measure_all()
+        return qc
+
+    def _qiskit_refine(self, hidden: np.ndarray, teacher_probs: np.ndarray, entangle: bool = True) -> Dict[str, np.ndarray]:
+        """Shot-sampled 3-qubit circuit (variant "full"; entangle=False gives "no_cz").
+
+        NOTE (camera-ready repair): the body of this method was truncated in the
+        first public export. It was reconstructed from the class docstring and
+        validated against the persisted per-candidate scores in
+        outputs/ranking_diagnostic_seed42.json and the per-seed curves in
+        outputs/mechanism_controls.json (see outputs/repair_validation.json).
+        """
         sampler = StatevectorSampler(seed=self.seed)
         top_indices = self._top_indices(teacher_probs)
-        top_index_set = set(int(
+        top_index_set = set(int(index) for index in top_indices.tolist())
+        scores = np.zeros(len(hidden), dtype=float)
+        backend = np.array(["skipped-low-teacher"] * len(hidden), dtype=object)
+        for index in range(len(hidden)):
+            if index not in top_index_set:
+                continue
+            theta, phi = self._angles(hidden[index], float(teacher_probs[index]))
+            qc = self._build_circuit(theta, phi, entangle=entangle, measure=True)
+            result = sampler.run([qc], shots=int(self.shots)).result()[0]
+            counts = result.data.meas.get_counts()
+            total = sum(counts.values())
+            weight = sum(bits.count("1") * count for bits, count in counts.items())
+            scores[index] = float(np.clip(weight / (3.0 * total), 0.0, 1.0))
+            backend[index] = "qiskit-statevector" if entangle else "qiskit-statevector-no-cz"
+        return {"backend": backend, "quantum_scores": scores}
+
+    def _analytic_refine(self, hidden: np.ndarray, teacher_probs: np.ndarray) -> Dict[str, np.ndarray]:
+        """Exact (shot-free) expectation of the same entangled circuit."""
+        top_indices = self._top_indices(teacher_probs)
+        scores = np.zeros(len(hidden), dtype=float)
+        backend = np.array(["skipped-low-teacher"] * len(hidden), dtype=object)
+        for index in top_indices:
+            theta, phi = self._angles(hidden[int(index)], float(teacher_probs[int(index)]))
+            qc = self._build_circuit(theta, phi, entangle=True, measure=False)
+            probabilities = Statevector.from_instruction(qc).probabilities_dict()
+            scores[int(index)] = float(
+                np.clip(sum((bits.count("1") / 3.0) * float(p) for bits, p in probabilities.items()), 0.0, 1.0)
+            )
+            backend[int(index)] = "qiskit-statevector-exact"
+        return {"backend": backend, "quantum_scores": scores}
+
+    def refine(self, hidden: np.ndarray, teacher_probs: np.ndarray) -> Dict[str, np.ndarray]:
+        hidden = np.asarray(hidden, dtype=float)
+        teacher_probs = np.asarray(teacher_probs, dtype=float).reshape(-1)
+        if self.variant == "matched_classical":
+            return self._matched_classical_refine(hidden, teacher_probs)
+        if not QISKIT_TREE_AVAILABLE:
+            return self._fallback_refine(hidden, teacher_probs)
+        if self.variant == "full":
+            return self._qiskit_refine(hidden, teacher_probs, entangle=True)
+        if self.variant == "no_cz":
+            return self._qiskit_refine(hidden, teacher_probs, entangle=False)
+        if self.variant == "analytic":
+            return self._analytic_refine(hidden, teacher_probs)
+        if self.variant in {"shuffled", "random"}:
+            result = self._qiskit_refine(hidden, teacher_probs, entangle=True)
+            top_indices = np.sort(self._top_indices(teacher_probs))
+            rng = np.random.default_rng(self.seed)
+            scores = result["quantum_scores"].copy()
+            if self.variant == "shuffled":
+                scores[top_indices] = rng.permutation(scores[top_indices])
+            else:
+                scores[top_indices] = rng.uniform(0.0, 1.0, size=len(top_indices))
+            result["quantum_scores"] = scores
+            return result
+        raise ValueError(f"unknown quantum variant: {self.variant}")

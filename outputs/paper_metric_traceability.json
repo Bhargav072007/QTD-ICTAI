@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T06:22:55.023630+00:00",
+  "generated_at": "2026-09-17T21:17:06.853067+00:00",
   "description": "Traceability of the current QTD ICTAI-2026 manuscript claims to persisted JSON sources.",
   "shared_metric_functions": {
     "auc": "trapezoidal cumulative-failure AUC starting from previous=0",
@@ -551,4 +551,315 @@
       "paper_value": 0.0,
       "persisted_value": 0.0,
       "match_status": "MATCH",
-      "sourc
+      "source_json_file": "split_results_1024.json",
+      "source_json_key_path": "aggregate.qtd_recall.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 1024-shot quantum AUC lift (mean)",
+      "paper_value": 7.4,
+      "persisted_value": 7.4,
+      "match_status": "MATCH",
+      "source_json_file": "split_results_1024.json",
+      "source_json_key_path": "aggregate.quantum_auc_lift.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Exp5 1024-shot quantum AUC lift (std)",
+      "paper_value": 14.4,
+      "persisted_value": 14.381933,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "split_results_1024.json",
+      "source_json_key_path": "aggregate.quantum_auc_lift.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Mechanism full-vs-teacher AUC lift (mean)",
+      "paper_value": 26.5,
+      "persisted_value": 26.45,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mechanism_controls.json",
+      "source_json_key_path": "paired_comparisons.qtd_full.vs_teacher_only.auc_delta.aggregate.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Mechanism full-vs-teacher AUC lift (std)",
+      "paper_value": 12.2,
+      "persisted_value": 12.180825,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "mechanism_controls.json",
+      "source_json_key_path": "paired_comparisons.qtd_full.vs_teacher_only.auc_delta.aggregate.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Mechanism no_cz control recorded",
+      "paper_value": true,
+      "persisted_value": true,
+      "match_status": "MATCH",
+      "source_json_file": "mechanism_controls.json",
+      "source_json_key_path": "arms.no_cz",
+      "notes": "A control arm exists and must be considered before attributing the full-arm lift to quantum computation."
+    },
+    {
+      "metric_name": "Mechanism analytic control recorded",
+      "paper_value": true,
+      "persisted_value": true,
+      "match_status": "MATCH",
+      "source_json_file": "mechanism_controls.json",
+      "source_json_key_path": "arms.analytic",
+      "notes": "A control arm exists and must be considered before attributing the full-arm lift to quantum computation."
+    },
+    {
+      "metric_name": "Mechanism matched_classical control recorded",
+      "paper_value": true,
+      "persisted_value": true,
+      "match_status": "MATCH",
+      "source_json_file": "mechanism_controls.json",
+      "source_json_key_path": "arms.matched_classical",
+      "notes": "A control arm exists and must be considered before attributing the full-arm lift to quantum computation."
+    },
+    {
+      "metric_name": "Mechanism shuffled control recorded",
+      "paper_value": true,
+      "persisted_value": true,
+      "match_status": "MATCH",
+      "source_json_file": "mechanism_controls.json",
+      "source_json_key_path": "arms.shuffled",
+      "notes": "A control arm exists and must be considered before attributing the full-arm lift to quantum computation."
+    },
+    {
+      "metric_name": "Mechanism random control recorded",
+      "paper_value": true,
+      "persisted_value": true,
+      "match_status": "MATCH",
+      "source_json_file": "mechanism_controls.json",
+      "source_json_key_path": "arms.random",
+      "notes": "A control arm exists and must be considered before attributing the full-arm lift to quantum computation."
+    },
+    {
+      "metric_name": "Experiment 6 CEM failures (mean)",
+      "paper_value": 6.5,
+      "persisted_value": 6.5,
+      "match_status": "MATCH",
+      "source_json_file": "adaptive_baseline.json",
+      "source_json_key_path": "aggregate.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 6 CEM failures (std)",
+      "paper_value": 2.2,
+      "persisted_value": 2.156386,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "adaptive_baseline.json",
+      "source_json_key_path": "aggregate.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 6 CEM AUC (mean)",
+      "paper_value": 138.7,
+      "persisted_value": 138.65,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "adaptive_baseline.json",
+      "source_json_key_path": "aggregate.auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 6 CEM AUC (std)",
+      "paper_value": 48.0,
+      "persisted_value": 47.969808,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "adaptive_baseline.json",
+      "source_json_key_path": "aggregate.auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 6 policy CEM failures (mean)",
+      "paper_value": 5.2,
+      "persisted_value": 5.2,
+      "match_status": "MATCH",
+      "source_json_file": "adaptive_baseline_policy.json",
+      "source_json_key_path": "aggregate.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 6 policy CEM failures (std)",
+      "paper_value": 1.5,
+      "persisted_value": 1.469694,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "adaptive_baseline_policy.json",
+      "source_json_key_path": "aggregate.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 cold-start QTD failures (mean)",
+      "paper_value": 3.7,
+      "persisted_value": 3.7,
+      "match_status": "MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.coldstart_qtd.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 cold-start QTD failures (std)",
+      "paper_value": 4.3,
+      "persisted_value": 4.313931,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.coldstart_qtd.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 teacher-only failures (mean)",
+      "paper_value": 6.1,
+      "persisted_value": 6.1,
+      "match_status": "MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.coldstart_teacher_only.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 teacher-only failures (std)",
+      "paper_value": 2.5,
+      "persisted_value": 2.507987,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.coldstart_teacher_only.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 failure delta (mean)",
+      "paper_value": -2.4,
+      "persisted_value": -2.4,
+      "match_status": "MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.quantum_delta.unique_failures.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 failure delta (std)",
+      "paper_value": 2.7,
+      "persisted_value": 2.6533,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.quantum_delta.unique_failures.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 AUC delta (mean)",
+      "paper_value": -29.3,
+      "persisted_value": -29.3,
+      "match_status": "MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.quantum_delta.auc.mean",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 AUC delta (std)",
+      "paper_value": 44.1,
+      "persisted_value": 44.072781,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.quantum_delta.auc.std",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 positive failure deltas",
+      "paper_value": 2,
+      "persisted_value": 2,
+      "match_status": "MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.quantum_delta.positive_failure_delta_seed_count",
+      "notes": ""
+    },
+    {
+      "metric_name": "Experiment 7 positive AUC deltas",
+      "paper_value": 3,
+      "persisted_value": 3,
+      "match_status": "MATCH",
+      "source_json_file": "coldstart_qtd.json",
+      "source_json_key_path": "aggregate.quantum_delta.positive_auc_delta_seed_count",
+      "notes": ""
+    },
+    {
+      "metric_name": "QUBO ranking AUC",
+      "paper_value": 0.753,
+      "persisted_value": 0.7531512605042018,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "qubo_alignment_final.json",
+      "source_json_key_path": "metrics.empirical_build_qubo_matrix.geometric_labels.ranking_auc_score_neg_objective",
+      "notes": ""
+    },
+    {
+      "metric_name": "QUBO point-biserial r",
+      "paper_value": -0.191,
+      "persisted_value": -0.19058208267430402,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "qubo_alignment_final.json",
+      "source_json_key_path": "metrics.empirical_build_qubo_matrix.geometric_labels.point_biserial_r_label_vs_objective",
+      "notes": ""
+    },
+    {
+      "metric_name": "8q sweep variant count",
+      "paper_value": 36,
+      "persisted_value": 36,
+      "match_status": "MATCH",
+      "source_json_file": "quantum_8dim_sweep.json",
+      "source_json_key_path": "variants",
+      "notes": ""
+    },
+    {
+      "metric_name": "8q sweep best-variant AUC lift (mean)",
+      "paper_value": 7.3,
+      "persisted_value": 7.3,
+      "match_status": "MATCH",
+      "source_json_file": "quantum_8dim_sweep.json",
+      "source_json_key_path": "aggregate.q8_absnorm_chain_cov50.auc_lift_vs_teacher.mean",
+      "notes": "best_variant=q8_absnorm_chain_cov50; positive_lift_splits=7/10 (not significant)"
+    },
+    {
+      "metric_name": "Teacher accuracy",
+      "paper_value": 0.926,
+      "persisted_value": 0.925781,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "phase3_quantum_tree/classical_layer.py",
+      "source_json_key_path": "run_classical_layer(seed=42) in-sample",
+      "notes": ""
+    },
+    {
+      "metric_name": "Teacher loss",
+      "paper_value": 0.182,
+      "persisted_value": 0.182206,
+      "match_status": "ROUNDING-MATCH",
+      "source_json_file": "phase3_quantum_tree/classical_layer.py",
+      "source_json_key_path": "run_classical_layer(seed=42) in-sample",
+      "notes": ""
+    },
+    {
+      "metric_name": "Phase 1 episodes",
+      "paper_value": 500,
+      "persisted_value": 500,
+      "match_status": "MATCH",
+      "source_json_file": "phase1/evaluation_summary.json",
+      "source_json_key_path": "episodes",
+      "notes": ""
+    },
+    {
+      "metric_name": "Phase 1 failure rate (%)",
+      "paper_value": 5.2,
+      "persisted_value": 5.2,
+      "match_status": "MATCH",
+      "source_json_file": "phase1/evaluation_summary.json",
+      "source_json_key_path": "failure_rate",
+      "notes": ""
+    },
+    {
+      "metric_name": "Phase 1 success rate (%)",
+      "paper_value": 94.8,
+      "persisted_value": 94.8,
+      "match_status": "MATCH",
+      "source_json_file": "phase1/evaluation_summary.json",
+      "source_json_key_path": "success_rate",
+      "notes": ""
+    }
+  ]
+}

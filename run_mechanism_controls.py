@@ -148,8 +148,9 @@ def load_existing_full() -> Dict[int, Dict[str, Any]]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run QTD mechanism controls")
     parser.add_argument("--force", action="store_true", help="Allow replacement of mechanism_controls.json.")
+    parser.add_argument("--output-name", default="mechanism_controls.json", help="JSON filename under outputs/.")
     args = parser.parse_args()
-    output = OUT / "mechanism_controls.json"
+    output = OUT / args.output_name
     if output.exists() and not args.force:
         raise FileExistsError(f"Refusing to overwrite existing canonical output: {output}")
 

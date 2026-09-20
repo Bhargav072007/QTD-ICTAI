@@ -344,7 +344,11 @@ def run_quantum_tree_pipeline(
     ranking_mode: str = "qtd",
     evaluator: str = "geometric",
     output_path: Optional[str | Path] = "outputs/",
+    score_transform: Optional[Any] = None,
+    readout: str = "student",
 ) -> Dict[str, Any]:
+    if readout not in {"student", "target"}:
+        raise ValueError("readout must be 'student' or 'target'")
     if ranking_mode not in {"qtd", "teacher_only"}:
         raise ValueError("ranking_mode must be 'qtd' or 'teacher_only'")
     if not quantum_enabled and ranking_mode == "qtd":
@@ -357,6 +361,21 @@ def run_quantum_tree_pipeline(
     if quantum_enabled:
         quantum_layer = QuantumDistillationLayer(shots=effective_shots, seed=seed, variant=quantum_variant)
         quantum = quantum_layer.refine(classical["hidden"], classical["teacher_probs"])
+        if score_transform is not None:
+            # Camera-ready addition: optional hook used only by
+            # run_positive_control.py to substitute the Layer-2 score
+            # (positive/negative controls). Default None leaves behaviour unchanged.
+            quantum = dict(quantum)
+            quantum["quantum_scores"] = np.asarray(
+                score_transform(
+                    scores=np.asarray(quantum["quantum_scores"], dtype=float).copy(),
+                    teacher_probs=np.asarray(classical["teacher_probs"], dtype=float),
+                    labels=np.asarray(classical["labels"], dtype=float),
+                    gated=np.asarray(quantum["backend"] != "skipped-low-teacher"),
+                    seed=seed,
+                ),
+                dtype=float,
+            )
         no_quantum_mode = None
     else:
         quantum = {
@@ -386,10 +405,18 @@ def run_quantum_tree_pipeline(
     n_evaluate = min(k_iterations, len(ranked_rows))
     n_generate = min(len(ranked_rows), max(n_evaluate, n_evaluate * 3))
     candidate_pool = _select_candidate_pool(ranked_rows, n_generate=n_generate)
-    candidate_pool.sort(
-        key=lambda row: (row["student_score"], row["distilled_target"], row["alignment_score"]),
-        reverse=True,
-    )
+    if readout == "target":
+        # Camera-ready addition (run_positive_control.py only): rank the pool by the
+        # distillation target itself, bypassing the linear student.
+        candidate_pool.sort(
+            key=lambda row: (row["distilled_target"], row["student_score"], row["alignment_score"]),
+            reverse=True,
+        )
+    else:
+        candidate_pool.sort(
+            key=lambda row: (row["student_score"], row["distilled_target"], row["alignment_score"]),
+            reverse=True,
+        )
     evaluation_rows = candidate_pool[:n_evaluate]
     search_results = _evaluate_student_search(evaluation_rows, len(evaluation_rows), evaluator=evaluator_fn)
     ranked = evaluation_rows[:10]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T06:22:55.016630+00:00",
+  "generated_at": "2026-09-17T21:17:06.850046+00:00",
   "description": "Exact two-sided sign tests and Wilcoxon signed-rank tests on the per-seed quantum AUC lifts. Ablation lift is the in-sample QTD-minus-teacher-only AUC delta (quantum_ablation_multiseed.json); split lift is the current 1024-shot held-out delta (split_results_1024.json).",
   "ablation_auc_lift": {
     "source": "outputs/quantum_ablation_multiseed.json#/per_seed[*]/delta/auc",
@@ -44,4 +44,6 @@
     "negative_count": 4,
     "zero_count": 0,
     "sign_test_two_sided_p": 0.75390625,
-    "wilcoxon_signed_rank_two_s
+    "wilcoxon_signed_rank_two_sided_p": 0.16015625
+  }
+}

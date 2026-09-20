@@ -1,0 +1,535 @@
+{
+  "state_count": 256,
+  "geometric_failures": 18,
+  "variants": {
+    "with_penalty": {
+      "xTQx_symmetric": {
+        "ranking_auc": 0.753268,
+        "failures_in_lowest_energy": {
+          "18": 2,
+          "45": 7,
+          "50": 7,
+          "100": 13
+        },
+        "rank_of_first_failure": 8,
+        "global_minimum_state": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "global_minimum_is_failure": false,
+        "exact_enumeration_cumulative_failures_k50": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "per_parameter": {
+          "heading": {
+            "mean_objective_by_value_index": [
+              -3.147885,
+              -3.597885,
+              -3.147885,
+              -3.357885
+            ],
+            "failures_by_value_index": [
+              12,
+              6,
+              0,
+              0
+            ],
+            "marginal_ranking_auc": 0.455182
+          },
+          "altitude": {
+            "mean_objective_by_value_index": [
+              -1.958462,
+              -3.418077,
+              -3.22,
+              -4.655
+            ],
+            "failures_by_value_index": [
+              0,
+              6,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.634454
+          },
+          "speed": {
+            "mean_objective_by_value_index": [
+              -1.684423,
+              -2.890192,
+              -3.626731,
+              -5.050192
+            ],
+            "failures_by_value_index": [
+              0,
+              3,
+              9,
+              6
+            ],
+            "marginal_ranking_auc": 0.679272
+          },
+          "lateral_offset": {
+            "mean_objective_by_value_index": [
+              -2.023846,
+              -3.535385,
+              -3.035385,
+              -4.656923
+            ],
+            "failures_by_value_index": [
+              3,
+              3,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.544818
+          }
+        }
+      },
+      "upper_triangular_hamiltonian": {
+        "ranking_auc": 0.750117,
+        "failures_in_lowest_energy": {
+          "18": 2,
+          "45": 7,
+          "50": 7,
+          "100": 13
+        },
+        "rank_of_first_failure": 8,
+        "global_minimum_state": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "global_minimum_is_failure": false,
+        "exact_enumeration_cumulative_failures_k50": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "per_parameter": {
+          "heading": {
+            "mean_objective_by_value_index": [
+              -2.622019,
+              -2.923942,
+              -2.622019,
+              -2.803942
+            ],
+            "failures_by_value_index": [
+              12,
+              6,
+              0,
+              0
+            ],
+            "marginal_ranking_auc": 0.455182
+          },
+          "altitude": {
+            "mean_objective_by_value_index": [
+              -1.738846,
+              -2.814808,
+              -2.677308,
+              -3.740962
+            ],
+            "failures_by_value_index": [
+              0,
+              6,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.634454
+          },
+          "speed": {
+            "mean_objective_by_value_index": [
+              -1.515288,
+              -2.445096,
+              -2.986442,
+              -4.025096
+            ],
+            "failures_by_value_index": [
+              0,
+              3,
+              9,
+              6
+            ],
+            "marginal_ranking_auc": 0.679272
+          },
+          "lateral_offset": {
+            "mean_objective_by_value_index": [
+              -1.790769,
+              -2.911923,
+              -2.546538,
+              -3.722692
+            ],
+            "failures_by_value_index": [
+              3,
+              3,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.544818
+          }
+        }
+      }
+    },
+    "without_penalty": {
+      "xTQx_symmetric": {
+        "ranking_auc": 0.736461,
+        "failures_in_lowest_energy": {
+          "18": 2,
+          "45": 6,
+          "50": 7,
+          "100": 12
+        },
+        "rank_of_first_failure": 9,
+        "global_minimum_state": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "global_minimum_is_failure": false,
+        "exact_enumeration_cumulative_failures_k50": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7
+        ],
+        "per_parameter": {
+          "heading": {
+            "mean_objective_by_value_index": [
+              -3.327885,
+              -3.777885,
+              -3.327885,
+              -3.777885
+            ],
+            "failures_by_value_index": [
+              12,
+              6,
+              0,
+              0
+            ],
+            "marginal_ranking_auc": 0.410364
+          },
+          "altitude": {
+            "mean_objective_by_value_index": [
+              -2.138462,
+              -3.598077,
+              -3.4,
+              -5.075
+            ],
+            "failures_by_value_index": [
+              0,
+              6,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.634454
+          },
+          "speed": {
+            "mean_objective_by_value_index": [
+              -1.864423,
+              -3.070192,
+              -3.806731,
+              -5.470192
+            ],
+            "failures_by_value_index": [
+              0,
+              3,
+              9,
+              6
+            ],
+            "marginal_ranking_auc": 0.679272
+          },
+          "lateral_offset": {
+            "mean_objective_by_value_index": [
+              -2.203846,
+              -3.715385,
+              -3.215385,
+              -5.076923
+            ],
+            "failures_by_value_index": [
+              3,
+              3,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.544818
+          }
+        }
+      },
+      "upper_triangular_hamiltonian": {
+        "ranking_auc": 0.738095,
+        "failures_in_lowest_energy": {
+          "18": 2,
+          "45": 6,
+          "50": 7,
+          "100": 12
+        },
+        "rank_of_first_failure": 9,
+        "global_minimum_state": {
+          "int_heading": 90.0,
+          "int_altitude": 32000.0,
+          "int_speed": 6.0,
+          "int_x_offset": 10.0
+        },
+        "global_minimum_is_failure": false,
+        "exact_enumeration_cumulative_failures_k50": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7
+        ],
+        "per_parameter": {
+          "heading": {
+            "mean_objective_by_value_index": [
+              -2.712019,
+              -3.013942,
+              -2.712019,
+              -3.013942
+            ],
+            "failures_by_value_index": [
+              12,
+              6,
+              0,
+              0
+            ],
+            "marginal_ranking_auc": 0.410364
+          },
+          "altitude": {
+            "mean_objective_by_value_index": [
+              -1.828846,
+              -2.904808,
+              -2.767308,
+              -3.950962
+            ],
+            "failures_by_value_index": [
+              0,
+              6,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.634454
+          },
+          "speed": {
+            "mean_objective_by_value_index": [
+              -1.605288,
+              -2.535096,
+              -3.076442,
+              -4.235096
+            ],
+            "failures_by_value_index": [
+              0,
+              3,
+              9,
+              6
+            ],
+            "marginal_ranking_auc": 0.679272
+          },
+          "lateral_offset": {
+            "mean_objective_by_value_index": [
+              -1.880769,
+              -3.001923,
+              -2.636538,
+              -3.932692
+            ],
+            "failures_by_value_index": [
+              3,
+              3,
+              6,
+              6
+            ],
+            "marginal_ranking_auc": 0.544818
+          }
+        }
+      }
+    }
+  },
+  "note": "Value index 0 of each parameter encodes as bits 00; the frequency-based construction credits only set bits, so index 0 is never rewarded.  12 of 18 failures have heading index 0."
+}
