@@ -208,7 +208,7 @@ def fig_mechanism():
     ax.set_xticks(range(len(arms)), [a[1] for a in arms], fontsize=6.6, rotation=35, ha="right")
     ax.set_xlim(-0.5, len(arms) - 0.25)
     ax.set_ylim(-55, 78)
-    ax.set_ylabel("AUC difference vs. teacher-only")
+    ax.set_ylabel("AUC difference vs.\nteacher-only")
     save(fig, "fig_mechanism_controls.pdf")
     plt.close(fig)
 
@@ -231,7 +231,7 @@ def fig_policy():
     ax.set_xticks(range(4), [s[0] for s in series])
     ax.set_ylim(0, 15)
     ax.set_yticks([0, 3, 6, 9, 12])
-    ax.set_ylabel(f"Failing states found (of {load('policy_failure_overlap.json')['policy_failures']})")
+    ax.set_ylabel(f"Failing states found\n(of {load('policy_failure_overlap.json')['policy_failures']})")
     save(fig, "fig_policy_conditioned.pdf")
     plt.close(fig)
 
