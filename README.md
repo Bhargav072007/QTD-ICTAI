@@ -9,12 +9,12 @@ Code, scripts, figure sources, and persisted per-seed outputs for
 All circuits are noiseless statevector simulations (Qiskit `StatevectorSampler`); no
 quantum hardware is needed. Everything runs on a laptop CPU.
 
-**Artifact status (September 2026):** The QAOA bit-order error in the first public
-code export has been fixed. The corrected ten-seed results, exact-objective
-diagnostics, and current figure PDFs are checked in. The published submission
-numbers are retained as historical outputs so changes remain auditable. The
-camera-ready manuscript PDF must be updated to these corrected values before
-paper upload; this repository alone does not certify the paper as upload-ready.
+**Artifact status (final camera-ready, September 2026):** The QAOA bit-order
+error in the first public code export is fixed. The corrected ten-seed results,
+exact-objective diagnostics, and figures matching the final camera-ready paper
+are checked in. Earlier submission numbers and figures remain available as
+historical outputs so the corrections can be audited. The manuscript and the
+conference submission are managed separately from this code repository.
 
 | Corrected result | Value |
 |---|---:|
@@ -22,14 +22,16 @@ paper upload; this repository alone does not certify the paper as upload-ready.
 | QAOA discovery AUC | 134.6 ± 35.7 |
 | QAOA unique simulator states | 37.8 ± 5.1 |
 | QAOA simulator calls / measured circuit shots per seed | 400 / 1,843,200 |
+| Exact energy ranking, matched to each QAOA seed's unique-state budget (Fig. 4) | 4.3 ± 0.9 failures |
 | Exact energy ranking, fixed 50-state budget | 7 failures |
 | Exact energy ranking, QAOA's seed-42 unique budget of 38 | 4 failures |
 
-The 50-state energy-ranking result is a specified classical comparator, not a
-limit on what all optimizers can find. QAOA used policy-derived failure labels
-to construct its objective, so its search is not label-free. The
-[camera-ready correction guide](docs/CAMERA_READY_CHANGES.md) records changed
-numbers, resource definitions, limitations, and required paper edits.
+The energy ranking is a specified same-objective classical comparator, not a
+limit on what all optimizers can find. Figure 4 reads it to each QAOA seed's
+unique-state budget; Figure 10 also shows the fixed 50-state result. QAOA used
+policy-derived failure labels to construct its objective, so its search is not
+label-free. The [camera-ready correction record](docs/CAMERA_READY_CHANGES.md) documents the
+changed numbers, resource definitions, and limitations.
 
 ## Setup (Linux / macOS)
 
@@ -117,12 +119,13 @@ without rerunning QAOA:
 python analysis/check_corrected_artifacts.py --data-dir outputs/reproduction/qaoa_corrected
 ```
 
-The checked-in PDFs under `figures/` use corrected QAOA data. Prior figure PDFs
+The checked-in PDFs under `figures/` match the final paper; prior figure PDFs
 are preserved under `outputs/historical_figures/`. Figure generation uses the
 corrected data overlay by default; unchanged series come from historical
 outputs. Each generated figure package includes input hashes and rendering
-provenance. The comparator
-is an energy ranking of 50 states, **not** a ceiling on arbitrary search methods.
+provenance. Figure 4's energy ranking uses the ten QAOA-matched unique-state
+budgets (mean 4.3 ± 0.9); Figure 10 uses a fixed 50-state budget (7). Neither
+comparison is a ceiling on arbitrary search methods.
 Diagnostics round energies to 12 decimals before stable ranking/AUROC tie handling
 to prevent machine-precision noise from separating mathematical ties.
 
@@ -133,10 +136,12 @@ QTD reuses search evaluations for reporting and records actual training/search
 calls, unique states and sampled circuit shots. Historical label-acquisition
 costs are separate from calls measured during a new invocation.
 
-Figures use Matplotlib's bundled DejaVu Serif (recorded by hash), avoiding
-machine-dependent font fallback. This intentionally differs from the old
-Liberation Serif rendering. `requirements.audit.txt` pins the core environment
-used for these corrections; `requirements.lock` is the historical environment,
+The checked-in figures were rendered with Liberation Serif and Matplotlib
+3.10.9; `figures/figure_provenance.json` records the exact font and input hashes.
+The generator falls back to DejaVu Serif when Liberation Serif is unavailable,
+so layout can vary slightly across machines while plotted data stay the same.
+`requirements.audit.txt` pins the core environment used for these corrections;
+`requirements.lock` is the historical environment,
 not the environment in which these corrected results were verified.
 
 ## Provenance notes
@@ -157,8 +162,9 @@ not the environment in which these corrected results were verified.
   different machine (Linux, same package versions) into `outputs/qaoa_multiseed_parts_rerun/`:
   failures found, discovery AUC and first-failure iteration are identical for all six seeds;
   the number of unique states visited differs by 1-4 on three seeds (46, 48, 50), a
-  floating-point effect in COBYLA. The supplied camera-ready PDF reports this
-  historical file; the corrected source result is
+  floating-point effect in COBYLA. The reviewed submission reported this
+  historical file; the final camera-ready paper reports the corrected source
+  result in
   `outputs/reproduction/qaoa_corrected/qaoa_multiseed.json`.
 * `code_commit` hashes inside older outputs refer to the authors' private working tree, which
   predates this public history.

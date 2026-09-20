@@ -34,12 +34,15 @@ INPUTS = {}
 plt.rcParams.update({
     "pdf.fonttype": 42, "ps.fonttype": 42,
     "font.family": "serif",
-    "font.serif": ["DejaVu Serif"],
+    # Liberation Serif matches the camera-ready body font and is what the
+    # submitted figures were rendered with; DejaVu Serif ships with matplotlib
+    # and is the portable fallback.  figure_provenance.json records which was used.
+    "font.serif": ["Liberation Serif", "DejaVu Serif"],
     "mathtext.fontset": "stix",
     "font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8,
     "xtick.labelsize": 7.5, "ytick.labelsize": 7.5, "legend.fontsize": 7.5,
     "axes.linewidth": 0.6, "axes.grid": True, "grid.color": "0.88", "grid.linewidth": 0.5,
-    "legend.frameon": False, "savefig.bbox": "tight", "savefig.pad_inches": 0.08,
+    "legend.frameon": False, "savefig.bbox": "tight", "savefig.pad_inches": 0.02,
     "axes.spines.top": False, "axes.spines.right": False,
 })
 COL = 3.45  # IEEE column width (in)
@@ -175,16 +178,17 @@ def fig_qaoa():
     rng = np.random.default_rng(0)
     qaoa = [r["unique_failures"] for r in load("qaoa_multiseed.json")["per_seed"]]
     mc = [r["unique_failures"] for r in load("mc_no_replacement.json")["table_ii_mc_records"]]
-    exact = load("qubo_diagnostics.json")["variants"]["with_penalty"]["upper_triangular_hamiltonian"]["failures_in_lowest_energy"]
+    # Paper Fig. 4: the exact energy ranking is read down to EACH SEED's own
+    # unique-state budget, so it is budget-matched to QAOA rather than fixed at 50.
+    matched = load("qubo_diagnostics.json")["qaoa_matched_unique_budgets"]
+    exact_matched = [r["energy_ranking_failures"] for r in matched["per_seed"]]
     fig, ax = plt.subplots(figsize=(COL, 1.75))
-    for x, vals, col in ((0, qaoa, C["qaoa"]), (1, mc, C["mc"])):
+    for x, vals, col in ((0, qaoa, C["qaoa"]), (1, mc, C["mc"]), (2, exact_matched, C["exact"])):
         m, s = dots(ax, x, vals, col, rng)
         ax.text(x + 0.36, m, r1(m) + "$\\pm$" + r1(s), va="center", fontsize=7.5)
-    ax.scatter([2], [exact["50"]], marker="D", s=22, color=C["exact"], zorder=3)
-    ax.text(2.13, exact["50"], f"{exact['50']} (deterministic)", va="center", fontsize=7.5)
     ax.set_xticks([0, 1, 2], ["QAOA ($p{=}2$)\n400 calls/seed", "Monte Carlo\n50 states",
-                              "Exact QUBO\nranking, 50 states"])
-    ax.set_xlim(-0.45, 3.1)
+                              "Exact QUBO\nrank (matched)"])
+    ax.set_xlim(-0.5, 3.25)
     ax.set_ylim(0, 9)
     ax.set_ylabel(f"Failures found (of {load('policy_failure_overlap.json')['geometric_failures']})")
     save(fig, "fig_qaoa_multiseed.pdf")
@@ -206,7 +210,9 @@ def fig_mechanism():
         m, _ = dots(ax, x, vals, col, rng, width=0.10)
         ax.text(x + 0.05, 71, ("+" if m > 0 else "") + r1(m), ha="center", va="center", fontsize=6.3)
     ax.axhline(0, color="0.4", lw=0.7, ls="--")
-    ax.set_xticks(range(len(arms)), [a[1] for a in arms], fontsize=6.6, rotation=35, ha="right")
+    # Labels carry their own line breaks, so keep them horizontal: rotating them
+    # costs vertical space and reads worse for two-line entries.
+    ax.set_xticks(range(len(arms)), [a[1] for a in arms], fontsize=6.6)
     ax.set_xlim(-0.5, len(arms) - 0.25)
     ax.set_ylim(-55, 78)
     ax.set_ylabel("AUC difference vs.\nteacher-only")
@@ -308,7 +314,7 @@ def fig_regimes():
         ("CEM (label-free)", [r["unique_failures"] for r in load("adaptive_baseline.json")["records"]], C["cem"]),
         ("Monte Carlo", [r["unique_failures"] for r in load("mc_no_replacement.json")["table_ii_mc_records"]], C["mc"]),
         None,
-        ("Exact QUBO ranking$^{\\ddagger}$", [exact], C["exact"]),
+        ("Exact QUBO rank, 50 states$^{\\ddagger}$", [exact], C["exact"]),
         ("QAOA direct$^{\\dagger}$", [r["unique_failures"] for r in load("qaoa_multiseed.json")["per_seed"]], C["qaoa"]),
         None,
         ("Cold-start teacher-only", [r["coldstart_teacher_only"]["unique_failures"] for r in cold], C["coldt"]),
@@ -352,7 +358,8 @@ if __name__ == "__main__":
         print("ok", fn.__name__)
 
     from matplotlib import font_manager
-    font_path = Path(font_manager.findfont("DejaVu Serif"))
+    # Record the font actually resolved for the serif family, not a fixed name.
+    font_path = Path(font_manager.findfont(font_manager.FontProperties(family="serif")))
     (FIG / "figure_provenance.json").write_text(json.dumps({
         "python": platform.python_version(), "matplotlib": matplotlib.__version__,
         "font": font_path.name, "font_sha256": hashlib.sha256(font_path.read_bytes()).hexdigest(),

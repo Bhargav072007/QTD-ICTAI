@@ -1,8 +1,8 @@
 {
-  "python": "3.9.6",
-  "matplotlib": "3.9.4",
-  "font": "DejaVuSerif.ttf",
-  "font_sha256": "107244956e9962b9e96faccdc551825e0ae0898ae13737133e1b921a2fd35ffa",
+  "python": "3.10.12",
+  "matplotlib": "3.10.9",
+  "font": "LiberationSerif-Regular.ttf",
+  "font_sha256": "8d6951ea5fc4a9656df4802227292c7943186364929f00b97629e70daf228439",
   "inputs": {
     "qaoa_multiseed.json": {
       "path": "outputs/reproduction/qaoa_corrected/qaoa_multiseed.json",
@@ -61,5 +61,5 @@
       "sha256": "456cfea94c6964991aebee35a6effe1a989872862a057aae27c7cf17a26e08b2"
     }
   },
-  "script_sha256": "ce8ed05ba979be90c15909b3846cbf535c857b665e999463e7085661f0684af1"
+  "script_sha256": "2a0e45715fb0874c96f94e8d51b37b7c54cdcab91e155ce7ba1672f17e4a38d2"
 }

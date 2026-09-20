@@ -1,9 +1,10 @@
-# Corrections needed in the camera-ready paper
+# Camera-ready correction record
 
-The checked-in repository is the corrected **code and data artifact**. The
-supplied `Main.pdf` and Overleaf ZIP still report historical QAOA results and
-must be revised before paper submission. This document is a handoff for that
-revision; it does not claim that the conference has approved substantive changes.
+The repository is the corrected **code, data, and figure artifact** for the
+final camera-ready paper. The earlier `Main.pdf` and Overleaf ZIP reported
+historical QAOA results; the final paper uses the corrected values below.
+This record documents the revision and does not claim conference approval of
+substantive changes.
 
 The original code was audited at commit
 `07f8552028703f8ead7775c8f4810881322dd084`. The public QAOA cost function
@@ -14,13 +15,13 @@ corrected implementation now agrees on all 256. Its objective is
 `E(x) = Σ_i Q_ii x_i + Σ_(i<j) [(Q_ij + Q_ji)/2] x_i x_j`.
 
 Stored `Q` is symmetric, but each pair is counted once. The earlier prose
-`xᵀQx` counts pairs twice and needs correction. The circuit construction and
-0.12 pair penalty were preserved. See
+`xᵀQx` counted pairs twice; the final manuscript uses the pair-once convention.
+The circuit construction and 0.12 pair penalty were preserved. See
 [`objective_value`](../phase2_qaoa/qubo_encoder.py),
 [`_hamiltonian_cost`](../phase2_qaoa/qaoa_runner.py), and the
 [exhaustive tests](../phase2_qaoa/tests/test_objective_consistency.py).
 
-## Values to replace
+## Corrected values
 
 Corrected [ten-seed results](../outputs/reproduction/qaoa_corrected/qaoa_multiseed.json)
 were generated from seeds 42–51, twice per seed. The
@@ -42,9 +43,9 @@ commit. The previous results remain in
 | Final sampling shots per seed | omitted | **51,200 measured** |
 | Total circuit shots per seed | not established | **1,843,200 measured** |
 
-These changes affect the abstract, the QAOA methods/results, resource table,
-seed-42 table, Figure 4, Figure 10, their captions, the limitations, and the
-conclusion. Use `ROUND_HALF_UP` to one decimal and population SD, as in the
+These changes appear in the final abstract, QAOA methods/results, resource
+table, seed-42 table, Figures 4 and 10, their captions, limitations, and
+conclusion. They use `ROUND_HALF_UP` to one decimal and population SD, as in the
 paper. The corrected mean failure count remains below the saved MC mean of
 4.2 ± 1.1. This is a result for one tested configuration, not a general QAOA
 limit.
@@ -78,9 +79,8 @@ The shuffled and random control numbers had already changed between the
 reviewed and camera-ready versions because of an artifact repair:
 shuffled **+27.6 ± 11.8 → +26.7 ± 14.4**, random
 **+15.1 ± 8.5 → +14.1 ± 3.6**. Both exports remain in
-[`outputs/`](../outputs/). Disclose this change in the paper itself; the
-README provenance note alone is insufficient. The code corrections in this
-revision did not replace those arms again.
+[`outputs/`](../outputs/). The final manuscript discloses this change. The code
+corrections in this revision did not replace those arms again.
 
 A full mechanism-control rerun and a full positive-control rerun reproduced
 all 290 current curves. The strongest student-readout oracle beats its own
@@ -89,8 +89,8 @@ positive, one negative and one tied seed. The circuit versus its shuffle in
 the direct target readout is **−10.1 ± 58.7**, CI **[−44.5,28.6]**. The
 latter is not an equivalence test or proof that the circuit contains no
 candidate-specific signal. The constant and random substitutions recover
-part of the full lift; the zero-score arm worsens it. Narrow the blanket
-mechanism claims accordingly.
+part of the full lift; the zero-score arm worsens it. The final manuscript
+treats the circuit comparison as a null result, not proof of no signal.
 
 All 16 tests pass. The corrected-artifact checker verifies every basis-state
 energy, all ten seed files, the objective-matched comparator, resource totals,
@@ -100,7 +100,7 @@ pass historical numbers; they do not certify a revised paper. The 10 current
 PDFs are archived in [`outputs/historical_figures`](../outputs/historical_figures/).
 
 The original independent audit and complete 79-item old/new manifest remain
-in the local handoff package supplied to the authors. After the LaTeX is
-revised, compile and visually inspect the eight-page PDF, check every number
-against the corrected JSON, and confirm the exact EasyChair title. This
-repository cannot by itself make the unchanged manuscript upload-ready.
+in the local handoff package supplied to the authors. The final eight-page PDF
+was visually inspected; its title and author order match the EasyChair record,
+and the corrected QAOA figures and claims match these saved results. Conference
+submission and any publisher-side validation are separate from this repository.
