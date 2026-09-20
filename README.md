@@ -1,4 +1,4 @@
-# QTD-ICTAI: reproduction artifact
+# QTD-ICTAI: verified reproduction artifact
 
 Code, scripts, figure sources, and persisted per-seed outputs for
 
@@ -8,6 +8,28 @@ Code, scripts, figure sources, and persisted per-seed outputs for
 
 All circuits are noiseless statevector simulations (Qiskit `StatevectorSampler`); no
 quantum hardware is needed. Everything runs on a laptop CPU.
+
+**Artifact status (September 2026):** The QAOA bit-order error in the first public
+code export has been fixed. The corrected ten-seed results, exact-objective
+diagnostics, and current figure PDFs are checked in. The published submission
+numbers are retained as historical outputs so changes remain auditable. The
+camera-ready manuscript PDF must be updated to these corrected values before
+paper upload; this repository alone does not certify the paper as upload-ready.
+
+| Corrected result | Value |
+|---|---:|
+| QAOA failures, seeds 42–51 (mean ± population SD) | 3.5 ± 0.7 of 18 |
+| QAOA discovery AUC | 134.6 ± 35.7 |
+| QAOA unique simulator states | 37.8 ± 5.1 |
+| QAOA simulator calls / measured circuit shots per seed | 400 / 1,843,200 |
+| Exact energy ranking, fixed 50-state budget | 7 failures |
+| Exact energy ranking, QAOA's seed-42 unique budget of 38 | 4 failures |
+
+The 50-state energy-ranking result is a specified classical comparator, not a
+limit on what all optimizers can find. QAOA used policy-derived failure labels
+to construct its objective, so its search is not label-free. The
+[camera-ready correction guide](docs/CAMERA_READY_CHANGES.md) records changed
+numbers, resource definitions, limitations, and required paper edits.
 
 ## Setup (Linux / macOS)
 
@@ -20,7 +42,10 @@ pip install -r requirements.txt        # or: pip install -r requirements.lock  (
 Windows (PowerShell): `python -m venv .venv; .venv\Scripts\Activate.ps1; pip install -r requirements.txt`
 
 Tested with Python 3.11, qiskit 1.4.6, qiskit-aer 0.17.2, qiskit-algorithms 0.4.0, numpy 2.x.
-The scripts record `git rev-parse HEAD` in their outputs, so run them inside a git clone.
+The corrected QAOA runs used Python 3.9.6 and the versions in
+`requirements.audit.txt`; their recorded producing commit predates this README
+update. Source SHA-256 hashes in each seed file identify the exact producing
+code. Run reproduction commands inside a Git clone for commit provenance.
 
 ## Quick check (about 2 minutes)
 
@@ -28,9 +53,10 @@ The scripts record `git rev-parse HEAD` in their outputs, so run them inside a g
 python -m pytest -q                              # unit tests
 python run_traceability_checks.py                # numbers carried over from the reviewed paper vs outputs/*.json
 python analysis/check_camera_ready_numbers.py    # numbers added or changed in the camera-ready
+python analysis/check_corrected_artifacts.py --data-dir outputs/reproduction/qaoa_corrected
 ```
 
-Both checkers must end with `ALL PASS`. They verify historical saved metrics,
+The last three checks must end with `ALL PASS`. The first two checkers verify historical saved metrics,
 not the corrected QAOA manuscript or the mathematical implementation. The
 exhaustive objective/counter tests in pytest cover the repaired implementation.
 The traceability checker is read-only unless `--report-dir NEW_DIRECTORY` is supplied.
@@ -40,9 +66,9 @@ The traceability checker is read-only unless `--report-dir NEW_DIRECTORY` is sup
 | Paper item | Command | Output (under `outputs/`) | Time |
 | --- | --- | --- | --- |
 | Policy weights and rollout failures (Sec. III-A) | `python phase1/train.py && python phase1/evaluate.py` | `reproduction/phase1/` (does not replace the QUBO training input) | seconds |
-| MC baselines (Tables II-III, Sec. VI-C) | `python run_mc_no_replacement_analysis.py` | `mc_no_replacement.json` | seconds |
-| QAOA, one seed at a time (Sec. VI-A) | `python run_qaoa_multiseed.py --seed 42` ... `--seed 51`, then `python run_qaoa_multiseed.py --assemble` | `reproduction/qaoa_corrected/` | about 12 min per seed |
-| QUBO diagnostics and exact minimizer (Secs. III-B, VI-A) | `python analysis/qubo_diagnostics.py` | `reproduction/derived/qubo_diagnostics.json` | seconds |
+| MC baselines (Tables II-III, Sec. VI-C) | `python run_mc_no_replacement_analysis.py` | new timestamped `reproduction/mc_no_replacement_*/` directory | seconds |
+| QAOA, one seed at a time (Sec. VI-A) | See complete rerun commands below | `reproduction/qaoa_verification/` | machine-dependent |
+| QUBO diagnostics and exact ranking (Secs. III-B, VI-A) | `python analysis/qubo_diagnostics.py --output-dir outputs/reproduction/qaoa_verification` | `reproduction/qaoa_verification/qubo_diagnostics.json` | seconds |
 | Mechanism controls (Sec. VI-B1) | `python run_mechanism_controls.py --output-name mechanism_controls_rerun.json` | as named | about 2 min |
 | Positive control, constant and zero-score arms (Secs. VI-B1, VI-B2) | `python run_positive_control.py --output-name positive_control_rerun.json` | as named | about 2 min |
 | Fixed-ego vs. policy failures, warm-start overlap (Sec. VI-B3) | `python analysis/policy_failure_overlap.py` | `reproduction/derived/policy_failure_overlap.json` | seconds |
@@ -70,17 +96,32 @@ Hamiltonian and 0.12 pair penalty. `objective_value` documents the convention.
 The optimizer now evaluates Qiskit measurement strings in the same qubit order
 as the Hamiltonian. Historical JSON remains unchanged and is not a corrected run.
 
-After all ten corrected seeds have been generated and assembled:
+The verified corrected outputs are already checked in at
+`outputs/reproduction/qaoa_corrected/`; earlier results remain at
+`outputs/qaoa_multiseed.json`. To independently rerun into a new location:
 
 ```bash
-python analysis/qubo_diagnostics.py --output-dir outputs/reproduction/qaoa_corrected
-python analysis/check_corrected_artifacts.py --data-dir outputs/reproduction/qaoa_corrected
-python figures/make_paper_figures.py --data-dir outputs/reproduction/qaoa_corrected --output-dir outputs/reproduction/corrected_figures
+for seed in 42 43 44 45 46 47 48 49 50 51; do
+  python run_qaoa_multiseed.py --seed "$seed" --output-dir outputs/reproduction/qaoa_verification
+done
+python run_qaoa_multiseed.py --assemble --output-dir outputs/reproduction/qaoa_verification
+python analysis/qubo_diagnostics.py --output-dir outputs/reproduction/qaoa_verification
+python analysis/check_corrected_artifacts.py --data-dir outputs/reproduction/qaoa_verification
+python figures/make_paper_figures.py --data-dir outputs/reproduction/qaoa_verification --output-dir outputs/reproduction/verification_figures
 ```
 
-The figure data directory is an explicit overlay: corrected QAOA/diagnostics
-come from it, and unchanged series come from historical outputs. Each generated
-figure package includes input hashes and rendering provenance. The comparator
+For the checked-in results, the following command validates the result files
+without rerunning QAOA:
+
+```bash
+python analysis/check_corrected_artifacts.py --data-dir outputs/reproduction/qaoa_corrected
+```
+
+The checked-in PDFs under `figures/` use corrected QAOA data. Prior figure PDFs
+are preserved under `outputs/historical_figures/`. Figure generation uses the
+corrected data overlay by default; unchanged series come from historical
+outputs. Each generated figure package includes input hashes and rendering
+provenance. The comparator
 is an energy ranking of 50 states, **not** a ceiling on arbitrary search methods.
 Diagnostics round energies to 12 decimals before stable ranking/AUROC tie handling
 to prevent machine-precision noise from separating mathematical ties.
@@ -111,12 +152,14 @@ not the environment in which these corrected results were verified.
   (`outputs/mechanism_controls.json`); the first-export values are kept in
   `outputs/mechanism_controls_original_export.json` (shuffled +27.6 +/- 11.8, random +15.1 +/- 8.5
   vs. +26.7 +/- 14.4 and +14.1 +/- 3.6 now). Conclusions are unchanged.
-* **QAOA per-seed files.** The first export contained per-seed part files for seeds 42-45 only;
-  `outputs/qaoa_multiseed.json` (all ten seeds) is canonical. Seeds 46-51 were re-run on a
+* **Historical QAOA per-seed files.** The first export contained per-seed part files for seeds 42-45 only;
+  `outputs/qaoa_multiseed.json` preserves the earlier ten-seed results. Seeds 46-51 were re-run on a
   different machine (Linux, same package versions) into `outputs/qaoa_multiseed_parts_rerun/`:
   failures found, discovery AUC and first-failure iteration are identical for all six seeds;
   the number of unique states visited differs by 1-4 on three seeds (46, 48, 50), a
-  floating-point effect in COBYLA. The paper reports the canonical file.
+  floating-point effect in COBYLA. The supplied camera-ready PDF reports this
+  historical file; the corrected source result is
+  `outputs/reproduction/qaoa_corrected/qaoa_multiseed.json`.
 * `code_commit` hashes inside older outputs refer to the authors' private working tree, which
   predates this public history.
 * Superseded files kept for the record: `multiseed_results.json` and

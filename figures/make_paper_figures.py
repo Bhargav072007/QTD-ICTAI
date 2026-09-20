@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 OUT = ROOT / "outputs"
 FIG = ROOT / "outputs/reproduction/figures"
-OVERLAY = None
+OVERLAY = ROOT / "outputs/reproduction/qaoa_corrected"
 INPUTS = {}
 
 plt.rcParams.update({
@@ -59,7 +59,8 @@ def save(fig, name: str) -> None:
 
 def load(name: str):
     path = OVERLAY / name if OVERLAY and (OVERLAY / name).exists() else OUT / name
-    INPUTS[name] = {"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    INPUTS[name] = {"path": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -341,7 +342,7 @@ def fig_regimes():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=FIG)
-    parser.add_argument("--data-dir", type=Path, help="Overlay corrected JSON; unchanged sources use historical outputs")
+    parser.add_argument("--data-dir", type=Path, default=OVERLAY, help="Overlay corrected JSON (default: tracked corrected QAOA artifacts); unchanged sources use historical outputs")
     args = parser.parse_args()
     FIG, OVERLAY = args.output_dir, args.data_dir
     FIG.mkdir(parents=True, exist_ok=False)
@@ -354,6 +355,6 @@ if __name__ == "__main__":
     font_path = Path(font_manager.findfont("DejaVu Serif"))
     (FIG / "figure_provenance.json").write_text(json.dumps({
         "python": platform.python_version(), "matplotlib": matplotlib.__version__,
-        "font": str(font_path), "font_sha256": hashlib.sha256(font_path.read_bytes()).hexdigest(),
+        "font": font_path.name, "font_sha256": hashlib.sha256(font_path.read_bytes()).hexdigest(),
         "inputs": INPUTS, "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
     }, indent=2))

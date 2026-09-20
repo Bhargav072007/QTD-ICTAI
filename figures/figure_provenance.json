@@ -1,0 +1,65 @@
+{
+  "python": "3.9.6",
+  "matplotlib": "3.9.4",
+  "font": "DejaVuSerif.ttf",
+  "font_sha256": "107244956e9962b9e96faccdc551825e0ae0898ae13737133e1b921a2fd35ffa",
+  "inputs": {
+    "qaoa_multiseed.json": {
+      "path": "outputs/reproduction/qaoa_corrected/qaoa_multiseed.json",
+      "sha256": "7599d52fd0e4f1ef4627c1531a29b4bf2012b209da90c5fbf794bcb6b3022b1f"
+    },
+    "mc_no_replacement.json": {
+      "path": "outputs/mc_no_replacement.json",
+      "sha256": "5021d4d0d2d87c0dc2b5547b60afa606af13cb8abc4110479fede0ca88da73b7"
+    },
+    "qubo_diagnostics.json": {
+      "path": "outputs/reproduction/qaoa_corrected/qubo_diagnostics.json",
+      "sha256": "1d2c2789d6ff9914523cd094e287ff7080e2cfe8eaa807a3da6569055081cb85"
+    },
+    "policy_failure_overlap.json": {
+      "path": "outputs/policy_failure_overlap.json",
+      "sha256": "20c21b6a72ebfcdf6a0afecd7bee1c3cd9641ee449ed98f01850fc9082c5ab6f"
+    },
+    "mechanism_controls.json": {
+      "path": "outputs/mechanism_controls.json",
+      "sha256": "d772958ac5dd16e6126369717c3e83422434de96a4aaea88c087c569c0698b38"
+    },
+    "positive_control.json": {
+      "path": "outputs/positive_control.json",
+      "sha256": "8a363787144f27d13e05c75c9c168963c787bb6a769aeaf8827e7f0558d2de68"
+    },
+    "policy_loop_comparison.json": {
+      "path": "outputs/policy_loop_comparison.json",
+      "sha256": "9a675f335ddd280c238bc8eb8b8761d7579aee36151a4de163e94e706eaa07b2"
+    },
+    "policy_loop_norepl.json": {
+      "path": "outputs/policy_loop_norepl.json",
+      "sha256": "7b7d6d6cc13d8da704a1a57bb51187edb89b27796b82d8c8c35e09be6964e17d"
+    },
+    "adaptive_baseline_policy.json": {
+      "path": "outputs/adaptive_baseline_policy.json",
+      "sha256": "985718e994de5b0ac5381af1dc35be40755069e451caf3748eb5461e24225460"
+    },
+    "fig_cumulative_norepl.json": {
+      "path": "outputs/fig_cumulative_norepl.json",
+      "sha256": "0fd5f0e811d2e09040f543497a43105e6d5c1cb843a61052cc9c81c92cc452e8"
+    },
+    "split_results_1024.json": {
+      "path": "outputs/split_results_1024.json",
+      "sha256": "86ba6fedeb0e84331d67a53ff70b7a632416a06e1ec94ee26ce05a0e15fd9761"
+    },
+    "quantum_ablation_multiseed.json": {
+      "path": "outputs/quantum_ablation_multiseed.json",
+      "sha256": "b920a4055f29861e3ee5fdcb516b7f949379e0100c20c79f05cebf64e5723570"
+    },
+    "coldstart_qtd.json": {
+      "path": "outputs/coldstart_qtd.json",
+      "sha256": "707a8eba45e8d9d263eb867b4761224cb4d29b04ff4c68bfa68934061a8ec478"
+    },
+    "adaptive_baseline.json": {
+      "path": "outputs/adaptive_baseline.json",
+      "sha256": "456cfea94c6964991aebee35a6effe1a989872862a057aae27c7cf17a26e08b2"
+    }
+  },
+  "script_sha256": "ce8ed05ba979be90c15909b3846cbf535c857b665e999463e7085661f0684af1"
+}
