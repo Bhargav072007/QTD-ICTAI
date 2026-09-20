@@ -185,7 +185,7 @@ def fig_qaoa():
                               "Exact QUBO\nranking, 50 states"])
     ax.set_xlim(-0.45, 3.1)
     ax.set_ylim(0, 9)
-    ax.set_ylabel("Failures found (of 18)")
+    ax.set_ylabel(f"Failures found (of {load('policy_failure_overlap.json')['geometric_failures']})")
     save(fig, "fig_qaoa_multiseed.pdf")
     plt.close(fig)
 
@@ -203,9 +203,9 @@ def fig_mechanism():
         vals = src[key]["vs_teacher_only"]["auc_delta"]["per_seed"]
         col = C["qtd"] if src is mech else C["oracle"]
         m, _ = dots(ax, x, vals, col, rng, width=0.10)
-        ax.text(x + 0.05, 71, ("+" if m > 0 else "") + r1(m), ha="center", va="center", fontsize=7)
+        ax.text(x + 0.05, 71, ("+" if m > 0 else "") + r1(m), ha="center", va="center", fontsize=6.3)
     ax.axhline(0, color="0.4", lw=0.7, ls="--")
-    ax.set_xticks(range(len(arms)), [a[1] for a in arms], fontsize=6.6)
+    ax.set_xticks(range(len(arms)), [a[1] for a in arms], fontsize=6.6, rotation=35, ha="right")
     ax.set_xlim(-0.5, len(arms) - 0.25)
     ax.set_ylim(-55, 78)
     ax.set_ylabel("AUC difference vs. teacher-only")
@@ -227,11 +227,11 @@ def fig_policy():
         ax.bar(x, m, yerr=s, color=col, width=0.62, error_kw=dict(lw=0.9, capsize=2.5), zorder=2)
         ax.text(x, m + s + 0.45, r1(m), ha="center", fontsize=7.5)
     ax.axhline(load("policy_failure_overlap.json")["policy_failures"], color="0.35", lw=0.7, ls=":")
-    ax.text(3.45, 12.25, "12 policy-failing states", ha="right", fontsize=7)
+    ax.text(3.45, 12.25, f"{load('policy_failure_overlap.json')['policy_failures']} policy-failing states", ha="right", fontsize=7)
     ax.set_xticks(range(4), [s[0] for s in series])
     ax.set_ylim(0, 15)
     ax.set_yticks([0, 3, 6, 9, 12])
-    ax.set_ylabel("Failing states found (of 12)")
+    ax.set_ylabel(f"Failing states found (of {load('policy_failure_overlap.json')['policy_failures']})")
     save(fig, "fig_policy_conditioned.pdf")
     plt.close(fig)
 
@@ -244,7 +244,7 @@ def fig_cumulative():
     ax.step(k, d["qtd_cum42"], where="post", color=C["qtd"], lw=1.4, label="QTD (full circuit)")
     ax.step(k, d["mc_cum42"], where="post", color=C["mc"], lw=1.3, ls="--", label="Monte Carlo")
     ax.axhline(load("policy_failure_overlap.json")["geometric_failures"], color="0.35", lw=0.7, ls=":")
-    ax.text(1, 18.4, "all 18 failing states", fontsize=7)
+    ax.text(1, 18.4, f"all {load('policy_failure_overlap.json')['geometric_failures']} failing states", fontsize=7)
     ax.set_xlim(0, 50)
     ax.set_ylim(0, 20.5)
     ax.set_xlabel("Evaluations used")
@@ -307,7 +307,7 @@ def fig_regimes():
         ("CEM (label-free)", [r["unique_failures"] for r in load("adaptive_baseline.json")["records"]], C["cem"]),
         ("Monte Carlo", [r["unique_failures"] for r in load("mc_no_replacement.json")["table_ii_mc_records"]], C["mc"]),
         None,
-        ("Exact QUBO minimizer$^{\\ddagger}$", [exact], C["exact"]),
+        ("Exact QUBO ranking$^{\\ddagger}$", [exact], C["exact"]),
         ("QAOA direct$^{\\dagger}$", [r["unique_failures"] for r in load("qaoa_multiseed.json")["per_seed"]], C["qaoa"]),
         None,
         ("Cold-start teacher-only", [r["coldstart_teacher_only"]["unique_failures"] for r in cold], C["coldt"]),
@@ -332,7 +332,7 @@ def fig_regimes():
     ax.set_yticks(ticks, labels)
     ax.set_xlim(0, 23.5)
     ax.set_xticks([0, 5, 10, 15, 18])
-    ax.set_xlabel("Failing states found (of 18)")
+    ax.set_xlabel(f"Failing states found (of {load('policy_failure_overlap.json')['geometric_failures']})")
     ax.grid(axis="y", visible=False)
     save(fig, "fig_budget_regimes.pdf")
     plt.close(fig)
