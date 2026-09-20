@@ -85,6 +85,20 @@ def main() -> None:
         "Value index 0 of each parameter encodes as bits 00; the frequency-based construction credits only "
         "set bits, so index 0 is never rewarded.  12 of 18 failures have heading index 0."
     )
+    corrected_path = destination / "qaoa_multiseed.json"
+    if corrected_path.exists():
+        corrected = json.loads(corrected_path.read_text())
+        prefix = out["variants"]["with_penalty"]["upper_triangular_hamiltonian"]["failures_in_lowest_energy"]
+        records = [{"seed": row["seed"], "unique_state_budget": row["unique_env_evaluations"],
+                    "qaoa_failures": row["unique_failures"],
+                    "energy_ranking_failures": prefix[str(row["unique_env_evaluations"]) ]}
+                   for row in corrected["per_seed"]]
+        values = np.array([row["energy_ranking_failures"] for row in records])
+        out["qaoa_matched_unique_budgets"] = {
+            "source": str(corrected_path), "per_seed": records,
+            "energy_ranking_mean": float(values.mean()), "energy_ranking_population_sd": float(values.std()),
+            "note": "Variation reflects QAOA's changing state budget; the energy ranking itself is deterministic. Not a universal ceiling.",
+        }
     path = destination / "qubo_diagnostics.json"
     path.write_text(json.dumps(out, indent=2), encoding="utf-8")
     sym = out["variants"]["with_penalty"]["xTQx_symmetric"]
