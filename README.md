@@ -82,6 +82,8 @@ The figure data directory is an explicit overlay: corrected QAOA/diagnostics
 come from it, and unchanged series come from historical outputs. Each generated
 figure package includes input hashes and rendering provenance. The comparator
 is an energy ranking of 50 states, **not** a ceiling on arbitrary search methods.
+Diagnostics round energies to 12 decimals before stable ranking/AUROC tie handling
+to prevent machine-precision noise from separating mathematical ties.
 
 QAOA records measured optimizer calls/shots and final sampling shots separately.
 It no longer builds the unused 256-state fallback catalog on the Qiskit path.

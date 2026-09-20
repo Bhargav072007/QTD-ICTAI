@@ -82,7 +82,7 @@ def evaluate_policy(episodes: int = 500, seed: int = 42) -> Dict[str, Any]:
         "near_miss_rate": round(failure_counts["near_miss"] / max(episodes, 1), 6),
         "separation_loss_rate": round(failure_counts["separation_loss"] / max(episodes, 1), 6),
         "failure_counts": failure_counts,
-        # Repo-relative path so exported artifacts carry no machine-specific identity.
+        # Record the actual policy location selected for this reproduction.
         "policy_artifact": str(OUT / "policy_weights.npz"),
     }
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)

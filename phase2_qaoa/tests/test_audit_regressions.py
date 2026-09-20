@@ -40,3 +40,9 @@ def test_qaoa_refuses_overwrite_before_running(tmp_path,monkeypatch):
     monkeypatch.setattr(runner,'run_iteration',lambda _: pytest.fail('should preflight output'))
     with pytest.raises(FileExistsError):runner.run(1,p)
     assert p.read_text()=='historical'
+
+
+def test_diagnostic_auc_does_not_split_numerical_ties():
+    from analysis.qubo_diagnostics import rank_auc
+    assert rank_auc(np.array([1., 1. + 1e-15]),np.array([1,0])) == .5
+    assert rank_auc(np.array([1., 1. + 1e-6]),np.array([1,0])) == 0.
